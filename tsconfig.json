@@ -1,6 +1,8 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
+    "target": "es2017", // or "es2020", "esnext", etc.
+    "module": "es2022", // or "esnext", "node16", etc.
     "strict": true,
     "paths": {
       "@/*": [

@@ -1,219 +1,282 @@
-// src/screens/Medications.tsx
-import React, { useState, useEffect, useMemo } from 'react';
+// screens/MedicationScreen.tsx
+import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
   TextInput,
   Button,
   FlatList,
-  StyleSheet,
+  TouchableOpacity,
   Alert,
-  Pressable
+  StyleSheet,
+  KeyboardAvoidingView,
+  Platform,
 } from 'react-native';
-import debounce from 'lodash.debounce';
+import firebase, { auth, db } from '../firebase';
+import { Picker } from '@react-native-picker/picker';
 
-import { auth, db } from '../firebase';
-import { onAuthStateChanged } from 'firebase/auth';
-import {
-  collection,
-  addDoc,
-  onSnapshot,
-  query,
-  where,
-  getDocs,
-  doc,
-  deleteDoc
-} from 'firebase/firestore';
+export default function MedicationScreen() {
+  const uid = auth.currentUser!.uid;
+  const medsRef = db.collection('users').doc(uid).collection('medications');
 
-type Medication = {
-  id: string;
-  name: string;
-  dosage: string;
-  time: string;
-  rxcui?: string;
-};
-
-export default function MedicationsScreen() {
-  const [userId, setUserId]           = useState<string | null>(null);
-  const [medications, setMedications] = useState<Medication[]>([]);
-  const [name, setName]               = useState('');
-  const [dosage, setDosage]           = useState('');
-  const [time, setTime]               = useState('');
+  // form state
+  const [searchText, setSearchText] = useState('');
   const [suggestions, setSuggestions] = useState<string[]>([]);
+  const [name, setName] = useState('');
+  const [amount, setAmount] = useState(1);
+  const [doseCount, setDoseCount] = useState(1);
+  const [periodCount, setPeriodCount] = useState(1);
+  const [periodUnit, setPeriodUnit] = useState<'day' | 'week'>('day');
+  const [durationCount, setDurationCount] = useState(1);
+  const [durationUnit, setDurationUnit] = useState<'day' | 'week'>('day');
 
-  // — auth / Firestore subscription (unchanged) —
+  // current meds list
+  const [medList, setMedList] = useState<{ id: string; data: any }[]>([]);
+
+  // Listen for meds, auto-remove expired
   useEffect(() => {
-    const unsub = onAuthStateChanged(auth, user => {
-      setUserId(user?.uid ?? null);
-    });
-    return unsub;
+    const unsub = medsRef
+      .orderBy('createdAt', 'desc')
+      .onSnapshot(
+        snap => {
+          const now = Date.now();
+          const live: { id: string; data: any }[] = [];
+          snap.docs.forEach(doc => {
+            const data = doc.data();
+            if (data.expiresAt) {
+              const expMillis = (data.expiresAt as firebase.firestore.Timestamp).toMillis();
+              if (expMillis < now) {
+                // automatically delete expired medication
+                medsRef.doc(doc.id).delete().catch(console.error);
+                return;
+              }
+            }
+            live.push({ id: doc.id, data });
+          });
+          setMedList(live);
+        },
+        err => console.error('Firestore onSnapshot error:', err)
+      );
+    return () => unsub();
   }, []);
 
+  // Autocomplete: only for 2+ letters
   useEffect(() => {
-    if (!userId) return;
-    const medsRef = collection(db, 'users', userId, 'medications');
-    return onSnapshot(query(medsRef), snap =>
-      setMedications(
-        snap.docs.map(d => ({ id: d.id, ...(d.data() as any) }))
-      )
-    );
-  }, [userId]);
-
-  // — fetch suggestions from RxNav approximateTerm endpoint —
-  const fetchDrugSuggestions = async (term: string) => {
-    if (term.length < 3) {
+    if (searchText.length < 2) {
       setSuggestions([]);
       return;
     }
-    try {
-      const res = await fetch(
-        `https://rxnav.nlm.nih.gov/REST/approximateTerm.json` +
-          `?term=${encodeURIComponent(term)}` +
-          `&maxEntries=10`
-      );
-      const data = await res.json();
-      // The JSON has an array under data.approximateGroup.candidate
-      const names =
-        data.approximateGroup?.candidate?.map(
-          (c: any) => c.minConceptItem.name
-        ) ?? [];
-      setSuggestions(names);
-    } catch {
-      setSuggestions([]);
+    const q = searchText.toLowerCase();
+    db.collection('drugs')
+      .orderBy('name')
+      .startAt(q)
+      .endAt(q + '\uf8ff')
+      .limit(5)
+      .get()
+      .then(snap => setSuggestions(snap.docs.map(d => d.data().name)))
+      .catch(console.error);
+  }, [searchText]);
+
+  const addMedication = async () => {
+    if (!name) {
+      Alert.alert('Error', 'Please select a drug name.');
+      return;
     }
+
+    // compute expiresAt timestamp
+    const now = Date.now();
+    const days =
+      durationUnit === 'week' ? durationCount * 7 : durationCount;
+    const expiresAtMillis = now + days * 24 * 60 * 60 * 1000;
+    const expiresAt = firebase.firestore.Timestamp.fromMillis(
+      expiresAtMillis
+    );
+
+    // save med with expiresAt
+    console.log(`Adding medication: ${name}, expires in ${days} days`);
+    await medsRef.add({
+      name,
+      amount,
+      doseCount,
+      periodCount,
+      periodUnit,
+      durationCount,
+      durationUnit,
+      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+      expiresAt,
+    });
+
+    // DDI check (logs for debugging)
+    console.log('Fetching meds for DDI check...');
+    const snap = await medsRef.get();
+    const meds = snap.docs.map(d => d.data());
+    const others = meds.map(m => m.name).filter(n => n !== name);
+    for (const other of others) {
+      const key = [name, other].sort().join('_');
+      console.log(`Checking interaction key: ${key}`);
+      const doc = await db.collection('ddi').doc(key).get();
+      console.log(`Doc.exists(${key}): ${doc.exists}`);
+      if (doc.exists) {
+        const interaction = doc.data()!.interaction;
+        console.log(`Interaction for ${key}: ${interaction}`);
+        Alert.alert(
+          'Interaction detected',
+          `${name} ↔ ${other}\n\n${interaction}`
+        );
+      }
+    }
+
+    // reset form
+    setName('');
+    setSearchText('');
+    setAmount(1);
+    setDoseCount(1);
+    setPeriodCount(1);
+    setPeriodUnit('day');
+    setDurationCount(1);
+    setDurationUnit('day');
+    setSuggestions([]);
   };
 
-  // debounce to avoid firing on every keystroke
-  const debouncedFetch = useMemo(
-    () => debounce(fetchDrugSuggestions, 300),
-    []
-  );
-
-  // call debounced fetch whenever name changes
-  useEffect(() => {
-    debouncedFetch(name);
-  }, [name]);
-
-  // — add / delete handlers (unchanged) —
-  const handleAddMedication = async () => {
-    if (!userId || !name.trim() || !dosage.trim() || !time.trim()) {
-      return Alert.alert('All fields are required');
-    }
-    const medsRef = collection(db, 'users', userId, 'medications');
-
-    // 1) duplicate-name check
-    const dupSnap = await getDocs(
-      query(medsRef, where('name', '==', name.trim()))
-    );
-    if (!dupSnap.empty) {
-      return Alert.alert(
-        'Duplicate Medication',
-        `${name} is already on your list.`
-      );
-    }
-
-    // 2) time conflict check
-    const timeSnap = await getDocs(
-      query(medsRef, where('time', '==', time))
-    );
-    if (!timeSnap.empty) {
-      return Alert.alert(
-        'Schedule Conflict',
-        `You already have a medication set at ${time}.`
-      );
-    }
-
-    // 3) write it
-    try {
-      await addDoc(medsRef, {
-        name: name.trim(),
-        dosage: dosage.trim(),
-        time: time.trim(),
-        addedAt: Date.now()
-      });
-      setName('');
-      setDosage('');
-      setTime('');
-      setSuggestions([]);
-    } catch (err: any) {
-      Alert.alert('Failed to add medication', err.message);
-    }
-  };
-
-  const handleDelete = async (id: string) => {
-    if (!userId) return;
-    try {
-      await deleteDoc(doc(db, 'users', userId, 'medications', id));
-    } catch (err: any) {
-      Alert.alert('Failed to delete', err.message);
-    }
+  const removeMedication = (id: string) => {
+    medsRef.doc(id).delete().catch(console.error);
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>My Medications</Text>
-
-      {/* Autocomplete Name Input */}
-      <TextInput
-        placeholder="Name"
-        style={styles.input}
-        value={name}
-        onChangeText={setName}
-      />
-      {suggestions.length > 0 && (
-        <FlatList
-          data={suggestions}
-          keyExtractor={(item) => item}
-          renderItem={({ item }) => (
-            <Pressable
-              style={styles.suggestion}
-              onPress={() => {
-                setName(item);
-                setSuggestions([]);
-              }}
-            >
-              <Text>{item}</Text>
-            </Pressable>
-          )}
-          style={styles.suggestionList}
+    <KeyboardAvoidingView
+      style={styles.container}
+      behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+    >
+      {/* Form */}
+      <View style={styles.form}>
+        <Text style={styles.label}>Drug Name</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="Search drug…"
+          value={searchText || name}
+          onChangeText={t => {
+            setSearchText(t);
+            setName('');
+          }}
         />
-      )}
-
-      <TextInput
-        placeholder="Dosage"
-        style={styles.input}
-        value={dosage}
-        onChangeText={setDosage}
-      />
-      <TextInput
-        placeholder="Time (e.g. 08:00)"
-        style={styles.input}
-        value={time}
-        onChangeText={setTime}
-      />
-      <Button title="Add Medication" onPress={handleAddMedication} />
-
-      <FlatList
-        data={medications}
-        keyExtractor={(item) => item.id}
-        renderItem={({ item }) => (
-          <View style={styles.item}>
-            <Text>
-              {item.name} – {item.dosage} at {item.time}
-            </Text>
-            <Button title="Delete" onPress={() => handleDelete(item.id)} />
+        {searchText.length >= 2 && suggestions.length > 0 && (
+          <View style={styles.suggestionsContainer}>
+            {suggestions.map(s => (
+              <TouchableOpacity
+                key={s}
+                onPress={() => {
+                  setName(s);
+                  setSearchText('');
+                  setSuggestions([]);
+                }}
+                style={styles.suggestionItem}
+              >
+                <Text>{s}</Text>
+              </TouchableOpacity>
+            ))}
           </View>
         )}
+
+        <Text style={styles.label}>Amount (units per dose)</Text>
+        <TextInput
+          style={styles.input}
+          keyboardType="number-pad"
+          value={amount.toString()}
+          onChangeText={t => setAmount(+t || 1)}
+        />
+
+        <Text style={styles.label}>Frequency</Text>
+        <View style={styles.row}>
+          <TextInput
+            style={styles.smallInput}
+            keyboardType="number-pad"
+            value={doseCount.toString()}
+            onChangeText={t => setDoseCount(+t || 1)}
+          />
+          <Text style={styles.centerText}>per</Text>
+          <TextInput
+            style={styles.smallInput}
+            keyboardType="number-pad"
+            value={periodCount.toString()}
+            onChangeText={t => setPeriodCount(+t || 1)}
+          />
+          <Picker
+            selectedValue={periodUnit}
+            style={styles.picker}
+            onValueChange={v => setPeriodUnit(v as any)}
+          >
+            <Picker.Item label="day" value="day" />
+            <Picker.Item label="week" value="week" />
+          </Picker>
+        </View>
+
+        <Text style={styles.label}>Duration</Text>
+        <View style={styles.row}>
+          <TextInput
+            style={styles.smallInput}
+            keyboardType="number-pad"
+            value={durationCount.toString()}
+            onChangeText={t => setDurationCount(+t || 1)}
+          />
+          <Picker
+            selectedValue={durationUnit}
+            style={styles.picker}
+            onValueChange={v => setDurationUnit(v as any)}
+          >
+            <Picker.Item label="day" value="day" />
+            <Picker.Item label="week" value="week" />
+          </Picker>
+        </View>
+
+        <Button title="Add Medication" onPress={addMedication} />
+      </View>
+
+      {/* Medications List */}
+      <Text style={styles.medsTitle}>Your Medications</Text>
+      <FlatList
+        data={medList}
+        keyExtractor={item => item.id}
+        renderItem={({ item }) => {
+          const d = item.data;
+          return (
+            <View style={styles.listItem}>
+              <View style={styles.listItemText}>
+                <Text>{d.name}</Text>
+                <Text>
+                  {d.amount} unit(s) — {d.doseCount} per {d.periodCount}{' '}
+                  {d.periodUnit}(s) for {d.durationCount}{' '}
+                  {d.durationUnit}(s)
+                </Text>
+              </View>
+              <Button title="Remove" onPress={() => removeMedication(item.id)} />
+            </View>
+          );
+        }}
+        keyboardShouldPersistTaps="handled"
+        contentContainerStyle={styles.listContainer}
       />
-    </View>
+    </KeyboardAvoidingView>
   );
 }
 
 const styles = StyleSheet.create({
-  container:      { flex: 1, padding: 20 },
-  title:          { fontSize: 24, marginBottom: 12, textAlign: 'center' },
-  input:          { borderWidth: 1, padding: 10, marginBottom: 8, borderRadius: 6 },
-  suggestionList: { maxHeight: 150, marginBottom: 8, backgroundColor: '#fff' },
-  suggestion:     { padding: 10, borderBottomWidth: 1, borderColor: '#eee' },
-  item:           { marginVertical: 8, borderBottomWidth: 1, paddingBottom: 6 }
+  container: { flex: 1 },
+  form: { padding: 16, backgroundColor: '#fff' },
+  label: { marginBottom: 4 },
+  input: { borderWidth: 1, padding: 8, marginBottom: 12 },
+  suggestionsContainer: { borderWidth: 1, marginBottom: 12 },
+  suggestionItem: { padding: 8, borderBottomWidth: 1 },
+  row: { flexDirection: 'row', alignItems: 'center', marginBottom: 12 },
+  smallInput: { borderWidth: 1, padding: 8, flex: 1, marginHorizontal: 4 },
+  picker: { flex: 1 },
+  centerText: { marginHorizontal: 4 },
+  medsTitle: { margin: 16, fontSize: 18 },
+  listContainer: { paddingBottom: 32 },
+  listItem: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    padding: 12,
+    borderBottomWidth: 1,
+  },
+  listItemText: { flex: 1 },
 });

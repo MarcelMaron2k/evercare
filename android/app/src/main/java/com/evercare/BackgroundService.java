@@ -20,14 +20,14 @@ public class BackgroundService extends Service implements SensorEventListener{
 
     private static final String TAG = "BackgroundService";
     private static final String CHANNEL_ID = "FREE_FALL_CHANNEL";
-    private static final int NOTIFICATION_ID = 1001;
+    private static final int NOTIFICATION_ID = 1234;
 
     private SensorManager sensorManager;
     private Sensor accelerometer;
     private NotificationManager notificationManager;
 
     private static final float FREE_FALL_THRESHOLD = 2.0f; // m/s²
-    private static final long FREE_FALL_TIME_THRESHOLD = 300; // milliseconds
+    private static final long FREE_FALL_TIME_THRESHOLD = 50; // milliseconds
 
     
     private long freeFallStartTime = 0;
@@ -159,42 +159,72 @@ public class BackgroundService extends Service implements SensorEventListener{
     private void createNotificationChannel() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             CharSequence name = "Free Fall Detection";
-            String description = "Notifications for free fall events";
+            String description = "Critical notifications for free fall events";
             int importance = NotificationManager.IMPORTANCE_HIGH;
             NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
             channel.setDescription(description);
             channel.enableVibration(true);
             channel.setVibrationPattern(new long[]{0, 1000, 500, 1000});
+            channel.enableLights(true);
+            channel.setLightColor(android.graphics.Color.RED);
+            channel.setLockscreenVisibility(android.app.Notification.VISIBILITY_PUBLIC);
+            channel.setBypassDnd(true); // Bypass Do Not Disturb
+            channel.setShowBadge(true);
             
             notificationManager.createNotificationChannel(channel);
-            Log.d(TAG, "Notification channel created");
-        }
+            Log.d(TAG, "Notification channel created with high importance");
+        }    
     }
-
     private void showFreeFallNotification(float acceleration, long duration) {
+        Log.w(TAG, "Trigger Freefall Notification");
+        // Check if notifications are enabled
+        if (!notificationManager.areNotificationsEnabled()) {
+            Log.w(TAG, "Notifications are disabled for this app");
+        }
+        
         // Create intent to open app when notification is tapped
         Intent intent = new Intent(this, MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 
             PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
         
-        // Build the notification
+        // Build the notification with maximum visibility settings
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
-                .setSmallIcon(android.R.drawable.ic_dialog_alert) // Use system alert icon
-                .setContentTitle("⚠️ FREE FALL DETECTED!")
-                .setContentText(String.format("Duration: %dms | Acceleration: %.2f m/s²", duration, acceleration))
+                .setSmallIcon(android.R.drawable.stat_sys_warning) // Different system icon
+                .setContentTitle("🚨 CRITICAL: FREE FALL DETECTED!")
+                .setContentText(String.format("EMERGENCY - Duration: %dms | G-Force: %.2f", duration, acceleration))
                 .setStyle(new NotificationCompat.BigTextStyle()
-                        .bigText(String.format("Free fall event detected!\n\nDuration: %d milliseconds\nAcceleration: %.2f m/s²\n\nTap to open app.", duration, acceleration)))
-                .setPriority(NotificationCompat.PRIORITY_HIGH)
+                        .bigText(String.format("🚨 EMERGENCY ALERT 🚨\n\nFree fall event detected!\n\nDuration: %d milliseconds\nAcceleration: %.2f m/s²\n\nDevice may have been dropped or fallen!\n\nTap to open app immediately.", duration, acceleration)))
+                .setPriority(NotificationCompat.PRIORITY_MAX) // Changed to MAX
                 .setCategory(NotificationCompat.CATEGORY_ALARM)
                 .setAutoCancel(true)
                 .setContentIntent(pendingIntent)
                 .setVibrate(new long[]{0, 1000, 500, 1000})
-                .setDefaults(NotificationCompat.DEFAULT_SOUND);
+                .setDefaults(NotificationCompat.DEFAULT_ALL) // All defaults
+                .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
+                .setOngoing(false)
+                .setShowWhen(true)
+                .setWhen(System.currentTimeMillis())
+                .setFullScreenIntent(pendingIntent, true) // Show as full screen on lock screen
+                .setColor(android.graphics.Color.RED)
+                .setBadgeIconType(NotificationCompat.BADGE_ICON_SMALL);
         
-        // Show the notification
-        notificationManager.notify(NOTIFICATION_ID, builder.build());
-        Log.i(TAG, "Free fall notification displayed");
+        try {
+            // Show the notification
+            notificationManager.notify(NOTIFICATION_ID, builder.build());
+            Log.i(TAG, "Free fall notification sent to system");
+            
+            // Also try to show as heads-up notification
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                NotificationChannel channel = notificationManager.getNotificationChannel(CHANNEL_ID);
+                if (channel != null) {
+                    Log.d(TAG, "Channel importance: " + channel.getImportance());
+                    Log.d(TAG, "Notifications enabled: " + notificationManager.areNotificationsEnabled());
+                }
+            }
+        } catch (Exception e) {
+            Log.e(TAG, "Error displaying notification: " + e.getMessage());
+        }
     }
     
     private void vibrateDevice() {

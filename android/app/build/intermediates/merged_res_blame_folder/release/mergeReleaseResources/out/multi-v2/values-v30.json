@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.anonymous.evercare.app-mergeReleaseResources-66:/values-v30/values-v30.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\marse\\.gradle\\caches\\8.10.2\\transforms\\62948ac221d41e76ddff7537ca05eb9e\\transformed\\core-splashscreen-1.2.0-alpha02\\res\\values-v30\\values-v30.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "7",
+                        "endColumns": "12",
+                        "endOffsets": "433"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,1155 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:1:1-49:12
+INJECTED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:1:1-49:12
+INJECTED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:1:1-49:12
+INJECTED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:1:1-49:12
+MERGED from [:expo] C:\Users\marse\Desktop\evercare\node_modules\expo\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:2:1-7:12
+MERGED from [:react-native-gesture-handler] C:\Users\marse\Desktop\evercare\node_modules\react-native-gesture-handler\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:2:1-7:12
+MERGED from [:react-native-safe-area-context] C:\Users\marse\Desktop\evercare\node_modules\react-native-safe-area-context\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:2:1-7:12
+MERGED from [:react-native-screens] C:\Users\marse\Desktop\evercare\node_modules\react-native-screens\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:2:1-7:12
+MERGED from [:react-native-webview] C:\Users\marse\Desktop\evercare\node_modules\react-native-webview\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:2:1-19:12
+MERGED from [:react-native-reanimated] C:\Users\marse\Desktop\evercare\node_modules\react-native-reanimated\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:2:1-7:12
+MERGED from [:expo-application] C:\Users\marse\Desktop\evercare\node_modules\expo-application\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:2:1-7:12
+MERGED from [:expo-asset] C:\Users\marse\Desktop\evercare\node_modules\expo-asset\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:2:1-7:12
+MERGED from [:expo-blur] C:\Users\marse\Desktop\evercare\node_modules\expo-blur\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:2:1-7:12
+MERGED from [:expo-constants] C:\Users\marse\Desktop\evercare\node_modules\expo-constants\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:2:1-7:12
+MERGED from [:expo-dev-client] C:\Users\marse\Desktop\evercare\node_modules\expo-dev-client\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:2:1-7:12
+MERGED from [:expo-dev-launcher] C:\Users\marse\Desktop\evercare\node_modules\expo-dev-launcher\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:2:1-7:12
+MERGED from [:expo-dev-menu] C:\Users\marse\Desktop\evercare\node_modules\expo-dev-menu\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:2:1-7:12
+MERGED from [:expo-file-system] C:\Users\marse\Desktop\evercare\node_modules\expo-file-system\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:2:1-33:12
+MERGED from [:expo-font] C:\Users\marse\Desktop\evercare\node_modules\expo-font\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:2:1-7:12
+MERGED from [:expo-haptics] C:\Users\marse\Desktop\evercare\node_modules\expo-haptics\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:2:1-9:12
+MERGED from [:expo-manifests] C:\Users\marse\Desktop\evercare\node_modules\expo-manifests\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:2:1-7:12
+MERGED from [:expo-json-utils] C:\Users\marse\Desktop\evercare\node_modules\expo-json-utils\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:2:1-7:12
+MERGED from [:expo-keep-awake] C:\Users\marse\Desktop\evercare\node_modules\expo-keep-awake\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:2:1-7:12
+MERGED from [:expo-linking] C:\Users\marse\Desktop\evercare\node_modules\expo-linking\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:2:1-7:12
+MERGED from [:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:2:1-43:12
+MERGED from [:expo-sensors] C:\Users\marse\Desktop\evercare\node_modules\expo-sensors\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:2:1-9:12
+MERGED from [:expo-splash-screen] C:\Users\marse\Desktop\evercare\node_modules\expo-splash-screen\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:2:1-7:12
+MERGED from [:expo-system-ui] C:\Users\marse\Desktop\evercare\node_modules\expo-system-ui\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:2:1-7:12
+MERGED from [:expo-web-browser] C:\Users\marse\Desktop\evercare\node_modules\expo-web-browser\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:2:1-15:12
+MERGED from [:expo-dev-menu-interface] C:\Users\marse\Desktop\evercare\node_modules\expo-dev-menu-interface\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:2:1-7:12
+MERGED from [:expo-updates-interface] C:\Users\marse\Desktop\evercare\node_modules\expo-updates-interface\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:2:1-7:12
+MERGED from [:expo-modules-core] C:\Users\marse\Desktop\evercare\node_modules\expo-modules-core\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:2:1-18:12
+MERGED from [com.facebook.react:react-android:0.76.9] C:\Users\marse\.gradle\caches\8.10.2\transforms\348a38d6d3db7ad1b271b24b76c7a177\transformed\react-android-0.76.9-release\AndroidManifest.xml:2:1-12:12
+MERGED from [com.google.android.material:material:1.6.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\bb010b9a14f3a551d4ad4c17d2847aed\transformed\material-1.6.1\AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\f0da77113549db75f0e541c574414f9b\transformed\lifecycle-extensions-2.2.0\AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\3ccba122ab3346012d5f1cc852b3429a\transformed\legacy-support-v4-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\568263898e2f5cb7e1863b52dfceb618\transformed\constraintlayout-2.0.1\AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.core:core-splashscreen:1.2.0-alpha02] C:\Users\marse\.gradle\caches\8.10.2\transforms\62948ac221d41e76ddff7537ca05eb9e\transformed\core-splashscreen-1.2.0-alpha02\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.appcompat:appcompat-resources:1.7.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\9bdc0300c838abbf68edd7c2aba93241\transformed\appcompat-resources-1.7.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.appcompat:appcompat:1.7.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\6aa042e64df2ad29a08d4ccb09bb7608\transformed\appcompat-1.7.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\0c10db3e074ddb1199292e252b1a5934\transformed\viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:17:1-66:12
+MERGED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\98160fa8296e449f5be68025fcf6484e\transformed\play-services-base-18.0.1\AndroidManifest.xml:16:1-24:12
+MERGED from [com.google.firebase:firebase-installations:17.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\f49505e21fe83eb6a98e302e2e6eca93\transformed\firebase-installations-17.2.0\AndroidManifest.xml:2:1-24:12
+MERGED from [com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\e63025705c44e0b9ae7faab8c23d2211\transformed\firebase-common-ktx-21.0.0\AndroidManifest.xml:2:1-18:12
+MERGED from [com.google.firebase:firebase-common:21.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\90439eca9eec8e1378e1d65eec457845\transformed\firebase-common-21.0.0\AndroidManifest.xml:15:1-41:12
+MERGED from [com.google.firebase:firebase-iid-interop:17.1.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\8e97f21071780a6261a9428f604f71ba\transformed\firebase-iid-interop-17.1.0\AndroidManifest.xml:2:1-10:12
+MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\9c3879cd963f7ec1adc3defc40bc40ea\transformed\firebase-measurement-connector-19.0.0\AndroidManifest.xml:17:1-25:12
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\1d19e57ce4b75aeea6ff89628827c86c\transformed\play-services-cloud-messaging-17.2.0\AndroidManifest.xml:2:1-13:12
+MERGED from [com.google.android.gms:play-services-stats:17.0.2] C:\Users\marse\.gradle\caches\8.10.2\transforms\8f80e076a159fb0179e438582a580a50\transformed\play-services-stats-17.0.2\AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.compose.foundation:foundation-android:1.7.6] C:\Users\marse\.gradle\caches\8.10.2\transforms\157409378a717e5625365cb4f278d6fe\transformed\foundation-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.foundation:foundation-layout-android:1.7.6] C:\Users\marse\.gradle\caches\8.10.2\transforms\07043c9d1ab4c382027036a539b99667\transformed\foundation-layout-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.animation:animation-core-android:1.7.6] C:\Users\marse\.gradle\caches\8.10.2\transforms\2e380dc9ea811712983360a442ed085b\transformed\animation-core-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.animation:animation-android:1.7.6] C:\Users\marse\.gradle\caches\8.10.2\transforms\316c37684ace2546014abad4c070d488\transformed\animation-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-unit-android:1.7.6] C:\Users\marse\.gradle\caches\8.10.2\transforms\5134dcdcd9fc32e3041577b38e06d276\transformed\ui-unit-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-graphics-android:1.7.6] C:\Users\marse\.gradle\caches\8.10.2\transforms\53dfb5e290e712e3f52fa7428d1c817f\transformed\ui-graphics-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-geometry-android:1.7.6] C:\Users\marse\.gradle\caches\8.10.2\transforms\68d3146807deb2e1c10e8b74f3f20b5b\transformed\ui-geometry-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-util-android:1.7.6] C:\Users\marse\.gradle\caches\8.10.2\transforms\7b9ad8f5a51d20a02fb4d895bcee3bb3\transformed\ui-util-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-text-android:1.7.6] C:\Users\marse\.gradle\caches\8.10.2\transforms\c712abe878b36c89484e023a018b6509\transformed\ui-text-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-android:1.7.6] C:\Users\marse\.gradle\caches\8.10.2\transforms\809f1d550baadc4f13b3ef1e3c7198f3\transformed\ui-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\25619fef5ca1115a79d813b8cdde0487\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\c2df6f3158f72f0c95ba27840fe9c720\transformed\legacy-support-core-ui-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\8b72427a074368f2d199fec6221681c1\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5653b9f4d0bdde4a04506d29edd640\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\d85e978ee9c5ccd77eecdd982139cfe7\transformed\emoji2-views-helper-1.3.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\6648128d35426136b864ddbabd0a58f8\transformed\emoji2-1.3.0\AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.activity:activity-ktx:1.7.2] C:\Users\marse\.gradle\caches\8.10.2\transforms\4bccbc811802e9651eeb7b5427c190e2\transformed\activity-ktx-1.7.2\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity:1.7.2] C:\Users\marse\.gradle\caches\8.10.2\transforms\db21c1a68b35382c06bf996fb24e94cf\transformed\activity-1.7.2\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\4df7a90b5e7a4cea1fe536022ec9f6e3\transformed\coordinatorlayout-1.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\fdb6b769ac264e1d8d2ed14b2a0b3465\transformed\swiperefreshlayout-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.webkit:webkit:1.4.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\f411fee41b2caf1ee1fe609f3dd6fe60\transformed\webkit-1.4.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.autofill:autofill:1.1.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\23c3ecfd2cbbb6f952f6ca6747a0de95\transformed\autofill-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.facebook.fresco:animated-gif:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\90828086bb7a5501a7d96815eae2d73c\transformed\animated-gif-3.2.0\AndroidManifest.xml:2:1-7:12
+MERGED from [com.facebook.fresco:webpsupport:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\ebd636c5c3fe77a2951546b542f4e446\transformed\webpsupport-3.2.0\AndroidManifest.xml:2:1-7:12
+MERGED from [com.facebook.fresco:fresco:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\31fbf6ce93950ec4a53288fa16710ef3\transformed\fresco-3.2.0\AndroidManifest.xml:2:1-7:12
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\d8a224db73e00b9de0671e8e442c5100\transformed\imagepipeline-okhttp3-3.2.0\AndroidManifest.xml:2:1-7:12
+MERGED from [com.facebook.fresco:animated-base:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\7532ca52c1aadb0af086bb9694ee4897\transformed\animated-base-3.2.0\AndroidManifest.xml:2:1-7:12
+MERGED from [com.facebook.fresco:animated-drawable:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\be99f6344f223789eb89b22731044b67\transformed\animated-drawable-3.2.0\AndroidManifest.xml:2:1-7:12
+MERGED from [com.facebook.fresco:vito-options:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\9d29b7196f1da4f6b3e01963c630e956\transformed\vito-options-3.2.0\AndroidManifest.xml:2:1-7:12
+MERGED from [com.facebook.fresco:drawee:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\8af01045d80784f5c356b7ae1081fd82\transformed\drawee-3.2.0\AndroidManifest.xml:2:1-7:12
+MERGED from [com.facebook.fresco:nativeimagefilters:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\3c6b240183f78d877fc8db3beb4ad74c\transformed\nativeimagefilters-3.2.0\AndroidManifest.xml:2:1-7:12
+MERGED from [com.facebook.fresco:memory-type-native:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\6efc03e79f4543f76796e5525f7e2178\transformed\memory-type-native-3.2.0\AndroidManifest.xml:2:1-7:12
+MERGED from [com.facebook.fresco:memory-type-java:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\35d4efc2f1eebf41146bdc1f68994f70\transformed\memory-type-java-3.2.0\AndroidManifest.xml:2:1-7:12
+MERGED from [com.facebook.fresco:imagepipeline-native:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\05a39df26391f6b6e4fd63654432467b\transformed\imagepipeline-native-3.2.0\AndroidManifest.xml:2:1-7:12
+MERGED from [com.facebook.fresco:memory-type-ashmem:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\3a8d99afbf44c38a13e5275a5c17279d\transformed\memory-type-ashmem-3.2.0\AndroidManifest.xml:2:1-7:12
+MERGED from [com.facebook.fresco:imagepipeline:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd045adedfcb0474a37d719ad43b27d6\transformed\imagepipeline-3.2.0\AndroidManifest.xml:2:1-7:12
+MERGED from [com.facebook.fresco:nativeimagetranscoder:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\100d9ccc9c6cfc74fe44169cb82daa4f\transformed\nativeimagetranscoder-3.2.0\AndroidManifest.xml:2:1-7:12
+MERGED from [com.facebook.fresco:imagepipeline-base:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\3c54016fd24427ffa02ec7967c6ae235\transformed\imagepipeline-base-3.2.0\AndroidManifest.xml:2:1-7:12
+MERGED from [com.facebook.fresco:middleware:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\81dda4d4976b8c344b14c7b5084aecc6\transformed\middleware-3.2.0\AndroidManifest.xml:2:1-7:12
+MERGED from [com.facebook.fresco:ui-common:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\fe08d882318043589347a05327586510\transformed\ui-common-3.2.0\AndroidManifest.xml:2:1-7:12
+MERGED from [com.facebook.fresco:soloader:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\c74c3e572ec10013f46808bed15a7d57\transformed\soloader-3.2.0\AndroidManifest.xml:2:1-7:12
+MERGED from [com.facebook.fresco:fbcore:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\36376f7ad38e3f7ed03d04bde5310d65\transformed\fbcore-3.2.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\36547d8a437fbae004bd20c1931101b7\transformed\customview-poolingcontainer-1.0.0\AndroidManifest.xml:17:1-23:12
+MERGED from [androidx.core:core-ktx:1.13.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\1a99585a374b0a87b3f76ec812828cb4\transformed\core-ktx-1.13.1\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.browser:browser:1.6.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\93e8cc37d86304bf49b7ee3b8e2bd9a3\transformed\browser-1.6.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.transition:transition:1.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\cc2c15b0f5f3d603d519209fdf34d2f0\transformed\transition-1.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\af77eeafcd317de4a079e798912bffb0\transformed\drawerlayout-1.1.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\a4c7197f987b29b6a9d9a9ae1c23d638\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\41df94fc91a18ba719ebdaaef2bd3ad4\transformed\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.media:media:1.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\df435116b6ee6a76c43ba912d92dfc5e\transformed\media-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\8cf522d90b7d428707175de9e4fda61a\transformed\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\37d7d0bfd1886f780bb45bb2d55f2d0e\transformed\recyclerview-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\c40bb2ee44083c3c4c521460b672ebf0\transformed\slidingpanelayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.1.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\738a7e7e10ef249a0451398c7966e515\transformed\customview-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\b8454715191e8052529777564567450c\transformed\asynclayoutinflater-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.graphics:graphics-path:1.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\f637deaae8c6f4d1da6ee77dfc5525d7\transformed\graphics-path-1.0.1\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.core:core:1.13.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\60030d18baf00ffcac78f89d7a69b77c\transformed\core-1.13.1\AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\a707b47f133cf69b4ded94740dd35036\transformed\savedstate-ktx-1.2.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\ee7e187a0aa6826731cbce268483c855\transformed\savedstate-1.2.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.8.3] C:\Users\marse\.gradle\caches\8.10.2\transforms\e543e1f7e5deaf43f1bcc1239622ca36\transformed\lifecycle-viewmodel-2.8.3\AndroidManifest.xml:2:1-5:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.8.3] C:\Users\marse\.gradle\caches\8.10.2\transforms\a49308e85a0e543b71ce2f1dee1bfbf0\transformed\lifecycle-viewmodel-release\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.8.3] C:\Users\marse\.gradle\caches\8.10.2\transforms\69628f476a21666c86146bccc3398ab1\transformed\lifecycle-runtime-ktx-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.8.3] C:\Users\marse\.gradle\caches\8.10.2\transforms\258cfd5afbccbd1ff9da17f9646fc855\transformed\lifecycle-runtime-2.8.3\AndroidManifest.xml:2:1-5:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.8.3] C:\Users\marse\.gradle\caches\8.10.2\transforms\261515bcc8f5ba6c4e4f841e83e32580\transformed\lifecycle-runtime-release\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.3] C:\Users\marse\.gradle\caches\8.10.2\transforms\41a3cb13e3092302d1a766c0b72c708b\transformed\lifecycle-viewmodel-ktx-2.8.3\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.3] C:\Users\marse\.gradle\caches\8.10.2\transforms\dc72317dd2e39b4a72bb4e48cd7d476d\transformed\lifecycle-viewmodel-savedstate-2.8.3\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-service:2.8.3] C:\Users\marse\.gradle\caches\8.10.2\transforms\5396ef31893736aa8989b8589b7a7342\transformed\lifecycle-service-2.8.3\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.3] C:\Users\marse\.gradle\caches\8.10.2\transforms\9fbd97a7a92e2593db28805f2172e0e4\transformed\lifecycle-process-2.8.3\AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.8.3] C:\Users\marse\.gradle\caches\8.10.2\transforms\d4c0b913b125af965af113aabba3a6d3\transformed\lifecycle-livedata-core-ktx-2.8.3\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.8.3] C:\Users\marse\.gradle\caches\8.10.2\transforms\8fc7a4bd688b91488bd6ae555e65c2c5\transformed\lifecycle-livedata-core-2.8.3\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.8.3] C:\Users\marse\.gradle\caches\8.10.2\transforms\f476b2f0195425de8ccbdcfa9a550a01\transformed\lifecycle-livedata-2.8.3\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-compose-android:2.8.3] C:\Users\marse\.gradle\caches\8.10.2\transforms\dc0c417ae01d051b4b6d773bc0999865\transformed\lifecycle-runtime-compose-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.7.6] C:\Users\marse\.gradle\caches\8.10.2\transforms\b9029b6c2d41885f0f5a0f16c20d6d11\transformed\runtime-saveable-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.runtime:runtime-android:1.7.6] C:\Users\marse\.gradle\caches\8.10.2\transforms\ba07022d727d431e1c002b989c92f102\transformed\runtime-release\AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.firebase:firebase-installations-interop:17.1.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\37d2ad2bea695229d3db109dc9d84276\transformed\firebase-installations-interop-17.1.1\AndroidManifest.xml:15:1-19:12
+MERGED from [com.google.android.gms:play-services-tasks:18.1.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\ce2d3047f54362a99d0933f216de5eb6\transformed\play-services-tasks-18.1.0\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-basement:18.3.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\ed3729ee67626c6fe065caf273b78485\transformed\play-services-basement-18.3.0\AndroidManifest.xml:16:1-26:12
+MERGED from [androidx.fragment:fragment:1.6.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\0217794c96dbbcc822c3134f1ea52712\transformed\fragment-1.6.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.fragment:fragment-ktx:1.6.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\f633045de3e35de821cbde5185c98cd4\transformed\fragment-ktx-1.6.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\901c327b6364b6a7813cf7fcf770c216\transformed\profileinstaller-1.3.1\AndroidManifest.xml:17:1-55:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\4358177135782005c8d7fa4053836136\transformed\startup-runtime-1.1.1\AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\2034c6eee313a995a978e70852c4d2b7\transformed\tracing-1.2.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.tracing:tracing-ktx:1.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\e468a54cc4b43ddbfc57384b15014f49\transformed\tracing-ktx-1.2.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.facebook.fresco:vito-renderer:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\041be504dd8efe6f05bf797cca0cc316\transformed\vito-renderer-3.2.0\AndroidManifest.xml:2:1-7:12
+MERGED from [com.facebook.react:hermes-android:0.76.9] C:\Users\marse\.gradle\caches\8.10.2\transforms\78757e88ad9656cd6077f535ee3ce443\transformed\hermes-android-0.76.9-release\AndroidManifest.xml:2:1-7:12
+MERGED from [com.github.Dimezis:BlurView:version-2.0.6] C:\Users\marse\.gradle\caches\8.10.2\transforms\464e730c6e4deb52e3f588c9b96302bd\transformed\BlurView-version-2.0.6\AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.databinding:viewbinding:8.6.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\5711d67574c8872dd2539ae74c4cc86e\transformed\viewbinding-8.6.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\974b3106ee5dfcde3998c005b611e5fa\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\5a761902b7b8c4db5e36ecb34db661f8\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.firebase:firebase-components:18.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\72c517e74e2a3d71aa765b0b4b9b99de\transformed\firebase-components-18.0.0\AndroidManifest.xml:15:1-20:12
+MERGED from [com.google.firebase:firebase-datatransport:18.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\e5c61f23a1adc97d06b71c10881d5db1\transformed\firebase-datatransport-18.2.0\AndroidManifest.xml:15:1-31:12
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.9] C:\Users\marse\.gradle\caches\8.10.2\transforms\8129939764ec4bac4c92fc2a16588f0e\transformed\transport-backend-cct-3.1.9\AndroidManifest.xml:15:1-37:12
+MERGED from [com.google.firebase:firebase-encoders-json:18.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\c1bff7114e1d8c0a9ab252fe117ee9b5\transformed\firebase-encoders-json-18.0.0\AndroidManifest.xml:15:1-23:12
+MERGED from [com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\marse\.gradle\caches\8.10.2\transforms\2131bf2235b7c9120d82a7760aa41607\transformed\transport-runtime-3.1.9\AndroidManifest.xml:15:1-41:12
+MERGED from [com.google.android.datatransport:transport-api:3.1.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\23ac75d309dca06cf40aa9bd0a502d28\transformed\transport-api-3.1.0\AndroidManifest.xml:15:1-20:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\7e4be7486c60235df5512988719fa4ef\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\e81ab1a531f7c3a7517c60c505fb6295\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\5dc41ce1417f762ad01b4f926845a326\transformed\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\a496b296b0ba350eabf9ef0291a33bf1\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\4c6ae5ce974c63680993c9ed66489657\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\efdaaa26c08a45b92bfe3bc16f8e5914\transformed\core-runtime-2.2.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.annotation:annotation-experimental:1.4.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\070dff28562ff4c7ffdc5e9ee6d6b9a7\transformed\annotation-experimental-1.4.1\AndroidManifest.xml:2:1-7:12
+MERGED from [com.facebook.fbjni:fbjni:0.6.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\a663ad1603164e283baab1764d2b625c\transformed\fbjni-0.6.0\AndroidManifest.xml:2:1-7:12
+MERGED from [com.facebook.soloader:soloader:0.12.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\6c14a87a8b5e39d333ca00fc174676fe\transformed\soloader-0.12.1\AndroidManifest.xml:2:1-17:12
+MERGED from [com.android.installreferrer:installreferrer:2.2] C:\Users\marse\.gradle\caches\8.10.2\transforms\3ee65b339f624983683fbfdb1e2b607f\transformed\installreferrer-2.2\AndroidManifest.xml:2:1-13:12
+MERGED from [me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:2:1-52:12
+	package
+		ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:3:5-37
+		INJECTED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml
+	xmlns:tools
+		ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:2:5-51
+	android:versionCode
+		INJECTED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:1:11-69
+uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
+ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:4:1-77
+MERGED from [:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:7:5-81
+MERGED from [:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:7:5-81
+	android:name
+		ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:4:18-74
+uses-permission#android.permission.FOREGROUND_SERVICE
+ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:5:1-73
+	android:name
+		ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:5:18-70
+uses-permission#android.permission.FOREGROUND_SERVICE_HEALTH
+ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:6:1-80
+	android:name
+		ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:6:18-77
+uses-permission#android.permission.BODY_SENSORS
+ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:7:1-67
+	android:name
+		ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:7:18-64
+uses-permission#android.permission.ACTIVITY_RECOGNITION
+ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:8:1-75
+MERGED from [:expo-sensors] C:\Users\marse\Desktop\evercare\node_modules\expo-sensors\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:7:5-79
+MERGED from [:expo-sensors] C:\Users\marse\Desktop\evercare\node_modules\expo-sensors\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:7:5-79
+	android:name
+		ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:8:18-72
+uses-permission#android.permission.FOREGROUND_SERVICE_SPECIAL_USE
+ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:9:1-118
+	tools:ignore
+		ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:9:83-115
+	android:name
+		ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:9:18-82
+queries
+ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:10:1-16:13
+MERGED from [:expo-file-system] C:\Users\marse\Desktop\evercare\node_modules\expo-file-system\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:12:5-18:15
+MERGED from [:expo-file-system] C:\Users\marse\Desktop\evercare\node_modules\expo-file-system\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:12:5-18:15
+MERGED from [:expo-web-browser] C:\Users\marse\Desktop\evercare\node_modules\expo-web-browser\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:7:5-13:15
+MERGED from [:expo-web-browser] C:\Users\marse\Desktop\evercare\node_modules\expo-web-browser\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:7:5-13:15
+intent#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+data:scheme:https
+ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:11:5-15:14
+action#android.intent.action.VIEW
+ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:12:7-58
+	android:name
+		ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:12:15-56
+category#android.intent.category.BROWSABLE
+ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:13:7-67
+	android:name
+		ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:13:17-65
+data
+ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:14:7-37
+	android:scheme
+		ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:14:13-35
+application
+ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:17:3-48:15
+INJECTED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:17:3-48:15
+MERGED from [:react-native-webview] C:\Users\marse\Desktop\evercare\node_modules\react-native-webview\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:7:5-17:19
+MERGED from [:react-native-webview] C:\Users\marse\Desktop\evercare\node_modules\react-native-webview\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:7:5-17:19
+MERGED from [:expo-file-system] C:\Users\marse\Desktop\evercare\node_modules\expo-file-system\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:20:5-31:19
+MERGED from [:expo-file-system] C:\Users\marse\Desktop\evercare\node_modules\expo-file-system\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:20:5-31:19
+MERGED from [:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:10:5-41:19
+MERGED from [:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:10:5-41:19
+MERGED from [:expo-modules-core] C:\Users\marse\Desktop\evercare\node_modules\expo-modules-core\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:8:5-16:19
+MERGED from [:expo-modules-core] C:\Users\marse\Desktop\evercare\node_modules\expo-modules-core\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:8:5-16:19
+MERGED from [com.google.android.material:material:1.6.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\bb010b9a14f3a551d4ad4c17d2847aed\transformed\material-1.6.1\AndroidManifest.xml:24:5-20
+MERGED from [com.google.android.material:material:1.6.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\bb010b9a14f3a551d4ad4c17d2847aed\transformed\material-1.6.1\AndroidManifest.xml:24:5-20
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\f0da77113549db75f0e541c574414f9b\transformed\lifecycle-extensions-2.2.0\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\f0da77113549db75f0e541c574414f9b\transformed\lifecycle-extensions-2.2.0\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\568263898e2f5cb7e1863b52dfceb618\transformed\constraintlayout-2.0.1\AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\568263898e2f5cb7e1863b52dfceb618\transformed\constraintlayout-2.0.1\AndroidManifest.xml:9:5-20
+MERGED from [com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:28:5-64:19
+MERGED from [com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:28:5-64:19
+MERGED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\98160fa8296e449f5be68025fcf6484e\transformed\play-services-base-18.0.1\AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\98160fa8296e449f5be68025fcf6484e\transformed\play-services-base-18.0.1\AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.firebase:firebase-installations:17.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\f49505e21fe83eb6a98e302e2e6eca93\transformed\firebase-installations-17.2.0\AndroidManifest.xml:11:5-22:19
+MERGED from [com.google.firebase:firebase-installations:17.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\f49505e21fe83eb6a98e302e2e6eca93\transformed\firebase-installations-17.2.0\AndroidManifest.xml:11:5-22:19
+MERGED from [com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\e63025705c44e0b9ae7faab8c23d2211\transformed\firebase-common-ktx-21.0.0\AndroidManifest.xml:8:5-16:19
+MERGED from [com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\e63025705c44e0b9ae7faab8c23d2211\transformed\firebase-common-ktx-21.0.0\AndroidManifest.xml:8:5-16:19
+MERGED from [com.google.firebase:firebase-common:21.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\90439eca9eec8e1378e1d65eec457845\transformed\firebase-common-21.0.0\AndroidManifest.xml:22:5-39:19
+MERGED from [com.google.firebase:firebase-common:21.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\90439eca9eec8e1378e1d65eec457845\transformed\firebase-common-21.0.0\AndroidManifest.xml:22:5-39:19
+MERGED from [com.google.firebase:firebase-iid-interop:17.1.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\8e97f21071780a6261a9428f604f71ba\transformed\firebase-iid-interop-17.1.0\AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.firebase:firebase-iid-interop:17.1.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\8e97f21071780a6261a9428f604f71ba\transformed\firebase-iid-interop-17.1.0\AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\9c3879cd963f7ec1adc3defc40bc40ea\transformed\firebase-measurement-connector-19.0.0\AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\9c3879cd963f7ec1adc3defc40bc40ea\transformed\firebase-measurement-connector-19.0.0\AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.android.gms:play-services-stats:17.0.2] C:\Users\marse\.gradle\caches\8.10.2\transforms\8f80e076a159fb0179e438582a580a50\transformed\play-services-stats-17.0.2\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-stats:17.0.2] C:\Users\marse\.gradle\caches\8.10.2\transforms\8f80e076a159fb0179e438582a580a50\transformed\play-services-stats-17.0.2\AndroidManifest.xml:7:5-20
+MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\6648128d35426136b864ddbabd0a58f8\transformed\emoji2-1.3.0\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\6648128d35426136b864ddbabd0a58f8\transformed\emoji2-1.3.0\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.core:core:1.13.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\60030d18baf00ffcac78f89d7a69b77c\transformed\core-1.13.1\AndroidManifest.xml:28:5-89
+MERGED from [androidx.core:core:1.13.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\60030d18baf00ffcac78f89d7a69b77c\transformed\core-1.13.1\AndroidManifest.xml:28:5-89
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.3] C:\Users\marse\.gradle\caches\8.10.2\transforms\9fbd97a7a92e2593db28805f2172e0e4\transformed\lifecycle-process-2.8.3\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.3] C:\Users\marse\.gradle\caches\8.10.2\transforms\9fbd97a7a92e2593db28805f2172e0e4\transformed\lifecycle-process-2.8.3\AndroidManifest.xml:23:5-33:19
+MERGED from [com.google.android.gms:play-services-tasks:18.1.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\ce2d3047f54362a99d0933f216de5eb6\transformed\play-services-tasks-18.1.0\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-tasks:18.1.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\ce2d3047f54362a99d0933f216de5eb6\transformed\play-services-tasks-18.1.0\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-basement:18.3.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\ed3729ee67626c6fe065caf273b78485\transformed\play-services-basement-18.3.0\AndroidManifest.xml:20:5-24:19
+MERGED from [com.google.android.gms:play-services-basement:18.3.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\ed3729ee67626c6fe065caf273b78485\transformed\play-services-basement-18.3.0\AndroidManifest.xml:20:5-24:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\901c327b6364b6a7813cf7fcf770c216\transformed\profileinstaller-1.3.1\AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\901c327b6364b6a7813cf7fcf770c216\transformed\profileinstaller-1.3.1\AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\4358177135782005c8d7fa4053836136\transformed\startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\4358177135782005c8d7fa4053836136\transformed\startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
+MERGED from [com.github.Dimezis:BlurView:version-2.0.6] C:\Users\marse\.gradle\caches\8.10.2\transforms\464e730c6e4deb52e3f588c9b96302bd\transformed\BlurView-version-2.0.6\AndroidManifest.xml:9:5-20
+MERGED from [com.github.Dimezis:BlurView:version-2.0.6] C:\Users\marse\.gradle\caches\8.10.2\transforms\464e730c6e4deb52e3f588c9b96302bd\transformed\BlurView-version-2.0.6\AndroidManifest.xml:9:5-20
+MERGED from [com.google.firebase:firebase-datatransport:18.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\e5c61f23a1adc97d06b71c10881d5db1\transformed\firebase-datatransport-18.2.0\AndroidManifest.xml:21:5-29:19
+MERGED from [com.google.firebase:firebase-datatransport:18.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\e5c61f23a1adc97d06b71c10881d5db1\transformed\firebase-datatransport-18.2.0\AndroidManifest.xml:21:5-29:19
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.9] C:\Users\marse\.gradle\caches\8.10.2\transforms\8129939764ec4bac4c92fc2a16588f0e\transformed\transport-backend-cct-3.1.9\AndroidManifest.xml:27:5-35:19
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.9] C:\Users\marse\.gradle\caches\8.10.2\transforms\8129939764ec4bac4c92fc2a16588f0e\transformed\transport-backend-cct-3.1.9\AndroidManifest.xml:27:5-35:19
+MERGED from [com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\marse\.gradle\caches\8.10.2\transforms\2131bf2235b7c9120d82a7760aa41607\transformed\transport-runtime-3.1.9\AndroidManifest.xml:25:5-39:19
+MERGED from [com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\marse\.gradle\caches\8.10.2\transforms\2131bf2235b7c9120d82a7760aa41607\transformed\transport-runtime-3.1.9\AndroidManifest.xml:25:5-39:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\e81ab1a531f7c3a7517c60c505fb6295\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\e81ab1a531f7c3a7517c60c505fb6295\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+MERGED from [com.facebook.soloader:soloader:0.12.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\6c14a87a8b5e39d333ca00fc174676fe\transformed\soloader-0.12.1\AndroidManifest.xml:11:5-15:19
+MERGED from [com.facebook.soloader:soloader:0.12.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\6c14a87a8b5e39d333ca00fc174676fe\transformed\soloader-0.12.1\AndroidManifest.xml:11:5-15:19
+MERGED from [com.android.installreferrer:installreferrer:2.2] C:\Users\marse\.gradle\caches\8.10.2\transforms\3ee65b339f624983683fbfdb1e2b607f\transformed\installreferrer-2.2\AndroidManifest.xml:11:5-20
+MERGED from [com.android.installreferrer:installreferrer:2.2] C:\Users\marse\.gradle\caches\8.10.2\transforms\3ee65b339f624983683fbfdb1e2b607f\transformed\installreferrer-2.2\AndroidManifest.xml:11:5-20
+	android:extractNativeLibs
+		INJECTED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.13.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\60030d18baf00ffcac78f89d7a69b77c\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
+	android:supportsRtl
+		ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:17:221-247
+	android:label
+		ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:17:48-80
+	android:roundIcon
+		ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:17:116-161
+	android:icon
+		ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:17:81-115
+	android:allowBackup
+		ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:17:162-188
+	android:theme
+		ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:17:189-220
+	android:name
+		ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:17:16-47
+meta-data#expo.modules.updates.ENABLED
+ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:18:5-83
+	android:value
+		ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:18:60-81
+	android:name
+		ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:18:16-59
+meta-data#expo.modules.updates.EXPO_UPDATES_CHECK_ON_LAUNCH
+ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:19:5-105
+	android:value
+		ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:19:81-103
+	android:name
+		ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:19:16-80
+meta-data#expo.modules.updates.EXPO_UPDATES_LAUNCH_WAIT_MS
+ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:20:5-99
+	android:value
+		ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:20:80-97
+	android:name
+		ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:20:16-79
+activity#com.anonymous.evercare.MainActivity
+ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:21:5-33:16
+	android:screenOrientation
+		ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:21:280-316
+	android:launchMode
+		ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:21:135-166
+	android:windowSoftInputMode
+		ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:21:167-209
+	android:exported
+		ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:21:256-279
+	android:configChanges
+		ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:21:44-134
+	android:theme
+		ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:21:210-255
+	android:name
+		ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:21:15-43
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:22:7-25:23
+action#android.intent.action.MAIN
+ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:23:9-60
+	android:name
+		ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:23:17-58
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:24:9-68
+	android:name
+		ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:24:19-66
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:scheme:com.anonymous.evercare+data:scheme:myapp
+ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:26:7-32:23
+category#android.intent.category.DEFAULT
+ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:28:9-67
+	android:name
+		ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:28:19-65
+service#com.anonymous.evercare.services.FallDetectionService
+ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:34:5-38:50
+	android:enabled
+		ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:36:9-31
+	android:exported
+		ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:37:9-33
+	android:foregroundServiceType
+		ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:38:9-47
+	android:name
+		ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:35:9-76
+receiver#com.anonymous.evercare.services.BootReceiver
+ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:40:5-47:16
+	android:enabled
+		ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:42:9-31
+	android:exported
+		ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:43:9-32
+	android:name
+		ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:41:9-68
+intent-filter#action:name:android.intent.action.BOOT_COMPLETED
+ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:44:9-46:25
+action#android.intent.action.BOOT_COMPLETED
+ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:45:13-75
+	android:name
+		ADDED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:45:21-72
+uses-sdk
+INJECTED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml
+MERGED from [:expo] C:\Users\marse\Desktop\evercare\node_modules\expo\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [:expo] C:\Users\marse\Desktop\evercare\node_modules\expo\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [:react-native-gesture-handler] C:\Users\marse\Desktop\evercare\node_modules\react-native-gesture-handler\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [:react-native-gesture-handler] C:\Users\marse\Desktop\evercare\node_modules\react-native-gesture-handler\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [:react-native-safe-area-context] C:\Users\marse\Desktop\evercare\node_modules\react-native-safe-area-context\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [:react-native-safe-area-context] C:\Users\marse\Desktop\evercare\node_modules\react-native-safe-area-context\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [:react-native-screens] C:\Users\marse\Desktop\evercare\node_modules\react-native-screens\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [:react-native-screens] C:\Users\marse\Desktop\evercare\node_modules\react-native-screens\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [:react-native-webview] C:\Users\marse\Desktop\evercare\node_modules\react-native-webview\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [:react-native-webview] C:\Users\marse\Desktop\evercare\node_modules\react-native-webview\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [:react-native-reanimated] C:\Users\marse\Desktop\evercare\node_modules\react-native-reanimated\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [:react-native-reanimated] C:\Users\marse\Desktop\evercare\node_modules\react-native-reanimated\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [:expo-application] C:\Users\marse\Desktop\evercare\node_modules\expo-application\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [:expo-application] C:\Users\marse\Desktop\evercare\node_modules\expo-application\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [:expo-asset] C:\Users\marse\Desktop\evercare\node_modules\expo-asset\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [:expo-asset] C:\Users\marse\Desktop\evercare\node_modules\expo-asset\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [:expo-blur] C:\Users\marse\Desktop\evercare\node_modules\expo-blur\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [:expo-blur] C:\Users\marse\Desktop\evercare\node_modules\expo-blur\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [:expo-constants] C:\Users\marse\Desktop\evercare\node_modules\expo-constants\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [:expo-constants] C:\Users\marse\Desktop\evercare\node_modules\expo-constants\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [:expo-dev-client] C:\Users\marse\Desktop\evercare\node_modules\expo-dev-client\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [:expo-dev-client] C:\Users\marse\Desktop\evercare\node_modules\expo-dev-client\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [:expo-dev-launcher] C:\Users\marse\Desktop\evercare\node_modules\expo-dev-launcher\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [:expo-dev-launcher] C:\Users\marse\Desktop\evercare\node_modules\expo-dev-launcher\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [:expo-dev-menu] C:\Users\marse\Desktop\evercare\node_modules\expo-dev-menu\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [:expo-dev-menu] C:\Users\marse\Desktop\evercare\node_modules\expo-dev-menu\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [:expo-file-system] C:\Users\marse\Desktop\evercare\node_modules\expo-file-system\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:6:5-44
+MERGED from [:expo-file-system] C:\Users\marse\Desktop\evercare\node_modules\expo-file-system\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:6:5-44
+MERGED from [:expo-font] C:\Users\marse\Desktop\evercare\node_modules\expo-font\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [:expo-font] C:\Users\marse\Desktop\evercare\node_modules\expo-font\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [:expo-haptics] C:\Users\marse\Desktop\evercare\node_modules\expo-haptics\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [:expo-haptics] C:\Users\marse\Desktop\evercare\node_modules\expo-haptics\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [:expo-manifests] C:\Users\marse\Desktop\evercare\node_modules\expo-manifests\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [:expo-manifests] C:\Users\marse\Desktop\evercare\node_modules\expo-manifests\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [:expo-json-utils] C:\Users\marse\Desktop\evercare\node_modules\expo-json-utils\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [:expo-json-utils] C:\Users\marse\Desktop\evercare\node_modules\expo-json-utils\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [:expo-keep-awake] C:\Users\marse\Desktop\evercare\node_modules\expo-keep-awake\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [:expo-keep-awake] C:\Users\marse\Desktop\evercare\node_modules\expo-keep-awake\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [:expo-linking] C:\Users\marse\Desktop\evercare\node_modules\expo-linking\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [:expo-linking] C:\Users\marse\Desktop\evercare\node_modules\expo-linking\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [:expo-sensors] C:\Users\marse\Desktop\evercare\node_modules\expo-sensors\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [:expo-sensors] C:\Users\marse\Desktop\evercare\node_modules\expo-sensors\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [:expo-splash-screen] C:\Users\marse\Desktop\evercare\node_modules\expo-splash-screen\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [:expo-splash-screen] C:\Users\marse\Desktop\evercare\node_modules\expo-splash-screen\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [:expo-system-ui] C:\Users\marse\Desktop\evercare\node_modules\expo-system-ui\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [:expo-system-ui] C:\Users\marse\Desktop\evercare\node_modules\expo-system-ui\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [:expo-web-browser] C:\Users\marse\Desktop\evercare\node_modules\expo-web-browser\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [:expo-web-browser] C:\Users\marse\Desktop\evercare\node_modules\expo-web-browser\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [:expo-dev-menu-interface] C:\Users\marse\Desktop\evercare\node_modules\expo-dev-menu-interface\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [:expo-dev-menu-interface] C:\Users\marse\Desktop\evercare\node_modules\expo-dev-menu-interface\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [:expo-updates-interface] C:\Users\marse\Desktop\evercare\node_modules\expo-updates-interface\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [:expo-updates-interface] C:\Users\marse\Desktop\evercare\node_modules\expo-updates-interface\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [:expo-modules-core] C:\Users\marse\Desktop\evercare\node_modules\expo-modules-core\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:6:5-44
+MERGED from [:expo-modules-core] C:\Users\marse\Desktop\evercare\node_modules\expo-modules-core\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:6:5-44
+MERGED from [com.facebook.react:react-android:0.76.9] C:\Users\marse\.gradle\caches\8.10.2\transforms\348a38d6d3db7ad1b271b24b76c7a177\transformed\react-android-0.76.9-release\AndroidManifest.xml:10:5-44
+MERGED from [com.facebook.react:react-android:0.76.9] C:\Users\marse\.gradle\caches\8.10.2\transforms\348a38d6d3db7ad1b271b24b76c7a177\transformed\react-android-0.76.9-release\AndroidManifest.xml:10:5-44
+MERGED from [com.google.android.material:material:1.6.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\bb010b9a14f3a551d4ad4c17d2847aed\transformed\material-1.6.1\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.material:material:1.6.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\bb010b9a14f3a551d4ad4c17d2847aed\transformed\material-1.6.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\f0da77113549db75f0e541c574414f9b\transformed\lifecycle-extensions-2.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\f0da77113549db75f0e541c574414f9b\transformed\lifecycle-extensions-2.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\3ccba122ab3346012d5f1cc852b3429a\transformed\legacy-support-v4-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\3ccba122ab3346012d5f1cc852b3429a\transformed\legacy-support-v4-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\568263898e2f5cb7e1863b52dfceb618\transformed\constraintlayout-2.0.1\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\568263898e2f5cb7e1863b52dfceb618\transformed\constraintlayout-2.0.1\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.core:core-splashscreen:1.2.0-alpha02] C:\Users\marse\.gradle\caches\8.10.2\transforms\62948ac221d41e76ddff7537ca05eb9e\transformed\core-splashscreen-1.2.0-alpha02\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core-splashscreen:1.2.0-alpha02] C:\Users\marse\.gradle\caches\8.10.2\transforms\62948ac221d41e76ddff7537ca05eb9e\transformed\core-splashscreen-1.2.0-alpha02\AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.7.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\9bdc0300c838abbf68edd7c2aba93241\transformed\appcompat-resources-1.7.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.7.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\9bdc0300c838abbf68edd7c2aba93241\transformed\appcompat-resources-1.7.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.appcompat:appcompat:1.7.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\6aa042e64df2ad29a08d4ccb09bb7608\transformed\appcompat-1.7.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.appcompat:appcompat:1.7.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\6aa042e64df2ad29a08d4ccb09bb7608\transformed\appcompat-1.7.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\0c10db3e074ddb1199292e252b1a5934\transformed\viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\0c10db3e074ddb1199292e252b1a5934\transformed\viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\98160fa8296e449f5be68025fcf6484e\transformed\play-services-base-18.0.1\AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\98160fa8296e449f5be68025fcf6484e\transformed\play-services-base-18.0.1\AndroidManifest.xml:18:5-43
+MERGED from [com.google.firebase:firebase-installations:17.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\f49505e21fe83eb6a98e302e2e6eca93\transformed\firebase-installations-17.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-installations:17.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\f49505e21fe83eb6a98e302e2e6eca93\transformed\firebase-installations-17.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\e63025705c44e0b9ae7faab8c23d2211\transformed\firebase-common-ktx-21.0.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\e63025705c44e0b9ae7faab8c23d2211\transformed\firebase-common-ktx-21.0.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-common:21.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\90439eca9eec8e1378e1d65eec457845\transformed\firebase-common-21.0.0\AndroidManifest.xml:19:5-44
+MERGED from [com.google.firebase:firebase-common:21.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\90439eca9eec8e1378e1d65eec457845\transformed\firebase-common-21.0.0\AndroidManifest.xml:19:5-44
+MERGED from [com.google.firebase:firebase-iid-interop:17.1.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\8e97f21071780a6261a9428f604f71ba\transformed\firebase-iid-interop-17.1.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-iid-interop:17.1.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\8e97f21071780a6261a9428f604f71ba\transformed\firebase-iid-interop-17.1.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\9c3879cd963f7ec1adc3defc40bc40ea\transformed\firebase-measurement-connector-19.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\9c3879cd963f7ec1adc3defc40bc40ea\transformed\firebase-measurement-connector-19.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\1d19e57ce4b75aeea6ff89628827c86c\transformed\play-services-cloud-messaging-17.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\1d19e57ce4b75aeea6ff89628827c86c\transformed\play-services-cloud-messaging-17.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-stats:17.0.2] C:\Users\marse\.gradle\caches\8.10.2\transforms\8f80e076a159fb0179e438582a580a50\transformed\play-services-stats-17.0.2\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-stats:17.0.2] C:\Users\marse\.gradle\caches\8.10.2\transforms\8f80e076a159fb0179e438582a580a50\transformed\play-services-stats-17.0.2\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-android:1.7.6] C:\Users\marse\.gradle\caches\8.10.2\transforms\157409378a717e5625365cb4f278d6fe\transformed\foundation-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-android:1.7.6] C:\Users\marse\.gradle\caches\8.10.2\transforms\157409378a717e5625365cb4f278d6fe\transformed\foundation-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-layout-android:1.7.6] C:\Users\marse\.gradle\caches\8.10.2\transforms\07043c9d1ab4c382027036a539b99667\transformed\foundation-layout-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-layout-android:1.7.6] C:\Users\marse\.gradle\caches\8.10.2\transforms\07043c9d1ab4c382027036a539b99667\transformed\foundation-layout-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-core-android:1.7.6] C:\Users\marse\.gradle\caches\8.10.2\transforms\2e380dc9ea811712983360a442ed085b\transformed\animation-core-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-core-android:1.7.6] C:\Users\marse\.gradle\caches\8.10.2\transforms\2e380dc9ea811712983360a442ed085b\transformed\animation-core-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-android:1.7.6] C:\Users\marse\.gradle\caches\8.10.2\transforms\316c37684ace2546014abad4c070d488\transformed\animation-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-android:1.7.6] C:\Users\marse\.gradle\caches\8.10.2\transforms\316c37684ace2546014abad4c070d488\transformed\animation-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-unit-android:1.7.6] C:\Users\marse\.gradle\caches\8.10.2\transforms\5134dcdcd9fc32e3041577b38e06d276\transformed\ui-unit-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-unit-android:1.7.6] C:\Users\marse\.gradle\caches\8.10.2\transforms\5134dcdcd9fc32e3041577b38e06d276\transformed\ui-unit-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-graphics-android:1.7.6] C:\Users\marse\.gradle\caches\8.10.2\transforms\53dfb5e290e712e3f52fa7428d1c817f\transformed\ui-graphics-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-graphics-android:1.7.6] C:\Users\marse\.gradle\caches\8.10.2\transforms\53dfb5e290e712e3f52fa7428d1c817f\transformed\ui-graphics-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-geometry-android:1.7.6] C:\Users\marse\.gradle\caches\8.10.2\transforms\68d3146807deb2e1c10e8b74f3f20b5b\transformed\ui-geometry-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-geometry-android:1.7.6] C:\Users\marse\.gradle\caches\8.10.2\transforms\68d3146807deb2e1c10e8b74f3f20b5b\transformed\ui-geometry-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-util-android:1.7.6] C:\Users\marse\.gradle\caches\8.10.2\transforms\7b9ad8f5a51d20a02fb4d895bcee3bb3\transformed\ui-util-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-util-android:1.7.6] C:\Users\marse\.gradle\caches\8.10.2\transforms\7b9ad8f5a51d20a02fb4d895bcee3bb3\transformed\ui-util-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-text-android:1.7.6] C:\Users\marse\.gradle\caches\8.10.2\transforms\c712abe878b36c89484e023a018b6509\transformed\ui-text-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-text-android:1.7.6] C:\Users\marse\.gradle\caches\8.10.2\transforms\c712abe878b36c89484e023a018b6509\transformed\ui-text-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-android:1.7.6] C:\Users\marse\.gradle\caches\8.10.2\transforms\809f1d550baadc4f13b3ef1e3c7198f3\transformed\ui-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-android:1.7.6] C:\Users\marse\.gradle\caches\8.10.2\transforms\809f1d550baadc4f13b3ef1e3c7198f3\transformed\ui-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\25619fef5ca1115a79d813b8cdde0487\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\25619fef5ca1115a79d813b8cdde0487\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\c2df6f3158f72f0c95ba27840fe9c720\transformed\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\c2df6f3158f72f0c95ba27840fe9c720\transformed\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\8b72427a074368f2d199fec6221681c1\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\8b72427a074368f2d199fec6221681c1\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5653b9f4d0bdde4a04506d29edd640\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5653b9f4d0bdde4a04506d29edd640\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\d85e978ee9c5ccd77eecdd982139cfe7\transformed\emoji2-views-helper-1.3.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\d85e978ee9c5ccd77eecdd982139cfe7\transformed\emoji2-views-helper-1.3.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\6648128d35426136b864ddbabd0a58f8\transformed\emoji2-1.3.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\6648128d35426136b864ddbabd0a58f8\transformed\emoji2-1.3.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.activity:activity-ktx:1.7.2] C:\Users\marse\.gradle\caches\8.10.2\transforms\4bccbc811802e9651eeb7b5427c190e2\transformed\activity-ktx-1.7.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity-ktx:1.7.2] C:\Users\marse\.gradle\caches\8.10.2\transforms\4bccbc811802e9651eeb7b5427c190e2\transformed\activity-ktx-1.7.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.7.2] C:\Users\marse\.gradle\caches\8.10.2\transforms\db21c1a68b35382c06bf996fb24e94cf\transformed\activity-1.7.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.7.2] C:\Users\marse\.gradle\caches\8.10.2\transforms\db21c1a68b35382c06bf996fb24e94cf\transformed\activity-1.7.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\4df7a90b5e7a4cea1fe536022ec9f6e3\transformed\coordinatorlayout-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\4df7a90b5e7a4cea1fe536022ec9f6e3\transformed\coordinatorlayout-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\fdb6b769ac264e1d8d2ed14b2a0b3465\transformed\swiperefreshlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\fdb6b769ac264e1d8d2ed14b2a0b3465\transformed\swiperefreshlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.webkit:webkit:1.4.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\f411fee41b2caf1ee1fe609f3dd6fe60\transformed\webkit-1.4.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.webkit:webkit:1.4.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\f411fee41b2caf1ee1fe609f3dd6fe60\transformed\webkit-1.4.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.autofill:autofill:1.1.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\23c3ecfd2cbbb6f952f6ca6747a0de95\transformed\autofill-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.autofill:autofill:1.1.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\23c3ecfd2cbbb6f952f6ca6747a0de95\transformed\autofill-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.facebook.fresco:animated-gif:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\90828086bb7a5501a7d96815eae2d73c\transformed\animated-gif-3.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.fresco:animated-gif:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\90828086bb7a5501a7d96815eae2d73c\transformed\animated-gif-3.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.fresco:webpsupport:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\ebd636c5c3fe77a2951546b542f4e446\transformed\webpsupport-3.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.fresco:webpsupport:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\ebd636c5c3fe77a2951546b542f4e446\transformed\webpsupport-3.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.fresco:fresco:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\31fbf6ce93950ec4a53288fa16710ef3\transformed\fresco-3.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.fresco:fresco:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\31fbf6ce93950ec4a53288fa16710ef3\transformed\fresco-3.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\d8a224db73e00b9de0671e8e442c5100\transformed\imagepipeline-okhttp3-3.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\d8a224db73e00b9de0671e8e442c5100\transformed\imagepipeline-okhttp3-3.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.fresco:animated-base:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\7532ca52c1aadb0af086bb9694ee4897\transformed\animated-base-3.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.fresco:animated-base:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\7532ca52c1aadb0af086bb9694ee4897\transformed\animated-base-3.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.fresco:animated-drawable:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\be99f6344f223789eb89b22731044b67\transformed\animated-drawable-3.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.fresco:animated-drawable:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\be99f6344f223789eb89b22731044b67\transformed\animated-drawable-3.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.fresco:vito-options:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\9d29b7196f1da4f6b3e01963c630e956\transformed\vito-options-3.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.fresco:vito-options:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\9d29b7196f1da4f6b3e01963c630e956\transformed\vito-options-3.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.fresco:drawee:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\8af01045d80784f5c356b7ae1081fd82\transformed\drawee-3.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.fresco:drawee:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\8af01045d80784f5c356b7ae1081fd82\transformed\drawee-3.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.fresco:nativeimagefilters:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\3c6b240183f78d877fc8db3beb4ad74c\transformed\nativeimagefilters-3.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.fresco:nativeimagefilters:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\3c6b240183f78d877fc8db3beb4ad74c\transformed\nativeimagefilters-3.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.fresco:memory-type-native:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\6efc03e79f4543f76796e5525f7e2178\transformed\memory-type-native-3.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.fresco:memory-type-native:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\6efc03e79f4543f76796e5525f7e2178\transformed\memory-type-native-3.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.fresco:memory-type-java:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\35d4efc2f1eebf41146bdc1f68994f70\transformed\memory-type-java-3.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.fresco:memory-type-java:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\35d4efc2f1eebf41146bdc1f68994f70\transformed\memory-type-java-3.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.fresco:imagepipeline-native:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\05a39df26391f6b6e4fd63654432467b\transformed\imagepipeline-native-3.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.fresco:imagepipeline-native:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\05a39df26391f6b6e4fd63654432467b\transformed\imagepipeline-native-3.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.fresco:memory-type-ashmem:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\3a8d99afbf44c38a13e5275a5c17279d\transformed\memory-type-ashmem-3.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.fresco:memory-type-ashmem:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\3a8d99afbf44c38a13e5275a5c17279d\transformed\memory-type-ashmem-3.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.fresco:imagepipeline:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd045adedfcb0474a37d719ad43b27d6\transformed\imagepipeline-3.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.fresco:imagepipeline:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd045adedfcb0474a37d719ad43b27d6\transformed\imagepipeline-3.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.fresco:nativeimagetranscoder:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\100d9ccc9c6cfc74fe44169cb82daa4f\transformed\nativeimagetranscoder-3.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.fresco:nativeimagetranscoder:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\100d9ccc9c6cfc74fe44169cb82daa4f\transformed\nativeimagetranscoder-3.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.fresco:imagepipeline-base:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\3c54016fd24427ffa02ec7967c6ae235\transformed\imagepipeline-base-3.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.fresco:imagepipeline-base:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\3c54016fd24427ffa02ec7967c6ae235\transformed\imagepipeline-base-3.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.fresco:middleware:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\81dda4d4976b8c344b14c7b5084aecc6\transformed\middleware-3.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.fresco:middleware:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\81dda4d4976b8c344b14c7b5084aecc6\transformed\middleware-3.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.fresco:ui-common:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\fe08d882318043589347a05327586510\transformed\ui-common-3.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.fresco:ui-common:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\fe08d882318043589347a05327586510\transformed\ui-common-3.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.fresco:soloader:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\c74c3e572ec10013f46808bed15a7d57\transformed\soloader-3.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.fresco:soloader:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\c74c3e572ec10013f46808bed15a7d57\transformed\soloader-3.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.fresco:fbcore:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\36376f7ad38e3f7ed03d04bde5310d65\transformed\fbcore-3.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.fresco:fbcore:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\36376f7ad38e3f7ed03d04bde5310d65\transformed\fbcore-3.2.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\36547d8a437fbae004bd20c1931101b7\transformed\customview-poolingcontainer-1.0.0\AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\36547d8a437fbae004bd20c1931101b7\transformed\customview-poolingcontainer-1.0.0\AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.core:core-ktx:1.13.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\1a99585a374b0a87b3f76ec812828cb4\transformed\core-ktx-1.13.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.13.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\1a99585a374b0a87b3f76ec812828cb4\transformed\core-ktx-1.13.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.browser:browser:1.6.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\93e8cc37d86304bf49b7ee3b8e2bd9a3\transformed\browser-1.6.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.browser:browser:1.6.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\93e8cc37d86304bf49b7ee3b8e2bd9a3\transformed\browser-1.6.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.transition:transition:1.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\cc2c15b0f5f3d603d519209fdf34d2f0\transformed\transition-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\cc2c15b0f5f3d603d519209fdf34d2f0\transformed\transition-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\af77eeafcd317de4a079e798912bffb0\transformed\drawerlayout-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\af77eeafcd317de4a079e798912bffb0\transformed\drawerlayout-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\a4c7197f987b29b6a9d9a9ae1c23d638\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\a4c7197f987b29b6a9d9a9ae1c23d638\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\41df94fc91a18ba719ebdaaef2bd3ad4\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\41df94fc91a18ba719ebdaaef2bd3ad4\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.media:media:1.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\df435116b6ee6a76c43ba912d92dfc5e\transformed\media-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\df435116b6ee6a76c43ba912d92dfc5e\transformed\media-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\8cf522d90b7d428707175de9e4fda61a\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\8cf522d90b7d428707175de9e4fda61a\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\37d7d0bfd1886f780bb45bb2d55f2d0e\transformed\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\37d7d0bfd1886f780bb45bb2d55f2d0e\transformed\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\c40bb2ee44083c3c4c521460b672ebf0\transformed\slidingpanelayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\c40bb2ee44083c3c4c521460b672ebf0\transformed\slidingpanelayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.1.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\738a7e7e10ef249a0451398c7966e515\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\738a7e7e10ef249a0451398c7966e515\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\b8454715191e8052529777564567450c\transformed\asynclayoutinflater-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\b8454715191e8052529777564567450c\transformed\asynclayoutinflater-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.graphics:graphics-path:1.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\f637deaae8c6f4d1da6ee77dfc5525d7\transformed\graphics-path-1.0.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.graphics:graphics-path:1.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\f637deaae8c6f4d1da6ee77dfc5525d7\transformed\graphics-path-1.0.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core:1.13.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\60030d18baf00ffcac78f89d7a69b77c\transformed\core-1.13.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.13.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\60030d18baf00ffcac78f89d7a69b77c\transformed\core-1.13.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\a707b47f133cf69b4ded94740dd35036\transformed\savedstate-ktx-1.2.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\a707b47f133cf69b4ded94740dd35036\transformed\savedstate-ktx-1.2.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\ee7e187a0aa6826731cbce268483c855\transformed\savedstate-1.2.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\ee7e187a0aa6826731cbce268483c855\transformed\savedstate-1.2.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.8.3] C:\Users\marse\.gradle\caches\8.10.2\transforms\e543e1f7e5deaf43f1bcc1239622ca36\transformed\lifecycle-viewmodel-2.8.3\AndroidManifest.xml:4:5-43
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.8.3] C:\Users\marse\.gradle\caches\8.10.2\transforms\e543e1f7e5deaf43f1bcc1239622ca36\transformed\lifecycle-viewmodel-2.8.3\AndroidManifest.xml:4:5-43
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.8.3] C:\Users\marse\.gradle\caches\8.10.2\transforms\a49308e85a0e543b71ce2f1dee1bfbf0\transformed\lifecycle-viewmodel-release\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.8.3] C:\Users\marse\.gradle\caches\8.10.2\transforms\a49308e85a0e543b71ce2f1dee1bfbf0\transformed\lifecycle-viewmodel-release\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.8.3] C:\Users\marse\.gradle\caches\8.10.2\transforms\69628f476a21666c86146bccc3398ab1\transformed\lifecycle-runtime-ktx-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.8.3] C:\Users\marse\.gradle\caches\8.10.2\transforms\69628f476a21666c86146bccc3398ab1\transformed\lifecycle-runtime-ktx-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.8.3] C:\Users\marse\.gradle\caches\8.10.2\transforms\258cfd5afbccbd1ff9da17f9646fc855\transformed\lifecycle-runtime-2.8.3\AndroidManifest.xml:4:5-43
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.8.3] C:\Users\marse\.gradle\caches\8.10.2\transforms\258cfd5afbccbd1ff9da17f9646fc855\transformed\lifecycle-runtime-2.8.3\AndroidManifest.xml:4:5-43
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.8.3] C:\Users\marse\.gradle\caches\8.10.2\transforms\261515bcc8f5ba6c4e4f841e83e32580\transformed\lifecycle-runtime-release\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.8.3] C:\Users\marse\.gradle\caches\8.10.2\transforms\261515bcc8f5ba6c4e4f841e83e32580\transformed\lifecycle-runtime-release\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.3] C:\Users\marse\.gradle\caches\8.10.2\transforms\41a3cb13e3092302d1a766c0b72c708b\transformed\lifecycle-viewmodel-ktx-2.8.3\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.3] C:\Users\marse\.gradle\caches\8.10.2\transforms\41a3cb13e3092302d1a766c0b72c708b\transformed\lifecycle-viewmodel-ktx-2.8.3\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.3] C:\Users\marse\.gradle\caches\8.10.2\transforms\dc72317dd2e39b4a72bb4e48cd7d476d\transformed\lifecycle-viewmodel-savedstate-2.8.3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.3] C:\Users\marse\.gradle\caches\8.10.2\transforms\dc72317dd2e39b4a72bb4e48cd7d476d\transformed\lifecycle-viewmodel-savedstate-2.8.3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-service:2.8.3] C:\Users\marse\.gradle\caches\8.10.2\transforms\5396ef31893736aa8989b8589b7a7342\transformed\lifecycle-service-2.8.3\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-service:2.8.3] C:\Users\marse\.gradle\caches\8.10.2\transforms\5396ef31893736aa8989b8589b7a7342\transformed\lifecycle-service-2.8.3\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.3] C:\Users\marse\.gradle\caches\8.10.2\transforms\9fbd97a7a92e2593db28805f2172e0e4\transformed\lifecycle-process-2.8.3\AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.3] C:\Users\marse\.gradle\caches\8.10.2\transforms\9fbd97a7a92e2593db28805f2172e0e4\transformed\lifecycle-process-2.8.3\AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.8.3] C:\Users\marse\.gradle\caches\8.10.2\transforms\d4c0b913b125af965af113aabba3a6d3\transformed\lifecycle-livedata-core-ktx-2.8.3\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.8.3] C:\Users\marse\.gradle\caches\8.10.2\transforms\d4c0b913b125af965af113aabba3a6d3\transformed\lifecycle-livedata-core-ktx-2.8.3\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.8.3] C:\Users\marse\.gradle\caches\8.10.2\transforms\8fc7a4bd688b91488bd6ae555e65c2c5\transformed\lifecycle-livedata-core-2.8.3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.8.3] C:\Users\marse\.gradle\caches\8.10.2\transforms\8fc7a4bd688b91488bd6ae555e65c2c5\transformed\lifecycle-livedata-core-2.8.3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.8.3] C:\Users\marse\.gradle\caches\8.10.2\transforms\f476b2f0195425de8ccbdcfa9a550a01\transformed\lifecycle-livedata-2.8.3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.8.3] C:\Users\marse\.gradle\caches\8.10.2\transforms\f476b2f0195425de8ccbdcfa9a550a01\transformed\lifecycle-livedata-2.8.3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-compose-android:2.8.3] C:\Users\marse\.gradle\caches\8.10.2\transforms\dc0c417ae01d051b4b6d773bc0999865\transformed\lifecycle-runtime-compose-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-compose-android:2.8.3] C:\Users\marse\.gradle\caches\8.10.2\transforms\dc0c417ae01d051b4b6d773bc0999865\transformed\lifecycle-runtime-compose-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.7.6] C:\Users\marse\.gradle\caches\8.10.2\transforms\b9029b6c2d41885f0f5a0f16c20d6d11\transformed\runtime-saveable-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.7.6] C:\Users\marse\.gradle\caches\8.10.2\transforms\b9029b6c2d41885f0f5a0f16c20d6d11\transformed\runtime-saveable-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-android:1.7.6] C:\Users\marse\.gradle\caches\8.10.2\transforms\ba07022d727d431e1c002b989c92f102\transformed\runtime-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-android:1.7.6] C:\Users\marse\.gradle\caches\8.10.2\transforms\ba07022d727d431e1c002b989c92f102\transformed\runtime-release\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-installations-interop:17.1.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\37d2ad2bea695229d3db109dc9d84276\transformed\firebase-installations-interop-17.1.1\AndroidManifest.xml:17:5-44
+MERGED from [com.google.firebase:firebase-installations-interop:17.1.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\37d2ad2bea695229d3db109dc9d84276\transformed\firebase-installations-interop-17.1.1\AndroidManifest.xml:17:5-44
+MERGED from [com.google.android.gms:play-services-tasks:18.1.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\ce2d3047f54362a99d0933f216de5eb6\transformed\play-services-tasks-18.1.0\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-tasks:18.1.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\ce2d3047f54362a99d0933f216de5eb6\transformed\play-services-tasks-18.1.0\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-basement:18.3.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\ed3729ee67626c6fe065caf273b78485\transformed\play-services-basement-18.3.0\AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-basement:18.3.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\ed3729ee67626c6fe065caf273b78485\transformed\play-services-basement-18.3.0\AndroidManifest.xml:18:5-43
+MERGED from [androidx.fragment:fragment:1.6.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\0217794c96dbbcc822c3134f1ea52712\transformed\fragment-1.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.6.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\0217794c96dbbcc822c3134f1ea52712\transformed\fragment-1.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment-ktx:1.6.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\f633045de3e35de821cbde5185c98cd4\transformed\fragment-ktx-1.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment-ktx:1.6.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\f633045de3e35de821cbde5185c98cd4\transformed\fragment-ktx-1.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\901c327b6364b6a7813cf7fcf770c216\transformed\profileinstaller-1.3.1\AndroidManifest.xml:21:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\901c327b6364b6a7813cf7fcf770c216\transformed\profileinstaller-1.3.1\AndroidManifest.xml:21:5-44
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\4358177135782005c8d7fa4053836136\transformed\startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\4358177135782005c8d7fa4053836136\transformed\startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\2034c6eee313a995a978e70852c4d2b7\transformed\tracing-1.2.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.tracing:tracing:1.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\2034c6eee313a995a978e70852c4d2b7\transformed\tracing-1.2.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.tracing:tracing-ktx:1.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\e468a54cc4b43ddbfc57384b15014f49\transformed\tracing-ktx-1.2.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.tracing:tracing-ktx:1.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\e468a54cc4b43ddbfc57384b15014f49\transformed\tracing-ktx-1.2.0\AndroidManifest.xml:20:5-44
+MERGED from [com.facebook.fresco:vito-renderer:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\041be504dd8efe6f05bf797cca0cc316\transformed\vito-renderer-3.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.fresco:vito-renderer:3.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\041be504dd8efe6f05bf797cca0cc316\transformed\vito-renderer-3.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.react:hermes-android:0.76.9] C:\Users\marse\.gradle\caches\8.10.2\transforms\78757e88ad9656cd6077f535ee3ce443\transformed\hermes-android-0.76.9-release\AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.react:hermes-android:0.76.9] C:\Users\marse\.gradle\caches\8.10.2\transforms\78757e88ad9656cd6077f535ee3ce443\transformed\hermes-android-0.76.9-release\AndroidManifest.xml:5:5-44
+MERGED from [com.github.Dimezis:BlurView:version-2.0.6] C:\Users\marse\.gradle\caches\8.10.2\transforms\464e730c6e4deb52e3f588c9b96302bd\transformed\BlurView-version-2.0.6\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.Dimezis:BlurView:version-2.0.6] C:\Users\marse\.gradle\caches\8.10.2\transforms\464e730c6e4deb52e3f588c9b96302bd\transformed\BlurView-version-2.0.6\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.databinding:viewbinding:8.6.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\5711d67574c8872dd2539ae74c4cc86e\transformed\viewbinding-8.6.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.databinding:viewbinding:8.6.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\5711d67574c8872dd2539ae74c4cc86e\transformed\viewbinding-8.6.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\974b3106ee5dfcde3998c005b611e5fa\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\974b3106ee5dfcde3998c005b611e5fa\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\5a761902b7b8c4db5e36ecb34db661f8\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\5a761902b7b8c4db5e36ecb34db661f8\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-components:18.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\72c517e74e2a3d71aa765b0b4b9b99de\transformed\firebase-components-18.0.0\AndroidManifest.xml:18:5-44
+MERGED from [com.google.firebase:firebase-components:18.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\72c517e74e2a3d71aa765b0b4b9b99de\transformed\firebase-components-18.0.0\AndroidManifest.xml:18:5-44
+MERGED from [com.google.firebase:firebase-datatransport:18.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\e5c61f23a1adc97d06b71c10881d5db1\transformed\firebase-datatransport-18.2.0\AndroidManifest.xml:18:5-44
+MERGED from [com.google.firebase:firebase-datatransport:18.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\e5c61f23a1adc97d06b71c10881d5db1\transformed\firebase-datatransport-18.2.0\AndroidManifest.xml:18:5-44
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.9] C:\Users\marse\.gradle\caches\8.10.2\transforms\8129939764ec4bac4c92fc2a16588f0e\transformed\transport-backend-cct-3.1.9\AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.9] C:\Users\marse\.gradle\caches\8.10.2\transforms\8129939764ec4bac4c92fc2a16588f0e\transformed\transport-backend-cct-3.1.9\AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.firebase:firebase-encoders-json:18.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\c1bff7114e1d8c0a9ab252fe117ee9b5\transformed\firebase-encoders-json-18.0.0\AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-encoders-json:18.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\c1bff7114e1d8c0a9ab252fe117ee9b5\transformed\firebase-encoders-json-18.0.0\AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\marse\.gradle\caches\8.10.2\transforms\2131bf2235b7c9120d82a7760aa41607\transformed\transport-runtime-3.1.9\AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\marse\.gradle\caches\8.10.2\transforms\2131bf2235b7c9120d82a7760aa41607\transformed\transport-runtime-3.1.9\AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.android.datatransport:transport-api:3.1.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\23ac75d309dca06cf40aa9bd0a502d28\transformed\transport-api-3.1.0\AndroidManifest.xml:18:5-44
+MERGED from [com.google.android.datatransport:transport-api:3.1.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\23ac75d309dca06cf40aa9bd0a502d28\transformed\transport-api-3.1.0\AndroidManifest.xml:18:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\7e4be7486c60235df5512988719fa4ef\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\7e4be7486c60235df5512988719fa4ef\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\e81ab1a531f7c3a7517c60c505fb6295\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\e81ab1a531f7c3a7517c60c505fb6295\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\5dc41ce1417f762ad01b4f926845a326\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\5dc41ce1417f762ad01b4f926845a326\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\a496b296b0ba350eabf9ef0291a33bf1\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\a496b296b0ba350eabf9ef0291a33bf1\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\4c6ae5ce974c63680993c9ed66489657\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\4c6ae5ce974c63680993c9ed66489657\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\efdaaa26c08a45b92bfe3bc16f8e5914\transformed\core-runtime-2.2.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\efdaaa26c08a45b92bfe3bc16f8e5914\transformed\core-runtime-2.2.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\070dff28562ff4c7ffdc5e9ee6d6b9a7\transformed\annotation-experimental-1.4.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\070dff28562ff4c7ffdc5e9ee6d6b9a7\transformed\annotation-experimental-1.4.1\AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.fbjni:fbjni:0.6.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\a663ad1603164e283baab1764d2b625c\transformed\fbjni-0.6.0\AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.fbjni:fbjni:0.6.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\a663ad1603164e283baab1764d2b625c\transformed\fbjni-0.6.0\AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.soloader:soloader:0.12.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\6c14a87a8b5e39d333ca00fc174676fe\transformed\soloader-0.12.1\AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.soloader:soloader:0.12.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\6c14a87a8b5e39d333ca00fc174676fe\transformed\soloader-0.12.1\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.installreferrer:installreferrer:2.2] C:\Users\marse\.gradle\caches\8.10.2\transforms\3ee65b339f624983683fbfdb1e2b607f\transformed\installreferrer-2.2\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.installreferrer:installreferrer:2.2] C:\Users\marse\.gradle\caches\8.10.2\transforms\3ee65b339f624983683fbfdb1e2b607f\transformed\installreferrer-2.2\AndroidManifest.xml:5:5-7:41
+MERGED from [me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:7:5-9:41
+MERGED from [me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:7:5-9:41
+	android:targetSdkVersion
+		INJECTED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml
+provider#com.reactnativecommunity.webview.RNCWebViewFileProvider
+ADDED from [:react-native-webview] C:\Users\marse\Desktop\evercare\node_modules\react-native-webview\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:8:9-16:20
+	android:grantUriPermissions
+		ADDED from [:react-native-webview] C:\Users\marse\Desktop\evercare\node_modules\react-native-webview\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:12:13-47
+	android:authorities
+		ADDED from [:react-native-webview] C:\Users\marse\Desktop\evercare\node_modules\react-native-webview\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:10:13-64
+	android:exported
+		ADDED from [:react-native-webview] C:\Users\marse\Desktop\evercare\node_modules\react-native-webview\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:11:13-37
+	android:name
+		ADDED from [:react-native-webview] C:\Users\marse\Desktop\evercare\node_modules\react-native-webview\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:9:13-83
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from [:react-native-webview] C:\Users\marse\Desktop\evercare\node_modules\react-native-webview\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:13:13-15:63
+	android:resource
+		ADDED from [:react-native-webview] C:\Users\marse\Desktop\evercare\node_modules\react-native-webview\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:15:17-60
+	android:name
+		ADDED from [:react-native-webview] C:\Users\marse\Desktop\evercare\node_modules\react-native-webview\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:14:17-67
+uses-permission#android.permission.INTERNET
+ADDED from [:expo-file-system] C:\Users\marse\Desktop\evercare\node_modules\expo-file-system\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:8:5-67
+MERGED from [com.google.firebase:firebase-installations:17.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\f49505e21fe83eb6a98e302e2e6eca93\transformed\firebase-installations-17.2.0\AndroidManifest.xml:8:5-67
+MERGED from [com.google.firebase:firebase-installations:17.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\f49505e21fe83eb6a98e302e2e6eca93\transformed\firebase-installations-17.2.0\AndroidManifest.xml:8:5-67
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\1d19e57ce4b75aeea6ff89628827c86c\transformed\play-services-cloud-messaging-17.2.0\AndroidManifest.xml:8:5-67
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\1d19e57ce4b75aeea6ff89628827c86c\transformed\play-services-cloud-messaging-17.2.0\AndroidManifest.xml:8:5-67
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.9] C:\Users\marse\.gradle\caches\8.10.2\transforms\8129939764ec4bac4c92fc2a16588f0e\transformed\transport-backend-cct-3.1.9\AndroidManifest.xml:25:5-67
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.9] C:\Users\marse\.gradle\caches\8.10.2\transforms\8129939764ec4bac4c92fc2a16588f0e\transformed\transport-backend-cct-3.1.9\AndroidManifest.xml:25:5-67
+	android:name
+		ADDED from [:expo-file-system] C:\Users\marse\Desktop\evercare\node_modules\expo-file-system\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:8:22-64
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from [:expo-file-system] C:\Users\marse\Desktop\evercare\node_modules\expo-file-system\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:9:5-81
+	android:name
+		ADDED from [:expo-file-system] C:\Users\marse\Desktop\evercare\node_modules\expo-file-system\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:9:22-78
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from [:expo-file-system] C:\Users\marse\Desktop\evercare\node_modules\expo-file-system\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:10:5-80
+	android:name
+		ADDED from [:expo-file-system] C:\Users\marse\Desktop\evercare\node_modules\expo-file-system\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:10:22-77
+intent#action:name:android.intent.action.OPEN_DOCUMENT_TREE
+ADDED from [:expo-file-system] C:\Users\marse\Desktop\evercare\node_modules\expo-file-system\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:15:9-17:18
+action#android.intent.action.OPEN_DOCUMENT_TREE
+ADDED from [:expo-file-system] C:\Users\marse\Desktop\evercare\node_modules\expo-file-system\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:16:13-79
+	android:name
+		ADDED from [:expo-file-system] C:\Users\marse\Desktop\evercare\node_modules\expo-file-system\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:16:21-76
+provider#expo.modules.filesystem.FileSystemFileProvider
+ADDED from [:expo-file-system] C:\Users\marse\Desktop\evercare\node_modules\expo-file-system\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:21:9-30:20
+	android:grantUriPermissions
+		ADDED from [:expo-file-system] C:\Users\marse\Desktop\evercare\node_modules\expo-file-system\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:25:13-47
+	android:authorities
+		ADDED from [:expo-file-system] C:\Users\marse\Desktop\evercare\node_modules\expo-file-system\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:23:13-74
+	android:exported
+		ADDED from [:expo-file-system] C:\Users\marse\Desktop\evercare\node_modules\expo-file-system\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:24:13-37
+	tools:replace
+		ADDED from [:expo-file-system] C:\Users\marse\Desktop\evercare\node_modules\expo-file-system\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:26:13-48
+	android:name
+		ADDED from [:expo-file-system] C:\Users\marse\Desktop\evercare\node_modules\expo-file-system\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:22:13-74
+uses-permission#android.permission.VIBRATE
+ADDED from [:expo-haptics] C:\Users\marse\Desktop\evercare\node_modules\expo-haptics\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:7:5-66
+	android:name
+		ADDED from [:expo-haptics] C:\Users\marse\Desktop\evercare\node_modules\expo-haptics\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:7:22-63
+uses-permission#android.permission.POST_NOTIFICATIONS
+ADDED from [:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:8:5-77
+MERGED from [com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:23:5-77
+MERGED from [com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:23:5-77
+	android:name
+		ADDED from [:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:8:22-74
+service#expo.modules.notifications.service.ExpoFirebaseMessagingService
+ADDED from [:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:11:9-17:19
+	android:exported
+		ADDED from [:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:13:13-37
+	android:name
+		ADDED from [:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:12:13-91
+intent-filter#action:name:com.google.firebase.MESSAGING_EVENT
+ADDED from [:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:14:13-16:29
+	android:priority
+		ADDED from [:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:14:28-49
+action#com.google.firebase.MESSAGING_EVENT
+ADDED from [:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:15:17-78
+	android:name
+		ADDED from [:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:15:25-75
+receiver#expo.modules.notifications.service.NotificationsService
+ADDED from [:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:19:9-31:20
+	android:enabled
+		ADDED from [:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:21:13-35
+	android:exported
+		ADDED from [:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:22:13-37
+	android:name
+		ADDED from [:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:20:13-83
+intent-filter#action:name:android.intent.action.BOOT_COMPLETED+action:name:android.intent.action.MY_PACKAGE_REPLACED+action:name:android.intent.action.QUICKBOOT_POWERON+action:name:android.intent.action.REBOOT+action:name:com.htc.intent.action.QUICKBOOT_POWERON+action:name:expo.modules.notifications.NOTIFICATION_EVENT
+ADDED from [:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:23:13-30:29
+	android:priority
+		ADDED from [:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:23:28-49
+action#expo.modules.notifications.NOTIFICATION_EVENT
+ADDED from [:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:24:17-88
+	android:name
+		ADDED from [:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:24:25-85
+action#android.intent.action.REBOOT
+ADDED from [:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:26:17-71
+	android:name
+		ADDED from [:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:26:25-68
+action#android.intent.action.QUICKBOOT_POWERON
+ADDED from [:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:27:17-82
+	android:name
+		ADDED from [:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:27:25-79
+action#com.htc.intent.action.QUICKBOOT_POWERON
+ADDED from [:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:28:17-82
+	android:name
+		ADDED from [:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:28:25-79
+action#android.intent.action.MY_PACKAGE_REPLACED
+ADDED from [:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:29:17-84
+	android:name
+		ADDED from [:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:29:25-81
+activity#expo.modules.notifications.service.NotificationForwarderActivity
+ADDED from [:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:33:9-40:75
+	android:excludeFromRecents
+		ADDED from [:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:35:13-46
+	android:launchMode
+		ADDED from [:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:37:13-42
+	android:noHistory
+		ADDED from [:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:38:13-37
+	android:exported
+		ADDED from [:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:36:13-37
+	android:theme
+		ADDED from [:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:40:13-72
+	android:taskAffinity
+		ADDED from [:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:39:13-36
+	android:name
+		ADDED from [:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:34:13-92
+intent#action:name:android.support.customtabs.action.CustomTabsService
+ADDED from [:expo-web-browser] C:\Users\marse\Desktop\evercare\node_modules\expo-web-browser\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:8:9-12:18
+action#android.support.customtabs.action.CustomTabsService
+ADDED from [:expo-web-browser] C:\Users\marse\Desktop\evercare\node_modules\expo-web-browser\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:11:13-90
+	android:name
+		ADDED from [:expo-web-browser] C:\Users\marse\Desktop\evercare\node_modules\expo-web-browser\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:11:21-87
+meta-data#org.unimodules.core.AppLoader#react-native-headless
+ADDED from [:expo-modules-core] C:\Users\marse\Desktop\evercare\node_modules\expo-modules-core\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:9:9-11:89
+	android:value
+		ADDED from [:expo-modules-core] C:\Users\marse\Desktop\evercare\node_modules\expo-modules-core\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:11:13-86
+	android:name
+		ADDED from [:expo-modules-core] C:\Users\marse\Desktop\evercare\node_modules\expo-modules-core\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:10:13-79
+meta-data#com.facebook.soloader.enabled
+ADDED from [:expo-modules-core] C:\Users\marse\Desktop\evercare\node_modules\expo-modules-core\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:12:9-15:45
+MERGED from [com.facebook.soloader:soloader:0.12.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\6c14a87a8b5e39d333ca00fc174676fe\transformed\soloader-0.12.1\AndroidManifest.xml:12:9-14:37
+MERGED from [com.facebook.soloader:soloader:0.12.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\6c14a87a8b5e39d333ca00fc174676fe\transformed\soloader-0.12.1\AndroidManifest.xml:12:9-14:37
+	tools:replace
+		ADDED from [:expo-modules-core] C:\Users\marse\Desktop\evercare\node_modules\expo-modules-core\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:15:13-42
+	android:value
+		ADDED from [:expo-modules-core] C:\Users\marse\Desktop\evercare\node_modules\expo-modules-core\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:14:13-33
+		REJECTED from [com.facebook.soloader:soloader:0.12.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\6c14a87a8b5e39d333ca00fc174676fe\transformed\soloader-0.12.1\AndroidManifest.xml:14:13-34
+	android:name
+		ADDED from [:expo-modules-core] C:\Users\marse\Desktop\evercare\node_modules\expo-modules-core\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:13:13-57
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-installations:17.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\f49505e21fe83eb6a98e302e2e6eca93\transformed\firebase-installations-17.2.0\AndroidManifest.xml:7:5-79
+MERGED from [com.google.firebase:firebase-installations:17.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\f49505e21fe83eb6a98e302e2e6eca93\transformed\firebase-installations-17.2.0\AndroidManifest.xml:7:5-79
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\1d19e57ce4b75aeea6ff89628827c86c\transformed\play-services-cloud-messaging-17.2.0\AndroidManifest.xml:7:5-79
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\1d19e57ce4b75aeea6ff89628827c86c\transformed\play-services-cloud-messaging-17.2.0\AndroidManifest.xml:7:5-79
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.9] C:\Users\marse\.gradle\caches\8.10.2\transforms\8129939764ec4bac4c92fc2a16588f0e\transformed\transport-backend-cct-3.1.9\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.9] C:\Users\marse\.gradle\caches\8.10.2\transforms\8129939764ec4bac4c92fc2a16588f0e\transformed\transport-backend-cct-3.1.9\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\marse\.gradle\caches\8.10.2\transforms\2131bf2235b7c9120d82a7760aa41607\transformed\transport-runtime-3.1.9\AndroidManifest.xml:22:5-79
+MERGED from [com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\marse\.gradle\caches\8.10.2\transforms\2131bf2235b7c9120d82a7760aa41607\transformed\transport-runtime-3.1.9\AndroidManifest.xml:22:5-79
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:22:22-76
+uses-permission#android.permission.WAKE_LOCK
+ADDED from [com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:24:5-68
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\1d19e57ce4b75aeea6ff89628827c86c\transformed\play-services-cloud-messaging-17.2.0\AndroidManifest.xml:9:5-68
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\1d19e57ce4b75aeea6ff89628827c86c\transformed\play-services-cloud-messaging-17.2.0\AndroidManifest.xml:9:5-68
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:24:22-65
+uses-permission#com.google.android.c2dm.permission.RECEIVE
+ADDED from [com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:26:5-82
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\1d19e57ce4b75aeea6ff89628827c86c\transformed\play-services-cloud-messaging-17.2.0\AndroidManifest.xml:11:5-82
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\1d19e57ce4b75aeea6ff89628827c86c\transformed\play-services-cloud-messaging-17.2.0\AndroidManifest.xml:11:5-82
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:26:22-79
+receiver#com.google.firebase.iid.FirebaseInstanceIdReceiver
+ADDED from [com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:29:9-40:20
+	android:exported
+		ADDED from [com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:31:13-36
+	android:permission
+		ADDED from [com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:32:13-73
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:30:13-78
+intent-filter#action:name:com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:33:13-35:29
+action#com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:34:17-81
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:34:25-78
+meta-data#com.google.android.gms.cloudmessaging.FINISHED_AFTER_HANDLED
+ADDED from [com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:37:13-39:40
+	android:value
+		ADDED from [com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:39:17-37
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:38:17-92
+service#com.google.firebase.messaging.FirebaseMessagingService
+ADDED from [com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:46:9-53:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:49:13-37
+	android:directBootAware
+		ADDED from [com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:48:13-43
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:47:13-82
+service#com.google.firebase.components.ComponentDiscoveryService
+ADDED from [com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:54:9-63:19
+MERGED from [com.google.firebase:firebase-installations:17.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\f49505e21fe83eb6a98e302e2e6eca93\transformed\firebase-installations-17.2.0\AndroidManifest.xml:12:9-21:19
+MERGED from [com.google.firebase:firebase-installations:17.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\f49505e21fe83eb6a98e302e2e6eca93\transformed\firebase-installations-17.2.0\AndroidManifest.xml:12:9-21:19
+MERGED from [com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\e63025705c44e0b9ae7faab8c23d2211\transformed\firebase-common-ktx-21.0.0\AndroidManifest.xml:9:9-15:19
+MERGED from [com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\e63025705c44e0b9ae7faab8c23d2211\transformed\firebase-common-ktx-21.0.0\AndroidManifest.xml:9:9-15:19
+MERGED from [com.google.firebase:firebase-common:21.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\90439eca9eec8e1378e1d65eec457845\transformed\firebase-common-21.0.0\AndroidManifest.xml:30:9-38:19
+MERGED from [com.google.firebase:firebase-common:21.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\90439eca9eec8e1378e1d65eec457845\transformed\firebase-common-21.0.0\AndroidManifest.xml:30:9-38:19
+MERGED from [com.google.firebase:firebase-datatransport:18.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\e5c61f23a1adc97d06b71c10881d5db1\transformed\firebase-datatransport-18.2.0\AndroidManifest.xml:22:9-28:19
+MERGED from [com.google.firebase:firebase-datatransport:18.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\e5c61f23a1adc97d06b71c10881d5db1\transformed\firebase-datatransport-18.2.0\AndroidManifest.xml:22:9-28:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:56:13-37
+	tools:targetApi
+		ADDED from [com.google.firebase:firebase-common:21.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\90439eca9eec8e1378e1d65eec457845\transformed\firebase-common-21.0.0\AndroidManifest.xml:34:13-32
+	android:directBootAware
+		ADDED from [com.google.firebase:firebase-common:21.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\90439eca9eec8e1378e1d65eec457845\transformed\firebase-common-21.0.0\AndroidManifest.xml:32:13-43
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:55:13-84
+meta-data#com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingKtxRegistrar
+ADDED from [com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:57:13-59:85
+	android:value
+		ADDED from [com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:59:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:58:17-122
+meta-data#com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar
+ADDED from [com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:60:13-62:85
+	android:value
+		ADDED from [com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:62:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:61:17-119
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\98160fa8296e449f5be68025fcf6484e\transformed\play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\98160fa8296e449f5be68025fcf6484e\transformed\play-services-base-18.0.1\AndroidManifest.xml:22:19-43
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\98160fa8296e449f5be68025fcf6484e\transformed\play-services-base-18.0.1\AndroidManifest.xml:21:19-78
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\98160fa8296e449f5be68025fcf6484e\transformed\play-services-base-18.0.1\AndroidManifest.xml:20:19-85
+meta-data#com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsKtxRegistrar
+ADDED from [com.google.firebase:firebase-installations:17.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\f49505e21fe83eb6a98e302e2e6eca93\transformed\firebase-installations-17.2.0\AndroidManifest.xml:15:13-17:85
+	android:value
+		ADDED from [com.google.firebase:firebase-installations:17.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\f49505e21fe83eb6a98e302e2e6eca93\transformed\firebase-installations-17.2.0\AndroidManifest.xml:17:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-installations:17.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\f49505e21fe83eb6a98e302e2e6eca93\transformed\firebase-installations-17.2.0\AndroidManifest.xml:16:17-130
+meta-data#com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar
+ADDED from [com.google.firebase:firebase-installations:17.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\f49505e21fe83eb6a98e302e2e6eca93\transformed\firebase-installations-17.2.0\AndroidManifest.xml:18:13-20:85
+	android:value
+		ADDED from [com.google.firebase:firebase-installations:17.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\f49505e21fe83eb6a98e302e2e6eca93\transformed\firebase-installations-17.2.0\AndroidManifest.xml:20:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-installations:17.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\f49505e21fe83eb6a98e302e2e6eca93\transformed\firebase-installations-17.2.0\AndroidManifest.xml:19:17-127
+meta-data#com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar
+ADDED from [com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\e63025705c44e0b9ae7faab8c23d2211\transformed\firebase-common-ktx-21.0.0\AndroidManifest.xml:12:13-14:85
+	android:value
+		ADDED from [com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\e63025705c44e0b9ae7faab8c23d2211\transformed\firebase-common-ktx-21.0.0\AndroidManifest.xml:14:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\e63025705c44e0b9ae7faab8c23d2211\transformed\firebase-common-ktx-21.0.0\AndroidManifest.xml:13:17-116
+provider#com.google.firebase.provider.FirebaseInitProvider
+ADDED from [com.google.firebase:firebase-common:21.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\90439eca9eec8e1378e1d65eec457845\transformed\firebase-common-21.0.0\AndroidManifest.xml:23:9-28:39
+	android:authorities
+		ADDED from [com.google.firebase:firebase-common:21.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\90439eca9eec8e1378e1d65eec457845\transformed\firebase-common-21.0.0\AndroidManifest.xml:25:13-72
+	android:exported
+		ADDED from [com.google.firebase:firebase-common:21.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\90439eca9eec8e1378e1d65eec457845\transformed\firebase-common-21.0.0\AndroidManifest.xml:27:13-37
+	android:directBootAware
+		ADDED from [com.google.firebase:firebase-common:21.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\90439eca9eec8e1378e1d65eec457845\transformed\firebase-common-21.0.0\AndroidManifest.xml:26:13-43
+	android:initOrder
+		ADDED from [com.google.firebase:firebase-common:21.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\90439eca9eec8e1378e1d65eec457845\transformed\firebase-common-21.0.0\AndroidManifest.xml:28:13-36
+	android:name
+		ADDED from [com.google.firebase:firebase-common:21.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\90439eca9eec8e1378e1d65eec457845\transformed\firebase-common-21.0.0\AndroidManifest.xml:24:13-77
+meta-data#com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar
+ADDED from [com.google.firebase:firebase-common:21.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\90439eca9eec8e1378e1d65eec457845\transformed\firebase-common-21.0.0\AndroidManifest.xml:35:13-37:85
+	android:value
+		ADDED from [com.google.firebase:firebase-common:21.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\90439eca9eec8e1378e1d65eec457845\transformed\firebase-common-21.0.0\AndroidManifest.xml:37:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-common:21.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\90439eca9eec8e1378e1d65eec457845\transformed\firebase-common-21.0.0\AndroidManifest.xml:36:17-109
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\6648128d35426136b864ddbabd0a58f8\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.3] C:\Users\marse\.gradle\caches\8.10.2\transforms\9fbd97a7a92e2593db28805f2172e0e4\transformed\lifecycle-process-2.8.3\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.3] C:\Users\marse\.gradle\caches\8.10.2\transforms\9fbd97a7a92e2593db28805f2172e0e4\transformed\lifecycle-process-2.8.3\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\901c327b6364b6a7813cf7fcf770c216\transformed\profileinstaller-1.3.1\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\901c327b6364b6a7813cf7fcf770c216\transformed\profileinstaller-1.3.1\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\4358177135782005c8d7fa4053836136\transformed\startup-runtime-1.1.1\AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\4358177135782005c8d7fa4053836136\transformed\startup-runtime-1.1.1\AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\6648128d35426136b864ddbabd0a58f8\transformed\emoji2-1.3.0\AndroidManifest.xml:28:13-31
+	android:authorities
+		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\6648128d35426136b864ddbabd0a58f8\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
+	android:exported
+		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\6648128d35426136b864ddbabd0a58f8\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\6648128d35426136b864ddbabd0a58f8\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
+meta-data#androidx.emoji2.text.EmojiCompatInitializer
+ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\6648128d35426136b864ddbabd0a58f8\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\6648128d35426136b864ddbabd0a58f8\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\6648128d35426136b864ddbabd0a58f8\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
+permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\60030d18baf00ffcac78f89d7a69b77c\transformed\core-1.13.1\AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.13.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\60030d18baf00ffcac78f89d7a69b77c\transformed\core-1.13.1\AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.13.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\60030d18baf00ffcac78f89d7a69b77c\transformed\core-1.13.1\AndroidManifest.xml:23:9-81
+permission#com.anonymous.evercare.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\60030d18baf00ffcac78f89d7a69b77c\transformed\core-1.13.1\AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.13.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\60030d18baf00ffcac78f89d7a69b77c\transformed\core-1.13.1\AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.13.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\60030d18baf00ffcac78f89d7a69b77c\transformed\core-1.13.1\AndroidManifest.xml:23:9-81
+uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\60030d18baf00ffcac78f89d7a69b77c\transformed\core-1.13.1\AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.13.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\60030d18baf00ffcac78f89d7a69b77c\transformed\core-1.13.1\AndroidManifest.xml:26:22-94
+uses-permission#com.anonymous.evercare.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\60030d18baf00ffcac78f89d7a69b77c\transformed\core-1.13.1\AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.13.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\60030d18baf00ffcac78f89d7a69b77c\transformed\core-1.13.1\AndroidManifest.xml:26:22-94
+meta-data#androidx.lifecycle.ProcessLifecycleInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.8.3] C:\Users\marse\.gradle\caches\8.10.2\transforms\9fbd97a7a92e2593db28805f2172e0e4\transformed\lifecycle-process-2.8.3\AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.lifecycle:lifecycle-process:2.8.3] C:\Users\marse\.gradle\caches\8.10.2\transforms\9fbd97a7a92e2593db28805f2172e0e4\transformed\lifecycle-process-2.8.3\AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.8.3] C:\Users\marse\.gradle\caches\8.10.2\transforms\9fbd97a7a92e2593db28805f2172e0e4\transformed\lifecycle-process-2.8.3\AndroidManifest.xml:30:17-78
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:18.3.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\ed3729ee67626c6fe065caf273b78485\transformed\play-services-basement-18.3.0\AndroidManifest.xml:21:9-23:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:18.3.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\ed3729ee67626c6fe065caf273b78485\transformed\play-services-basement-18.3.0\AndroidManifest.xml:23:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:18.3.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\ed3729ee67626c6fe065caf273b78485\transformed\play-services-basement-18.3.0\AndroidManifest.xml:22:13-58
+meta-data#androidx.profileinstaller.ProfileInstallerInitializer
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\901c327b6364b6a7813cf7fcf770c216\transformed\profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\901c327b6364b6a7813cf7fcf770c216\transformed\profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\901c327b6364b6a7813cf7fcf770c216\transformed\profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
+receiver#androidx.profileinstaller.ProfileInstallReceiver
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\901c327b6364b6a7813cf7fcf770c216\transformed\profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
+	android:enabled
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\901c327b6364b6a7813cf7fcf770c216\transformed\profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
+	android:exported
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\901c327b6364b6a7813cf7fcf770c216\transformed\profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
+	android:permission
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\901c327b6364b6a7813cf7fcf770c216\transformed\profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
+	android:directBootAware
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\901c327b6364b6a7813cf7fcf770c216\transformed\profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\901c327b6364b6a7813cf7fcf770c216\transformed\profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
+intent-filter#action:name:androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\901c327b6364b6a7813cf7fcf770c216\transformed\profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
+action#androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\901c327b6364b6a7813cf7fcf770c216\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\901c327b6364b6a7813cf7fcf770c216\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
+intent-filter#action:name:androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\901c327b6364b6a7813cf7fcf770c216\transformed\profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
+action#androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\901c327b6364b6a7813cf7fcf770c216\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\901c327b6364b6a7813cf7fcf770c216\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
+intent-filter#action:name:androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\901c327b6364b6a7813cf7fcf770c216\transformed\profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
+action#androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\901c327b6364b6a7813cf7fcf770c216\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\901c327b6364b6a7813cf7fcf770c216\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
+intent-filter#action:name:androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\901c327b6364b6a7813cf7fcf770c216\transformed\profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
+action#androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\901c327b6364b6a7813cf7fcf770c216\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\901c327b6364b6a7813cf7fcf770c216\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
+meta-data#com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar
+ADDED from [com.google.firebase:firebase-datatransport:18.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\e5c61f23a1adc97d06b71c10881d5db1\transformed\firebase-datatransport-18.2.0\AndroidManifest.xml:25:13-27:85
+	android:value
+		ADDED from [com.google.firebase:firebase-datatransport:18.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\e5c61f23a1adc97d06b71c10881d5db1\transformed\firebase-datatransport-18.2.0\AndroidManifest.xml:27:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-datatransport:18.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\e5c61f23a1adc97d06b71c10881d5db1\transformed\firebase-datatransport-18.2.0\AndroidManifest.xml:26:17-115
+service#com.google.android.datatransport.runtime.backends.TransportBackendDiscovery
+ADDED from [com.google.android.datatransport:transport-backend-cct:3.1.9] C:\Users\marse\.gradle\caches\8.10.2\transforms\8129939764ec4bac4c92fc2a16588f0e\transformed\transport-backend-cct-3.1.9\AndroidManifest.xml:28:9-34:19
+MERGED from [com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\marse\.gradle\caches\8.10.2\transforms\2131bf2235b7c9120d82a7760aa41607\transformed\transport-runtime-3.1.9\AndroidManifest.xml:36:9-38:40
+MERGED from [com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\marse\.gradle\caches\8.10.2\transforms\2131bf2235b7c9120d82a7760aa41607\transformed\transport-runtime-3.1.9\AndroidManifest.xml:36:9-38:40
+	android:exported
+		ADDED from [com.google.android.datatransport:transport-backend-cct:3.1.9] C:\Users\marse\.gradle\caches\8.10.2\transforms\8129939764ec4bac4c92fc2a16588f0e\transformed\transport-backend-cct-3.1.9\AndroidManifest.xml:30:13-37
+	android:name
+		ADDED from [com.google.android.datatransport:transport-backend-cct:3.1.9] C:\Users\marse\.gradle\caches\8.10.2\transforms\8129939764ec4bac4c92fc2a16588f0e\transformed\transport-backend-cct-3.1.9\AndroidManifest.xml:29:13-103
+meta-data#backend:com.google.android.datatransport.cct.CctBackendFactory
+ADDED from [com.google.android.datatransport:transport-backend-cct:3.1.9] C:\Users\marse\.gradle\caches\8.10.2\transforms\8129939764ec4bac4c92fc2a16588f0e\transformed\transport-backend-cct-3.1.9\AndroidManifest.xml:31:13-33:39
+	android:value
+		ADDED from [com.google.android.datatransport:transport-backend-cct:3.1.9] C:\Users\marse\.gradle\caches\8.10.2\transforms\8129939764ec4bac4c92fc2a16588f0e\transformed\transport-backend-cct-3.1.9\AndroidManifest.xml:33:17-36
+	android:name
+		ADDED from [com.google.android.datatransport:transport-backend-cct:3.1.9] C:\Users\marse\.gradle\caches\8.10.2\transforms\8129939764ec4bac4c92fc2a16588f0e\transformed\transport-backend-cct-3.1.9\AndroidManifest.xml:32:17-94
+service#com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService
+ADDED from [com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\marse\.gradle\caches\8.10.2\transforms\2131bf2235b7c9120d82a7760aa41607\transformed\transport-runtime-3.1.9\AndroidManifest.xml:26:9-30:19
+	android:exported
+		ADDED from [com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\marse\.gradle\caches\8.10.2\transforms\2131bf2235b7c9120d82a7760aa41607\transformed\transport-runtime-3.1.9\AndroidManifest.xml:28:13-37
+	android:permission
+		ADDED from [com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\marse\.gradle\caches\8.10.2\transforms\2131bf2235b7c9120d82a7760aa41607\transformed\transport-runtime-3.1.9\AndroidManifest.xml:29:13-69
+	android:name
+		ADDED from [com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\marse\.gradle\caches\8.10.2\transforms\2131bf2235b7c9120d82a7760aa41607\transformed\transport-runtime-3.1.9\AndroidManifest.xml:27:13-117
+receiver#com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver
+ADDED from [com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\marse\.gradle\caches\8.10.2\transforms\2131bf2235b7c9120d82a7760aa41607\transformed\transport-runtime-3.1.9\AndroidManifest.xml:32:9-34:40
+	android:exported
+		ADDED from [com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\marse\.gradle\caches\8.10.2\transforms\2131bf2235b7c9120d82a7760aa41607\transformed\transport-runtime-3.1.9\AndroidManifest.xml:34:13-37
+	android:name
+		ADDED from [com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\marse\.gradle\caches\8.10.2\transforms\2131bf2235b7c9120d82a7760aa41607\transformed\transport-runtime-3.1.9\AndroidManifest.xml:33:13-132
+uses-permission#com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE
+ADDED from [com.android.installreferrer:installreferrer:2.2] C:\Users\marse\.gradle\caches\8.10.2\transforms\3ee65b339f624983683fbfdb1e2b607f\transformed\installreferrer-2.2\AndroidManifest.xml:9:5-110
+	android:name
+		ADDED from [com.android.installreferrer:installreferrer:2.2] C:\Users\marse\.gradle\caches\8.10.2\transforms\3ee65b339f624983683fbfdb1e2b607f\transformed\installreferrer-2.2\AndroidManifest.xml:9:22-107
+uses-permission#com.sec.android.provider.badge.permission.READ
+ADDED from [me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:19:5-86
+	android:name
+		ADDED from [me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:19:22-83
+uses-permission#com.sec.android.provider.badge.permission.WRITE
+ADDED from [me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:20:5-87
+	android:name
+		ADDED from [me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:20:22-84
+uses-permission#com.htc.launcher.permission.READ_SETTINGS
+ADDED from [me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:23:5-81
+	android:name
+		ADDED from [me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:23:22-78
+uses-permission#com.htc.launcher.permission.UPDATE_SHORTCUT
+ADDED from [me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:24:5-83
+	android:name
+		ADDED from [me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:24:22-80
+uses-permission#com.sonyericsson.home.permission.BROADCAST_BADGE
+ADDED from [me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:27:5-88
+	android:name
+		ADDED from [me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:27:22-85
+uses-permission#com.sonymobile.home.permission.PROVIDER_INSERT_BADGE
+ADDED from [me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:28:5-92
+	android:name
+		ADDED from [me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:28:22-89
+uses-permission#com.anddoes.launcher.permission.UPDATE_COUNT
+ADDED from [me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:31:5-84
+	android:name
+		ADDED from [me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:31:22-81
+uses-permission#com.majeur.launcher.permission.UPDATE_BADGE
+ADDED from [me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:34:5-83
+	android:name
+		ADDED from [me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:34:22-80
+uses-permission#com.huawei.android.launcher.permission.CHANGE_BADGE
+ADDED from [me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:37:5-91
+	android:name
+		ADDED from [me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:37:22-88
+uses-permission#com.huawei.android.launcher.permission.READ_SETTINGS
+ADDED from [me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:38:5-92
+	android:name
+		ADDED from [me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:38:22-89
+uses-permission#com.huawei.android.launcher.permission.WRITE_SETTINGS
+ADDED from [me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:39:5-93
+	android:name
+		ADDED from [me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:39:22-90
+uses-permission#android.permission.READ_APP_BADGE
+ADDED from [me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:42:5-73
+	android:name
+		ADDED from [me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:42:22-70
+uses-permission#com.oppo.launcher.permission.READ_SETTINGS
+ADDED from [me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:45:5-82
+	android:name
+		ADDED from [me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:45:22-79
+uses-permission#com.oppo.launcher.permission.WRITE_SETTINGS
+ADDED from [me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:46:5-83
+	android:name
+		ADDED from [me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:46:22-80
+uses-permission#me.everything.badger.permission.BADGE_COUNT_READ
+ADDED from [me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:49:5-88
+	android:name
+		ADDED from [me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:49:22-85
+uses-permission#me.everything.badger.permission.BADGE_COUNT_WRITE
+ADDED from [me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:50:5-89
+	android:name
+		ADDED from [me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:50:22-86

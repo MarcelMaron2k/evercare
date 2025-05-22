@@ -1,0 +1,599 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.anonymous.evercare"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="24"
+9        android:targetSdkVersion="34" />
+10
+11    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+11-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:4:1-77
+11-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:4:18-74
+12    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+12-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:5:1-73
+12-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:5:18-70
+13    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_HEALTH" />
+13-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:6:1-80
+13-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:6:18-77
+14    <uses-permission android:name="android.permission.BODY_SENSORS" />
+14-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:7:1-67
+14-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:7:18-64
+15    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
+15-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:8:1-75
+15-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:8:18-72
+16    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+16-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:9:1-118
+16-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:9:18-82
+17
+18    <queries>
+18-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:10:1-16:13
+19        <intent>
+19-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:11:5-15:14
+20            <action android:name="android.intent.action.VIEW" />
+20-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:12:7-58
+20-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:12:15-56
+21
+22            <category android:name="android.intent.category.BROWSABLE" />
+22-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:13:7-67
+22-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:13:17-65
+23
+24            <data android:scheme="https" />
+24-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:14:7-37
+24-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:14:13-35
+25        </intent>
+26        <!-- Query open documents -->
+27        <intent>
+27-->[:expo-file-system] C:\Users\marse\Desktop\evercare\node_modules\expo-file-system\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:15:9-17:18
+28            <action android:name="android.intent.action.OPEN_DOCUMENT_TREE" />
+28-->[:expo-file-system] C:\Users\marse\Desktop\evercare\node_modules\expo-file-system\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:16:13-79
+28-->[:expo-file-system] C:\Users\marse\Desktop\evercare\node_modules\expo-file-system\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:16:21-76
+29        </intent>
+30        <intent>
+30-->[:expo-web-browser] C:\Users\marse\Desktop\evercare\node_modules\expo-web-browser\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:8:9-12:18
+31
+32            <!-- Required for opening tabs if targeting API 30 -->
+33            <action android:name="android.support.customtabs.action.CustomTabsService" />
+33-->[:expo-web-browser] C:\Users\marse\Desktop\evercare\node_modules\expo-web-browser\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:11:13-90
+33-->[:expo-web-browser] C:\Users\marse\Desktop\evercare\node_modules\expo-web-browser\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:11:21-87
+34        </intent>
+35    </queries>
+36
+37    <uses-permission android:name="android.permission.INTERNET" />
+37-->[:expo-file-system] C:\Users\marse\Desktop\evercare\node_modules\expo-file-system\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:8:5-67
+37-->[:expo-file-system] C:\Users\marse\Desktop\evercare\node_modules\expo-file-system\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:8:22-64
+38    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+38-->[:expo-file-system] C:\Users\marse\Desktop\evercare\node_modules\expo-file-system\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:9:5-81
+38-->[:expo-file-system] C:\Users\marse\Desktop\evercare\node_modules\expo-file-system\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:9:22-78
+39    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+39-->[:expo-file-system] C:\Users\marse\Desktop\evercare\node_modules\expo-file-system\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:10:5-80
+39-->[:expo-file-system] C:\Users\marse\Desktop\evercare\node_modules\expo-file-system\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:10:22-77
+40    <uses-permission android:name="android.permission.VIBRATE" />
+40-->[:expo-haptics] C:\Users\marse\Desktop\evercare\node_modules\expo-haptics\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:7:5-66
+40-->[:expo-haptics] C:\Users\marse\Desktop\evercare\node_modules\expo-haptics\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:7:22-63
+41    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+41-->[:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:8:5-77
+41-->[:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:8:22-74
+42    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+42-->[com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:22:5-79
+42-->[com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:22:22-76
+43    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+43-->[com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:24:5-68
+43-->[com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:24:22-65
+44    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+44-->[com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:26:5-82
+44-->[com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:26:22-79
+45
+46    <permission
+46-->[androidx.core:core:1.13.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\60030d18baf00ffcac78f89d7a69b77c\transformed\core-1.13.1\AndroidManifest.xml:22:5-24:47
+47        android:name="com.anonymous.evercare.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+47-->[androidx.core:core:1.13.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\60030d18baf00ffcac78f89d7a69b77c\transformed\core-1.13.1\AndroidManifest.xml:23:9-81
+48        android:protectionLevel="signature" />
+48-->[androidx.core:core:1.13.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\60030d18baf00ffcac78f89d7a69b77c\transformed\core-1.13.1\AndroidManifest.xml:24:9-44
+49
+50    <uses-permission android:name="com.anonymous.evercare.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+50-->[androidx.core:core:1.13.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\60030d18baf00ffcac78f89d7a69b77c\transformed\core-1.13.1\AndroidManifest.xml:26:5-97
+50-->[androidx.core:core:1.13.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\60030d18baf00ffcac78f89d7a69b77c\transformed\core-1.13.1\AndroidManifest.xml:26:22-94
+51    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" /> <!-- for android -->
+51-->[com.android.installreferrer:installreferrer:2.2] C:\Users\marse\.gradle\caches\8.10.2\transforms\3ee65b339f624983683fbfdb1e2b607f\transformed\installreferrer-2.2\AndroidManifest.xml:9:5-110
+51-->[com.android.installreferrer:installreferrer:2.2] C:\Users\marse\.gradle\caches\8.10.2\transforms\3ee65b339f624983683fbfdb1e2b607f\transformed\installreferrer-2.2\AndroidManifest.xml:9:22-107
+52    <!-- <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS"/> -->
+53    <!-- <uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS"/> -->
+54    <!-- <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" /> -->
+55    <!-- <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" /> -->
+56    <!-- for Samsung -->
+57    <uses-permission android:name="com.sec.android.provider.badge.permission.READ" />
+57-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:19:5-86
+57-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:19:22-83
+58    <uses-permission android:name="com.sec.android.provider.badge.permission.WRITE" /> <!-- for htc -->
+58-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:20:5-87
+58-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:20:22-84
+59    <uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS" />
+59-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:23:5-81
+59-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:23:22-78
+60    <uses-permission android:name="com.htc.launcher.permission.UPDATE_SHORTCUT" /> <!-- for sony -->
+60-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:24:5-83
+60-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:24:22-80
+61    <uses-permission android:name="com.sonyericsson.home.permission.BROADCAST_BADGE" />
+61-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:27:5-88
+61-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:27:22-85
+62    <uses-permission android:name="com.sonymobile.home.permission.PROVIDER_INSERT_BADGE" /> <!-- for apex -->
+62-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:28:5-92
+62-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:28:22-89
+63    <uses-permission android:name="com.anddoes.launcher.permission.UPDATE_COUNT" /> <!-- for solid -->
+63-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:31:5-84
+63-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:31:22-81
+64    <uses-permission android:name="com.majeur.launcher.permission.UPDATE_BADGE" /> <!-- for huawei -->
+64-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:34:5-83
+64-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:34:22-80
+65    <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE" />
+65-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:37:5-91
+65-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:37:22-88
+66    <uses-permission android:name="com.huawei.android.launcher.permission.READ_SETTINGS" />
+66-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:38:5-92
+66-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:38:22-89
+67    <uses-permission android:name="com.huawei.android.launcher.permission.WRITE_SETTINGS" /> <!-- for ZUK -->
+67-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:39:5-93
+67-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:39:22-90
+68    <uses-permission android:name="android.permission.READ_APP_BADGE" /> <!-- for OPPO -->
+68-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:42:5-73
+68-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:42:22-70
+69    <uses-permission android:name="com.oppo.launcher.permission.READ_SETTINGS" />
+69-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:45:5-82
+69-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:45:22-79
+70    <uses-permission android:name="com.oppo.launcher.permission.WRITE_SETTINGS" /> <!-- for EvMe -->
+70-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:46:5-83
+70-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:46:22-80
+71    <uses-permission android:name="me.everything.badger.permission.BADGE_COUNT_READ" />
+71-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:49:5-88
+71-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:49:22-85
+72    <uses-permission android:name="me.everything.badger.permission.BADGE_COUNT_WRITE" />
+72-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:50:5-89
+72-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\marse\.gradle\caches\8.10.2\transforms\e10c68a811d8f43b7180f962e64c7d59\transformed\ShortcutBadger-1.1.22\AndroidManifest.xml:50:22-86
+73
+74    <application
+74-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:17:3-48:15
+75        android:name="com.anonymous.evercare.MainApplication"
+75-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:17:16-47
+76        android:allowBackup="true"
+76-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:17:162-188
+77        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+77-->[androidx.core:core:1.13.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\60030d18baf00ffcac78f89d7a69b77c\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
+78        android:extractNativeLibs="false"
+79        android:icon="@mipmap/ic_launcher"
+79-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:17:81-115
+80        android:label="@string/app_name"
+80-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:17:48-80
+81        android:roundIcon="@mipmap/ic_launcher_round"
+81-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:17:116-161
+82        android:supportsRtl="true"
+82-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:17:221-247
+83        android:theme="@style/AppTheme" >
+83-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:17:189-220
+84        <meta-data
+84-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:18:5-83
+85            android:name="expo.modules.updates.ENABLED"
+85-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:18:16-59
+86            android:value="false" />
+86-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:18:60-81
+87        <meta-data
+87-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:19:5-105
+88            android:name="expo.modules.updates.EXPO_UPDATES_CHECK_ON_LAUNCH"
+88-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:19:16-80
+89            android:value="ALWAYS" />
+89-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:19:81-103
+90        <meta-data
+90-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:20:5-99
+91            android:name="expo.modules.updates.EXPO_UPDATES_LAUNCH_WAIT_MS"
+91-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:20:16-79
+92            android:value="0" />
+92-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:20:80-97
+93
+94        <activity
+94-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:21:5-33:16
+95            android:name="com.anonymous.evercare.MainActivity"
+95-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:21:15-43
+96            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|uiMode"
+96-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:21:44-134
+97            android:exported="true"
+97-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:21:256-279
+98            android:launchMode="singleTask"
+98-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:21:135-166
+99            android:screenOrientation="portrait"
+99-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:21:280-316
+100            android:theme="@style/Theme.App.SplashScreen"
+100-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:21:210-255
+101            android:windowSoftInputMode="adjustResize" >
+101-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:21:167-209
+102            <intent-filter>
+102-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:22:7-25:23
+103                <action android:name="android.intent.action.MAIN" />
+103-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:23:9-60
+103-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:23:17-58
+104
+105                <category android:name="android.intent.category.LAUNCHER" />
+105-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:24:9-68
+105-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:24:19-66
+106            </intent-filter>
+107            <intent-filter>
+107-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:26:7-32:23
+108                <action android:name="android.intent.action.VIEW" />
+108-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:12:7-58
+108-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:12:15-56
+109
+110                <category android:name="android.intent.category.DEFAULT" />
+110-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:28:9-67
+110-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:28:19-65
+111                <category android:name="android.intent.category.BROWSABLE" />
+111-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:13:7-67
+111-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:13:17-65
+112
+113                <data android:scheme="myapp" />
+113-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:14:7-37
+113-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:14:13-35
+114                <data android:scheme="com.anonymous.evercare" />
+114-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:14:7-37
+114-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:14:13-35
+115            </intent-filter>
+116        </activity>
+117
+118        <service
+118-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:34:5-38:50
+119            android:name="com.anonymous.evercare.services.FallDetectionService"
+119-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:35:9-76
+120            android:enabled="true"
+120-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:36:9-31
+121            android:exported="false"
+121-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:37:9-33
+122            android:foregroundServiceType="health" />
+122-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:38:9-47
+123
+124        <receiver
+124-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:40:5-47:16
+125            android:name="com.anonymous.evercare.services.BootReceiver"
+125-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:41:9-68
+126            android:enabled="true"
+126-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:42:9-31
+127            android:exported="true" >
+127-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:43:9-32
+128            <intent-filter>
+128-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:44:9-46:25
+129                <action android:name="android.intent.action.BOOT_COMPLETED" />
+129-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:45:13-75
+129-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:45:21-72
+130            </intent-filter>
+131        </receiver>
+132
+133        <provider
+133-->[:react-native-webview] C:\Users\marse\Desktop\evercare\node_modules\react-native-webview\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:8:9-16:20
+134            android:name="com.reactnativecommunity.webview.RNCWebViewFileProvider"
+134-->[:react-native-webview] C:\Users\marse\Desktop\evercare\node_modules\react-native-webview\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:9:13-83
+135            android:authorities="com.anonymous.evercare.fileprovider"
+135-->[:react-native-webview] C:\Users\marse\Desktop\evercare\node_modules\react-native-webview\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:10:13-64
+136            android:exported="false"
+136-->[:react-native-webview] C:\Users\marse\Desktop\evercare\node_modules\react-native-webview\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:11:13-37
+137            android:grantUriPermissions="true" >
+137-->[:react-native-webview] C:\Users\marse\Desktop\evercare\node_modules\react-native-webview\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:12:13-47
+138            <meta-data
+138-->[:react-native-webview] C:\Users\marse\Desktop\evercare\node_modules\react-native-webview\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:13:13-15:63
+139                android:name="android.support.FILE_PROVIDER_PATHS"
+139-->[:react-native-webview] C:\Users\marse\Desktop\evercare\node_modules\react-native-webview\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:14:17-67
+140                android:resource="@xml/file_provider_paths" />
+140-->[:react-native-webview] C:\Users\marse\Desktop\evercare\node_modules\react-native-webview\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:15:17-60
+141        </provider>
+142        <provider
+142-->[:expo-file-system] C:\Users\marse\Desktop\evercare\node_modules\expo-file-system\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:21:9-30:20
+143            android:name="expo.modules.filesystem.FileSystemFileProvider"
+143-->[:expo-file-system] C:\Users\marse\Desktop\evercare\node_modules\expo-file-system\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:22:13-74
+144            android:authorities="com.anonymous.evercare.FileSystemFileProvider"
+144-->[:expo-file-system] C:\Users\marse\Desktop\evercare\node_modules\expo-file-system\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:23:13-74
+145            android:exported="false"
+145-->[:expo-file-system] C:\Users\marse\Desktop\evercare\node_modules\expo-file-system\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:24:13-37
+146            android:grantUriPermissions="true" >
+146-->[:expo-file-system] C:\Users\marse\Desktop\evercare\node_modules\expo-file-system\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:25:13-47
+147            <meta-data
+147-->[:react-native-webview] C:\Users\marse\Desktop\evercare\node_modules\react-native-webview\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:13:13-15:63
+148                android:name="android.support.FILE_PROVIDER_PATHS"
+148-->[:react-native-webview] C:\Users\marse\Desktop\evercare\node_modules\react-native-webview\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:14:17-67
+149                android:resource="@xml/file_system_provider_paths" />
+149-->[:react-native-webview] C:\Users\marse\Desktop\evercare\node_modules\react-native-webview\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:15:17-60
+150        </provider>
+151
+152        <service
+152-->[:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:11:9-17:19
+153            android:name="expo.modules.notifications.service.ExpoFirebaseMessagingService"
+153-->[:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:12:13-91
+154            android:exported="false" >
+154-->[:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:13:13-37
+155            <intent-filter android:priority="-1" >
+155-->[:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:14:13-16:29
+155-->[:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:14:28-49
+156                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+156-->[:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:15:17-78
+156-->[:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:15:25-75
+157            </intent-filter>
+158        </service>
+159
+160        <receiver
+160-->[:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:19:9-31:20
+161            android:name="expo.modules.notifications.service.NotificationsService"
+161-->[:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:20:13-83
+162            android:enabled="true"
+162-->[:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:21:13-35
+163            android:exported="false" >
+163-->[:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:22:13-37
+164            <intent-filter android:priority="-1" >
+164-->[:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:23:13-30:29
+164-->[:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:23:28-49
+165                <action android:name="expo.modules.notifications.NOTIFICATION_EVENT" />
+165-->[:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:24:17-88
+165-->[:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:24:25-85
+166                <action android:name="android.intent.action.BOOT_COMPLETED" />
+166-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:45:13-75
+166-->C:\Users\marse\Desktop\evercare\android\app\src\main\AndroidManifest.xml:45:21-72
+167                <action android:name="android.intent.action.REBOOT" />
+167-->[:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:26:17-71
+167-->[:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:26:25-68
+168                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+168-->[:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:27:17-82
+168-->[:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:27:25-79
+169                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
+169-->[:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:28:17-82
+169-->[:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:28:25-79
+170                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+170-->[:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:29:17-84
+170-->[:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:29:25-81
+171            </intent-filter>
+172        </receiver>
+173
+174        <activity
+174-->[:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:33:9-40:75
+175            android:name="expo.modules.notifications.service.NotificationForwarderActivity"
+175-->[:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:34:13-92
+176            android:excludeFromRecents="true"
+176-->[:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:35:13-46
+177            android:exported="false"
+177-->[:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:36:13-37
+178            android:launchMode="standard"
+178-->[:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:37:13-42
+179            android:noHistory="true"
+179-->[:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:38:13-37
+180            android:taskAffinity=""
+180-->[:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:39:13-36
+181            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+181-->[:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:40:13-72
+182
+183        <meta-data
+183-->[:expo-modules-core] C:\Users\marse\Desktop\evercare\node_modules\expo-modules-core\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:9:9-11:89
+184            android:name="org.unimodules.core.AppLoader#react-native-headless"
+184-->[:expo-modules-core] C:\Users\marse\Desktop\evercare\node_modules\expo-modules-core\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:10:13-79
+185            android:value="expo.modules.adapters.react.apploader.RNHeadlessAppLoader" />
+185-->[:expo-modules-core] C:\Users\marse\Desktop\evercare\node_modules\expo-modules-core\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:11:13-86
+186        <meta-data
+186-->[:expo-modules-core] C:\Users\marse\Desktop\evercare\node_modules\expo-modules-core\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:12:9-15:45
+187            android:name="com.facebook.soloader.enabled"
+187-->[:expo-modules-core] C:\Users\marse\Desktop\evercare\node_modules\expo-modules-core\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:13:13-57
+188            android:value="true" />
+188-->[:expo-modules-core] C:\Users\marse\Desktop\evercare\node_modules\expo-modules-core\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:14:13-33
+189
+190        <receiver
+190-->[com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:29:9-40:20
+191            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+191-->[com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:30:13-78
+192            android:exported="true"
+192-->[com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:31:13-36
+193            android:permission="com.google.android.c2dm.permission.SEND" >
+193-->[com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:32:13-73
+194            <intent-filter>
+194-->[com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:33:13-35:29
+195                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+195-->[com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:34:17-81
+195-->[com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:34:25-78
+196            </intent-filter>
+197
+198            <meta-data
+198-->[com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:37:13-39:40
+199                android:name="com.google.android.gms.cloudmessaging.FINISHED_AFTER_HANDLED"
+199-->[com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:38:17-92
+200                android:value="true" />
+200-->[com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:39:17-37
+201        </receiver>
+202        <!--
+203             FirebaseMessagingService performs security checks at runtime,
+204             but set to not exported to explicitly avoid allowing another app to call it.
+205        -->
+206        <service
+206-->[com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:46:9-53:19
+207            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+207-->[com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:47:13-82
+208            android:directBootAware="true"
+208-->[com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:48:13-43
+209            android:exported="false" >
+209-->[com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:49:13-37
+210            <intent-filter android:priority="-500" >
+210-->[:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:14:13-16:29
+210-->[:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:14:28-49
+211                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+211-->[:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:15:17-78
+211-->[:expo-notifications] C:\Users\marse\Desktop\evercare\node_modules\expo-notifications\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:15:25-75
+212            </intent-filter>
+213        </service>
+214        <service
+214-->[com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:54:9-63:19
+215            android:name="com.google.firebase.components.ComponentDiscoveryService"
+215-->[com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:55:13-84
+216            android:directBootAware="true"
+216-->[com.google.firebase:firebase-common:21.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\90439eca9eec8e1378e1d65eec457845\transformed\firebase-common-21.0.0\AndroidManifest.xml:32:13-43
+217            android:exported="false" >
+217-->[com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:56:13-37
+218            <meta-data
+218-->[com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:57:13-59:85
+219                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingKtxRegistrar"
+219-->[com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:58:17-122
+220                android:value="com.google.firebase.components.ComponentRegistrar" />
+220-->[com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:59:17-82
+221            <meta-data
+221-->[com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:60:13-62:85
+222                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
+222-->[com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:61:17-119
+223                android:value="com.google.firebase.components.ComponentRegistrar" />
+223-->[com.google.firebase:firebase-messaging:24.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\cd5a5829c7d3f51e79ab5358b1c6b1c0\transformed\firebase-messaging-24.0.1\AndroidManifest.xml:62:17-82
+224            <meta-data
+224-->[com.google.firebase:firebase-installations:17.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\f49505e21fe83eb6a98e302e2e6eca93\transformed\firebase-installations-17.2.0\AndroidManifest.xml:15:13-17:85
+225                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsKtxRegistrar"
+225-->[com.google.firebase:firebase-installations:17.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\f49505e21fe83eb6a98e302e2e6eca93\transformed\firebase-installations-17.2.0\AndroidManifest.xml:16:17-130
+226                android:value="com.google.firebase.components.ComponentRegistrar" />
+226-->[com.google.firebase:firebase-installations:17.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\f49505e21fe83eb6a98e302e2e6eca93\transformed\firebase-installations-17.2.0\AndroidManifest.xml:17:17-82
+227            <meta-data
+227-->[com.google.firebase:firebase-installations:17.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\f49505e21fe83eb6a98e302e2e6eca93\transformed\firebase-installations-17.2.0\AndroidManifest.xml:18:13-20:85
+228                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+228-->[com.google.firebase:firebase-installations:17.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\f49505e21fe83eb6a98e302e2e6eca93\transformed\firebase-installations-17.2.0\AndroidManifest.xml:19:17-127
+229                android:value="com.google.firebase.components.ComponentRegistrar" />
+229-->[com.google.firebase:firebase-installations:17.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\f49505e21fe83eb6a98e302e2e6eca93\transformed\firebase-installations-17.2.0\AndroidManifest.xml:20:17-82
+230            <meta-data
+230-->[com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\e63025705c44e0b9ae7faab8c23d2211\transformed\firebase-common-ktx-21.0.0\AndroidManifest.xml:12:13-14:85
+231                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar"
+231-->[com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\e63025705c44e0b9ae7faab8c23d2211\transformed\firebase-common-ktx-21.0.0\AndroidManifest.xml:13:17-116
+232                android:value="com.google.firebase.components.ComponentRegistrar" />
+232-->[com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\e63025705c44e0b9ae7faab8c23d2211\transformed\firebase-common-ktx-21.0.0\AndroidManifest.xml:14:17-82
+233            <meta-data
+233-->[com.google.firebase:firebase-common:21.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\90439eca9eec8e1378e1d65eec457845\transformed\firebase-common-21.0.0\AndroidManifest.xml:35:13-37:85
+234                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
+234-->[com.google.firebase:firebase-common:21.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\90439eca9eec8e1378e1d65eec457845\transformed\firebase-common-21.0.0\AndroidManifest.xml:36:17-109
+235                android:value="com.google.firebase.components.ComponentRegistrar" />
+235-->[com.google.firebase:firebase-common:21.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\90439eca9eec8e1378e1d65eec457845\transformed\firebase-common-21.0.0\AndroidManifest.xml:37:17-82
+236            <meta-data
+236-->[com.google.firebase:firebase-datatransport:18.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\e5c61f23a1adc97d06b71c10881d5db1\transformed\firebase-datatransport-18.2.0\AndroidManifest.xml:25:13-27:85
+237                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
+237-->[com.google.firebase:firebase-datatransport:18.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\e5c61f23a1adc97d06b71c10881d5db1\transformed\firebase-datatransport-18.2.0\AndroidManifest.xml:26:17-115
+238                android:value="com.google.firebase.components.ComponentRegistrar" />
+238-->[com.google.firebase:firebase-datatransport:18.2.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\e5c61f23a1adc97d06b71c10881d5db1\transformed\firebase-datatransport-18.2.0\AndroidManifest.xml:27:17-82
+239        </service>
+240
+241        <activity
+241-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\98160fa8296e449f5be68025fcf6484e\transformed\play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
+242            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+242-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\98160fa8296e449f5be68025fcf6484e\transformed\play-services-base-18.0.1\AndroidManifest.xml:20:19-85
+243            android:exported="false"
+243-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\98160fa8296e449f5be68025fcf6484e\transformed\play-services-base-18.0.1\AndroidManifest.xml:22:19-43
+244            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+244-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\98160fa8296e449f5be68025fcf6484e\transformed\play-services-base-18.0.1\AndroidManifest.xml:21:19-78
+245
+246        <provider
+246-->[com.google.firebase:firebase-common:21.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\90439eca9eec8e1378e1d65eec457845\transformed\firebase-common-21.0.0\AndroidManifest.xml:23:9-28:39
+247            android:name="com.google.firebase.provider.FirebaseInitProvider"
+247-->[com.google.firebase:firebase-common:21.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\90439eca9eec8e1378e1d65eec457845\transformed\firebase-common-21.0.0\AndroidManifest.xml:24:13-77
+248            android:authorities="com.anonymous.evercare.firebaseinitprovider"
+248-->[com.google.firebase:firebase-common:21.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\90439eca9eec8e1378e1d65eec457845\transformed\firebase-common-21.0.0\AndroidManifest.xml:25:13-72
+249            android:directBootAware="true"
+249-->[com.google.firebase:firebase-common:21.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\90439eca9eec8e1378e1d65eec457845\transformed\firebase-common-21.0.0\AndroidManifest.xml:26:13-43
+250            android:exported="false"
+250-->[com.google.firebase:firebase-common:21.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\90439eca9eec8e1378e1d65eec457845\transformed\firebase-common-21.0.0\AndroidManifest.xml:27:13-37
+251            android:initOrder="100" />
+251-->[com.google.firebase:firebase-common:21.0.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\90439eca9eec8e1378e1d65eec457845\transformed\firebase-common-21.0.0\AndroidManifest.xml:28:13-36
+252        <provider
+252-->[androidx.emoji2:emoji2:1.3.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\6648128d35426136b864ddbabd0a58f8\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
+253            android:name="androidx.startup.InitializationProvider"
+253-->[androidx.emoji2:emoji2:1.3.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\6648128d35426136b864ddbabd0a58f8\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
+254            android:authorities="com.anonymous.evercare.androidx-startup"
+254-->[androidx.emoji2:emoji2:1.3.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\6648128d35426136b864ddbabd0a58f8\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
+255            android:exported="false" >
+255-->[androidx.emoji2:emoji2:1.3.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\6648128d35426136b864ddbabd0a58f8\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
+256            <meta-data
+256-->[androidx.emoji2:emoji2:1.3.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\6648128d35426136b864ddbabd0a58f8\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
+257                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+257-->[androidx.emoji2:emoji2:1.3.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\6648128d35426136b864ddbabd0a58f8\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
+258                android:value="androidx.startup" />
+258-->[androidx.emoji2:emoji2:1.3.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\6648128d35426136b864ddbabd0a58f8\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
+259            <meta-data
+259-->[androidx.lifecycle:lifecycle-process:2.8.3] C:\Users\marse\.gradle\caches\8.10.2\transforms\9fbd97a7a92e2593db28805f2172e0e4\transformed\lifecycle-process-2.8.3\AndroidManifest.xml:29:13-31:52
+260                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+260-->[androidx.lifecycle:lifecycle-process:2.8.3] C:\Users\marse\.gradle\caches\8.10.2\transforms\9fbd97a7a92e2593db28805f2172e0e4\transformed\lifecycle-process-2.8.3\AndroidManifest.xml:30:17-78
+261                android:value="androidx.startup" />
+261-->[androidx.lifecycle:lifecycle-process:2.8.3] C:\Users\marse\.gradle\caches\8.10.2\transforms\9fbd97a7a92e2593db28805f2172e0e4\transformed\lifecycle-process-2.8.3\AndroidManifest.xml:31:17-49
+262            <meta-data
+262-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\901c327b6364b6a7813cf7fcf770c216\transformed\profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
+263                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+263-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\901c327b6364b6a7813cf7fcf770c216\transformed\profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
+264                android:value="androidx.startup" />
+264-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\901c327b6364b6a7813cf7fcf770c216\transformed\profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
+265        </provider>
+266
+267        <meta-data
+267-->[com.google.android.gms:play-services-basement:18.3.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\ed3729ee67626c6fe065caf273b78485\transformed\play-services-basement-18.3.0\AndroidManifest.xml:21:9-23:69
+268            android:name="com.google.android.gms.version"
+268-->[com.google.android.gms:play-services-basement:18.3.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\ed3729ee67626c6fe065caf273b78485\transformed\play-services-basement-18.3.0\AndroidManifest.xml:22:13-58
+269            android:value="@integer/google_play_services_version" />
+269-->[com.google.android.gms:play-services-basement:18.3.0] C:\Users\marse\.gradle\caches\8.10.2\transforms\ed3729ee67626c6fe065caf273b78485\transformed\play-services-basement-18.3.0\AndroidManifest.xml:23:13-66
+270
+271        <receiver
+271-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\901c327b6364b6a7813cf7fcf770c216\transformed\profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
+272            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+272-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\901c327b6364b6a7813cf7fcf770c216\transformed\profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
+273            android:directBootAware="false"
+273-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\901c327b6364b6a7813cf7fcf770c216\transformed\profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
+274            android:enabled="true"
+274-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\901c327b6364b6a7813cf7fcf770c216\transformed\profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
+275            android:exported="true"
+275-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\901c327b6364b6a7813cf7fcf770c216\transformed\profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
+276            android:permission="android.permission.DUMP" >
+276-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\901c327b6364b6a7813cf7fcf770c216\transformed\profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
+277            <intent-filter>
+277-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\901c327b6364b6a7813cf7fcf770c216\transformed\profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
+278                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+278-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\901c327b6364b6a7813cf7fcf770c216\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
+278-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\901c327b6364b6a7813cf7fcf770c216\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
+279            </intent-filter>
+280            <intent-filter>
+280-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\901c327b6364b6a7813cf7fcf770c216\transformed\profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
+281                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+281-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\901c327b6364b6a7813cf7fcf770c216\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
+281-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\901c327b6364b6a7813cf7fcf770c216\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
+282            </intent-filter>
+283            <intent-filter>
+283-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\901c327b6364b6a7813cf7fcf770c216\transformed\profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
+284                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+284-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\901c327b6364b6a7813cf7fcf770c216\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
+284-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\901c327b6364b6a7813cf7fcf770c216\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
+285            </intent-filter>
+286            <intent-filter>
+286-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\901c327b6364b6a7813cf7fcf770c216\transformed\profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
+287                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+287-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\901c327b6364b6a7813cf7fcf770c216\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
+287-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\marse\.gradle\caches\8.10.2\transforms\901c327b6364b6a7813cf7fcf770c216\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
+288            </intent-filter>
+289        </receiver>
+290
+291        <service
+291-->[com.google.android.datatransport:transport-backend-cct:3.1.9] C:\Users\marse\.gradle\caches\8.10.2\transforms\8129939764ec4bac4c92fc2a16588f0e\transformed\transport-backend-cct-3.1.9\AndroidManifest.xml:28:9-34:19
+292            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+292-->[com.google.android.datatransport:transport-backend-cct:3.1.9] C:\Users\marse\.gradle\caches\8.10.2\transforms\8129939764ec4bac4c92fc2a16588f0e\transformed\transport-backend-cct-3.1.9\AndroidManifest.xml:29:13-103
+293            android:exported="false" >
+293-->[com.google.android.datatransport:transport-backend-cct:3.1.9] C:\Users\marse\.gradle\caches\8.10.2\transforms\8129939764ec4bac4c92fc2a16588f0e\transformed\transport-backend-cct-3.1.9\AndroidManifest.xml:30:13-37
+294            <meta-data
+294-->[com.google.android.datatransport:transport-backend-cct:3.1.9] C:\Users\marse\.gradle\caches\8.10.2\transforms\8129939764ec4bac4c92fc2a16588f0e\transformed\transport-backend-cct-3.1.9\AndroidManifest.xml:31:13-33:39
+295                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+295-->[com.google.android.datatransport:transport-backend-cct:3.1.9] C:\Users\marse\.gradle\caches\8.10.2\transforms\8129939764ec4bac4c92fc2a16588f0e\transformed\transport-backend-cct-3.1.9\AndroidManifest.xml:32:17-94
+296                android:value="cct" />
+296-->[com.google.android.datatransport:transport-backend-cct:3.1.9] C:\Users\marse\.gradle\caches\8.10.2\transforms\8129939764ec4bac4c92fc2a16588f0e\transformed\transport-backend-cct-3.1.9\AndroidManifest.xml:33:17-36
+297        </service>
+298        <service
+298-->[com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\marse\.gradle\caches\8.10.2\transforms\2131bf2235b7c9120d82a7760aa41607\transformed\transport-runtime-3.1.9\AndroidManifest.xml:26:9-30:19
+299            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+299-->[com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\marse\.gradle\caches\8.10.2\transforms\2131bf2235b7c9120d82a7760aa41607\transformed\transport-runtime-3.1.9\AndroidManifest.xml:27:13-117
+300            android:exported="false"
+300-->[com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\marse\.gradle\caches\8.10.2\transforms\2131bf2235b7c9120d82a7760aa41607\transformed\transport-runtime-3.1.9\AndroidManifest.xml:28:13-37
+301            android:permission="android.permission.BIND_JOB_SERVICE" >
+301-->[com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\marse\.gradle\caches\8.10.2\transforms\2131bf2235b7c9120d82a7760aa41607\transformed\transport-runtime-3.1.9\AndroidManifest.xml:29:13-69
+302        </service>
+303
+304        <receiver
+304-->[com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\marse\.gradle\caches\8.10.2\transforms\2131bf2235b7c9120d82a7760aa41607\transformed\transport-runtime-3.1.9\AndroidManifest.xml:32:9-34:40
+305            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+305-->[com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\marse\.gradle\caches\8.10.2\transforms\2131bf2235b7c9120d82a7760aa41607\transformed\transport-runtime-3.1.9\AndroidManifest.xml:33:13-132
+306            android:exported="false" />
+306-->[com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\marse\.gradle\caches\8.10.2\transforms\2131bf2235b7c9120d82a7760aa41607\transformed\transport-runtime-3.1.9\AndroidManifest.xml:34:13-37
+307    </application>
+308
+309</manifest>

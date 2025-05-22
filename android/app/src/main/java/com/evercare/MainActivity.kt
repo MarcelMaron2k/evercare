@@ -5,7 +5,18 @@ import com.facebook.react.ReactActivityDelegate
 import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint.fabricEnabled
 import com.facebook.react.defaults.DefaultReactActivityDelegate
 
+import android.content.Intent
+import android.os.Bundle
+
 class MainActivity : ReactActivity() {
+  
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    
+    // Start service when app launches
+    val serviceIntent = Intent(this, BackgroundService::class.java)
+    startService(serviceIntent)
+  }
 
   /**
    * Returns the name of the main component registered from JavaScript. This is used to schedule
@@ -19,4 +30,5 @@ class MainActivity : ReactActivity() {
    */
   override fun createReactActivityDelegate(): ReactActivityDelegate =
       DefaultReactActivityDelegate(this, mainComponentName, fabricEnabled)
+
 }

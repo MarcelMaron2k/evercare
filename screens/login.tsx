@@ -1,13 +1,28 @@
 // src/screens/login.tsx
 import React, { useState } from 'react';
 import {
-  View, Text, TextInput, Button, StyleSheet, Alert, Pressable
+  View,
+  Text,
+  TextInput,
+  Button,
+  StyleSheet,
+  Alert,
+  Pressable
 } from 'react-native';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import { auth }                       from '../firebase';
+import { auth } from '../firebase';
 
-export default function LoginScreen() {
-  const [email,    setEmail]    = useState('');
+import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { AuthStackParamList } from '../navigation/AuthNavigator';
+
+type LoginScreenNavigationProp = NativeStackNavigationProp<AuthStackParamList, 'Login'>;
+
+interface LoginScreenProps {
+  navigation: LoginScreenNavigationProp;
+}
+
+export default function LoginScreen({ navigation }: LoginScreenProps) {
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleLogin = async () => {
@@ -38,7 +53,7 @@ export default function LoginScreen() {
         secureTextEntry
       />
       <Button title="Sign In" onPress={handleLogin} />
-      <Pressable onPress={() => {/* use navigation.navigate('Signup') */}}>
+      <Pressable onPress={() => navigation.navigate('Signup')}>
         <Text style={styles.link}>Don't have an account? Sign up</Text>
       </Pressable>
     </View>
@@ -46,8 +61,8 @@ export default function LoginScreen() {
 }
 
 const styles = StyleSheet.create({
-  container:{ padding:24, flex:1, justifyContent:'center' },
-  title:    { fontSize:32, marginBottom:24, textAlign:'center' },
-  input:    { borderWidth:1, borderColor:'#ccc', padding:12, borderRadius:6, marginBottom:12 },
-  link:     { color:'#007bff', marginTop:12, textAlign:'center' }
+  container: { padding: 24, flex: 1, justifyContent: 'center' },
+  title: { fontSize: 32, marginBottom: 24, textAlign: 'center' },
+  input: { borderWidth: 1, borderColor: '#ccc', padding: 12, borderRadius: 6, marginBottom: 12 },
+  link: { color: '#007bff', marginTop: 12, textAlign: 'center' },
 });

@@ -1,0 +1,404 @@
+{
+  "doctors": [
+    {
+      "id": "yossi-cohen",
+      "firstName": "Yossi",
+      "lastName": "Cohen",
+      "specialty": "GP",
+      "clinics": [
+        {
+          "id": "CL03",
+          "name": "Clalit Haifa Medical Center",
+          "address": "Mount Carmel",
+          "city": "Haifa"
+        },
+        {
+          "id": "CL05",
+          "name": "Clalit Ramat Gan Clinic",
+          "address": "Weizmann St 2",
+          "city": "Ramat Gan"
+        }
+      ]
+    },
+    {
+      "id": "sarah-levi",
+      "firstName": "Sarah",
+      "lastName": "Levi",
+      "specialty": "Cardiology",
+      "clinics": [
+        {
+          "id": "CL05",
+          "name": "Clalit Ramat Gan Clinic",
+          "address": "Weizmann St 2",
+          "city": "Ramat Gan"
+        },
+        {
+          "id": "CL03",
+          "name": "Clalit Haifa Medical Center",
+          "address": "Mount Carmel",
+          "city": "Haifa"
+        }
+      ]
+    },
+    {
+      "id": "dana-ben-ari",
+      "firstName": "Dana",
+      "lastName": "Ben-Ari",
+      "specialty": "Dermatology",
+      "clinics": [
+        {
+          "id": "CL04",
+          "name": "Clalit Beer Sheva Clinic",
+          "address": "Rager Blvd 3",
+          "city": "Beer Sheva"
+        },
+        {
+          "id": "CL03",
+          "name": "Clalit Haifa Medical Center",
+          "address": "Mount Carmel",
+          "city": "Haifa"
+        }
+      ]
+    },
+    {
+      "id": "amir-klein",
+      "firstName": "Amir",
+      "lastName": "Klein",
+      "specialty": "Orthopedics",
+      "clinics": [
+        {
+          "id": "CL05",
+          "name": "Clalit Ramat Gan Clinic",
+          "address": "Weizmann St 2",
+          "city": "Ramat Gan"
+        },
+        {
+          "id": "CL04",
+          "name": "Clalit Beer Sheva Clinic",
+          "address": "Rager Blvd 3",
+          "city": "Beer Sheva"
+        }
+      ]
+    },
+    {
+      "id": "yael-navon",
+      "firstName": "Yael",
+      "lastName": "Navon",
+      "specialty": "Neurology",
+      "clinics": [
+        {
+          "id": "CL04",
+          "name": "Clalit Beer Sheva Clinic",
+          "address": "Rager Blvd 3",
+          "city": "Beer Sheva"
+        },
+        {
+          "id": "CL05",
+          "name": "Clalit Ramat Gan Clinic",
+          "address": "Weizmann St 2",
+          "city": "Ramat Gan"
+        }
+      ]
+    },
+    {
+      "id": "eli-shalev",
+      "firstName": "Eli",
+      "lastName": "Shalev",
+      "specialty": "Pediatrics",
+      "clinics": [
+        {
+          "id": "CL03",
+          "name": "Clalit Haifa Medical Center",
+          "address": "Mount Carmel",
+          "city": "Haifa"
+        },
+        {
+          "id": "CL02",
+          "name": "Clalit Jerusalem Division",
+          "address": "King George St 17",
+          "city": "Jerusalem"
+        }
+      ]
+    },
+    {
+      "id": "ruth-goldberg",
+      "firstName": "Ruth",
+      "lastName": "Goldberg",
+      "specialty": "ENT",
+      "clinics": [
+        {
+          "id": "CL04",
+          "name": "Clalit Beer Sheva Clinic",
+          "address": "Rager Blvd 3",
+          "city": "Beer Sheva"
+        },
+        {
+          "id": "CL02",
+          "name": "Clalit Jerusalem Division",
+          "address": "King George St 17",
+          "city": "Jerusalem"
+        }
+      ]
+    },
+    {
+      "id": "avi-michaeli",
+      "firstName": "Avi",
+      "lastName": "Michaeli",
+      "specialty": "Ophthalmology",
+      "clinics": [
+        {
+          "id": "CL02",
+          "name": "Clalit Jerusalem Division",
+          "address": "King George St 17",
+          "city": "Jerusalem"
+        },
+        {
+          "id": "CL04",
+          "name": "Clalit Beer Sheva Clinic",
+          "address": "Rager Blvd 3",
+          "city": "Beer Sheva"
+        }
+      ]
+    },
+    {
+      "id": "shani-shapira",
+      "firstName": "Shani",
+      "lastName": "Shapira",
+      "specialty": "Endocrinology",
+      "clinics": [
+        {
+          "id": "CL02",
+          "name": "Clalit Jerusalem Division",
+          "address": "King George St 17",
+          "city": "Jerusalem"
+        },
+        {
+          "id": "CL01",
+          "name": "Clalit Tel Aviv – Ibn Gabirol",
+          "address": "Ibn Gabirol 45",
+          "city": "Tel Aviv"
+        }
+      ]
+    },
+    {
+      "id": "noam-eran",
+      "firstName": "Noam",
+      "lastName": "Eran",
+      "specialty": "Oncology",
+      "clinics": [
+        {
+          "id": "CL05",
+          "name": "Clalit Ramat Gan Clinic",
+          "address": "Weizmann St 2",
+          "city": "Ramat Gan"
+        },
+        {
+          "id": "CL01",
+          "name": "Clalit Tel Aviv – Ibn Gabirol",
+          "address": "Ibn Gabirol 45",
+          "city": "Tel Aviv"
+        }
+      ]
+    },
+    {
+      "id": "tamar-barak",
+      "firstName": "Tamar",
+      "lastName": "Barak",
+      "specialty": "Gastroenterology",
+      "clinics": [
+        {
+          "id": "CL05",
+          "name": "Clalit Ramat Gan Clinic",
+          "address": "Weizmann St 2",
+          "city": "Ramat Gan"
+        },
+        {
+          "id": "CL02",
+          "name": "Clalit Jerusalem Division",
+          "address": "King George St 17",
+          "city": "Jerusalem"
+        }
+      ]
+    },
+    {
+      "id": "ori-hoffman",
+      "firstName": "Ori",
+      "lastName": "Hoffman",
+      "specialty": "Pulmonology",
+      "clinics": [
+        {
+          "id": "CL05",
+          "name": "Clalit Ramat Gan Clinic",
+          "address": "Weizmann St 2",
+          "city": "Ramat Gan"
+        },
+        {
+          "id": "CL02",
+          "name": "Clalit Jerusalem Division",
+          "address": "King George St 17",
+          "city": "Jerusalem"
+        }
+      ]
+    },
+    {
+      "id": "gal-shtern",
+      "firstName": "Gal",
+      "lastName": "Shtern",
+      "specialty": "Urology",
+      "clinics": [
+        {
+          "id": "CL03",
+          "name": "Clalit Haifa Medical Center",
+          "address": "Mount Carmel",
+          "city": "Haifa"
+        },
+        {
+          "id": "CL02",
+          "name": "Clalit Jerusalem Division",
+          "address": "King George St 17",
+          "city": "Jerusalem"
+        }
+      ]
+    },
+    {
+      "id": "nadav-tal",
+      "firstName": "Nadav",
+      "lastName": "Tal",
+      "specialty": "Nephrology",
+      "clinics": [
+        {
+          "id": "CL04",
+          "name": "Clalit Beer Sheva Clinic",
+          "address": "Rager Blvd 3",
+          "city": "Beer Sheva"
+        },
+        {
+          "id": "CL01",
+          "name": "Clalit Tel Aviv – Ibn Gabirol",
+          "address": "Ibn Gabirol 45",
+          "city": "Tel Aviv"
+        }
+      ]
+    },
+    {
+      "id": "michal-rosen",
+      "firstName": "Michal",
+      "lastName": "Rosen",
+      "specialty": "Psychiatry",
+      "clinics": [
+        {
+          "id": "CL01",
+          "name": "Clalit Tel Aviv – Ibn Gabirol",
+          "address": "Ibn Gabirol 45",
+          "city": "Tel Aviv"
+        },
+        {
+          "id": "CL04",
+          "name": "Clalit Beer Sheva Clinic",
+          "address": "Rager Blvd 3",
+          "city": "Beer Sheva"
+        }
+      ]
+    },
+    {
+      "id": "itai-raz",
+      "firstName": "Itai",
+      "lastName": "Raz",
+      "specialty": "Rheumatology",
+      "clinics": [
+        {
+          "id": "CL01",
+          "name": "Clalit Tel Aviv – Ibn Gabirol",
+          "address": "Ibn Gabirol 45",
+          "city": "Tel Aviv"
+        },
+        {
+          "id": "CL05",
+          "name": "Clalit Ramat Gan Clinic",
+          "address": "Weizmann St 2",
+          "city": "Ramat Gan"
+        }
+      ]
+    },
+    {
+      "id": "lea-peretz",
+      "firstName": "Lea",
+      "lastName": "Peretz",
+      "specialty": "Hematology",
+      "clinics": [
+        {
+          "id": "CL04",
+          "name": "Clalit Beer Sheva Clinic",
+          "address": "Rager Blvd 3",
+          "city": "Beer Sheva"
+        },
+        {
+          "id": "CL02",
+          "name": "Clalit Jerusalem Division",
+          "address": "King George St 17",
+          "city": "Jerusalem"
+        }
+      ]
+    },
+    {
+      "id": "bar-eliav",
+      "firstName": "Bar",
+      "lastName": "Eliav",
+      "specialty": "Allergy",
+      "clinics": [
+        {
+          "id": "CL04",
+          "name": "Clalit Beer Sheva Clinic",
+          "address": "Rager Blvd 3",
+          "city": "Beer Sheva"
+        },
+        {
+          "id": "CL03",
+          "name": "Clalit Haifa Medical Center",
+          "address": "Mount Carmel",
+          "city": "Haifa"
+        }
+      ]
+    },
+    {
+      "id": "guy-dayan",
+      "firstName": "Guy",
+      "lastName": "Dayan",
+      "specialty": "Infectious Disease",
+      "clinics": [
+        {
+          "id": "CL03",
+          "name": "Clalit Haifa Medical Center",
+          "address": "Mount Carmel",
+          "city": "Haifa"
+        },
+        {
+          "id": "CL05",
+          "name": "Clalit Ramat Gan Clinic",
+          "address": "Weizmann St 2",
+          "city": "Ramat Gan"
+        }
+      ]
+    },
+    {
+      "id": "hadas-moshe",
+      "firstName": "Hadas",
+      "lastName": "Moshe",
+      "specialty": "Rheumatology II",
+      "clinics": [
+        {
+          "id": "CL03",
+          "name": "Clalit Haifa Medical Center",
+          "address": "Mount Carmel",
+          "city": "Haifa"
+        },
+        {
+          "id": "CL05",
+          "name": "Clalit Ramat Gan Clinic",
+          "address": "Weizmann St 2",
+          "city": "Ramat Gan"
+        }
+      ]
+    }
+  ]
+}

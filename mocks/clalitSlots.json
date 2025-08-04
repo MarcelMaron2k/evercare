@@ -1,0 +1,264 @@
+{
+  "AvailableSlots": [
+    {
+      "SlotId": "SLOT-5706-0",
+      "DoctorId": "itai-raz",
+      "DoctorName": "Itai Raz",
+      "SlotDateTime": "2025-06-01T09:00:00Z",
+      "Location": {
+        "SiteCode": "CL01",
+        "SiteName": "Clalit Tel Aviv – Ibn Gabirol",
+        "Address": "Ibn Gabirol 45",
+        "City": "Tel Aviv"
+      },
+      "Status": "Open"
+    },
+    {
+      "SlotId": "SLOT-6833-1",
+      "DoctorId": "bar-eliav",
+      "DoctorName": "Bar Eliav",
+      "SlotDateTime": "2025-06-01T10:00:00Z",
+      "Location": {
+        "SiteCode": "CL04",
+        "SiteName": "Clalit Beer Sheva Clinic",
+        "Address": "Rager Blvd 3",
+        "City": "Beer Sheva"
+      },
+      "Status": "Open"
+    },
+    {
+      "SlotId": "SLOT-7813-2",
+      "DoctorId": "ruth-goldberg",
+      "DoctorName": "Ruth Goldberg",
+      "SlotDateTime": "2025-06-01T11:00:00Z",
+      "Location": {
+        "SiteCode": "CL03",
+        "SiteName": "Clalit Haifa Medical Center",
+        "Address": "Mount Carmel",
+        "City": "Haifa"
+      },
+      "Status": "Open"
+    },
+    {
+      "SlotId": "SLOT-3642-3",
+      "DoctorId": "bar-eliav",
+      "DoctorName": "Bar Eliav",
+      "SlotDateTime": "2025-06-01T12:00:00Z",
+      "Location": {
+        "SiteCode": "CL05",
+        "SiteName": "Clalit Ramat Gan Clinic",
+        "Address": "Weizmann St 2",
+        "City": "Ramat Gan"
+      },
+      "Status": "Open"
+    },
+    {
+      "SlotId": "SLOT-2158-4",
+      "DoctorId": "ruth-goldberg",
+      "DoctorName": "Ruth Goldberg",
+      "SlotDateTime": "2025-06-02T09:00:00Z",
+      "Location": {
+        "SiteCode": "CL02",
+        "SiteName": "Clalit Jerusalem Division",
+        "Address": "King George St 17",
+        "City": "Jerusalem"
+      },
+      "Status": "Booked"
+    },
+    {
+      "SlotId": "SLOT-9890-5",
+      "DoctorId": "sarah-levi",
+      "DoctorName": "Sarah Levi",
+      "SlotDateTime": "2025-06-02T10:00:00Z",
+      "Location": {
+        "SiteCode": "CL02",
+        "SiteName": "Clalit Jerusalem Division",
+        "Address": "King George St 17",
+        "City": "Jerusalem"
+      },
+      "Status": "Open"
+    },
+    {
+      "SlotId": "SLOT-5346-6",
+      "DoctorId": "yossi-cohen",
+      "DoctorName": "Yossi Cohen",
+      "SlotDateTime": "2025-06-02T11:00:00Z",
+      "Location": {
+        "SiteCode": "CL03",
+        "SiteName": "Clalit Haifa Medical Center",
+        "Address": "Mount Carmel",
+        "City": "Haifa"
+      },
+      "Status": "Open"
+    },
+    {
+      "SlotId": "SLOT-4891-7",
+      "DoctorId": "noam-eran",
+      "DoctorName": "Noam Eran",
+      "SlotDateTime": "2025-06-02T12:00:00Z",
+      "Location": {
+        "SiteCode": "CL05",
+        "SiteName": "Clalit Ramat Gan Clinic",
+        "Address": "Weizmann St 2",
+        "City": "Ramat Gan"
+      },
+      "Status": "Open"
+    },
+    {
+      "SlotId": "SLOT-3989-8",
+      "DoctorId": "yossi-cohen",
+      "DoctorName": "Yossi Cohen",
+      "SlotDateTime": "2025-06-03T09:00:00Z",
+      "Location": {
+        "SiteCode": "CL05",
+        "SiteName": "Clalit Ramat Gan Clinic",
+        "Address": "Weizmann St 2",
+        "City": "Ramat Gan"
+      },
+      "Status": "Open"
+    },
+    {
+      "SlotId": "SLOT-5924-9",
+      "DoctorId": "michal-rosen",
+      "DoctorName": "Michal Rosen",
+      "SlotDateTime": "2025-06-03T10:00:00Z",
+      "Location": {
+        "SiteCode": "CL01",
+        "SiteName": "Clalit Tel Aviv – Ibn Gabirol",
+        "Address": "Ibn Gabirol 45",
+        "City": "Tel Aviv"
+      },
+      "Status": "Booked"
+    },
+    {
+      "SlotId": "SLOT-1714-10",
+      "DoctorId": "ori-hoffman",
+      "DoctorName": "Ori Hoffman",
+      "SlotDateTime": "2025-06-03T11:00:00Z",
+      "Location": {
+        "SiteCode": "CL05",
+        "SiteName": "Clalit Ramat Gan Clinic",
+        "Address": "Weizmann St 2",
+        "City": "Ramat Gan"
+      },
+      "Status": "Booked"
+    },
+    {
+      "SlotId": "SLOT-6931-11",
+      "DoctorId": "itai-raz",
+      "DoctorName": "Itai Raz",
+      "SlotDateTime": "2025-06-03T12:00:00Z",
+      "Location": {
+        "SiteCode": "CL01",
+        "SiteName": "Clalit Tel Aviv – Ibn Gabirol",
+        "Address": "Ibn Gabirol 45",
+        "City": "Tel Aviv"
+      },
+      "Status": "Booked"
+    },
+    {
+      "SlotId": "SLOT-1091-12",
+      "DoctorId": "tamar-barak",
+      "DoctorName": "Tamar Barak",
+      "SlotDateTime": "2025-06-04T09:00:00Z",
+      "Location": {
+        "SiteCode": "CL03",
+        "SiteName": "Clalit Haifa Medical Center",
+        "Address": "Mount Carmel",
+        "City": "Haifa"
+      },
+      "Status": "Booked"
+    },
+    {
+      "SlotId": "SLOT-9865-13",
+      "DoctorId": "avi-michaeli",
+      "DoctorName": "Avi Michaeli",
+      "SlotDateTime": "2025-06-04T10:00:00Z",
+      "Location": {
+        "SiteCode": "CL02",
+        "SiteName": "Clalit Jerusalem Division",
+        "Address": "King George St 17",
+        "City": "Jerusalem"
+      },
+      "Status": "Open"
+    },
+    {
+      "SlotId": "SLOT-6863-14",
+      "DoctorId": "nadav-tal",
+      "DoctorName": "Nadav Tal",
+      "SlotDateTime": "2025-06-04T11:00:00Z",
+      "Location": {
+        "SiteCode": "CL04",
+        "SiteName": "Clalit Beer Sheva Clinic",
+        "Address": "Rager Blvd 3",
+        "City": "Beer Sheva"
+      },
+      "Status": "Open"
+    },
+    {
+      "SlotId": "SLOT-4434-15",
+      "DoctorId": "dana-ben-ari",
+      "DoctorName": "Dana Ben-Ari",
+      "SlotDateTime": "2025-06-04T12:00:00Z",
+      "Location": {
+        "SiteCode": "CL04",
+        "SiteName": "Clalit Beer Sheva Clinic",
+        "Address": "Rager Blvd 3",
+        "City": "Beer Sheva"
+      },
+      "Status": "Open"
+    },
+    {
+      "SlotId": "SLOT-7642-16",
+      "DoctorId": "sarah-levi",
+      "DoctorName": "Sarah Levi",
+      "SlotDateTime": "2025-06-05T09:00:00Z",
+      "Location": {
+        "SiteCode": "CL05",
+        "SiteName": "Clalit Ramat Gan Clinic",
+        "Address": "Weizmann St 2",
+        "City": "Ramat Gan"
+      },
+      "Status": "Open"
+    },
+    {
+      "SlotId": "SLOT-9081-17",
+      "DoctorId": "yael-navon",
+      "DoctorName": "Yael Navon",
+      "SlotDateTime": "2025-06-05T10:00:00Z",
+      "Location": {
+        "SiteCode": "CL02",
+        "SiteName": "Clalit Jerusalem Division",
+        "Address": "King George St 17",
+        "City": "Jerusalem"
+      },
+      "Status": "Open"
+    },
+    {
+      "SlotId": "SLOT-3955-18",
+      "DoctorId": "hadas-moshe",
+      "DoctorName": "Hadas Moshe",
+      "SlotDateTime": "2025-06-05T11:00:00Z",
+      "Location": {
+        "SiteCode": "CL04",
+        "SiteName": "Clalit Beer Sheva Clinic",
+        "Address": "Rager Blvd 3",
+        "City": "Beer Sheva"
+      },
+      "Status": "Open"
+    },
+    {
+      "SlotId": "SLOT-1296-19",
+      "DoctorId": "bar-eliav",
+      "DoctorName": "Bar Eliav",
+      "SlotDateTime": "2025-06-05T12:00:00Z",
+      "Location": {
+        "SiteCode": "CL05",
+        "SiteName": "Clalit Ramat Gan Clinic",
+        "Address": "Weizmann St 2",
+        "City": "Ramat Gan"
+      },
+      "Status": "Open"
+    }
+  ]
+}

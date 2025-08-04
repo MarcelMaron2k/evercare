@@ -1,0 +1,404 @@
+{
+  "doctors": [
+    {
+      "id": "yossi-cohen",
+      "firstName": "Yossi",
+      "lastName": "Cohen",
+      "specialty": "GP",
+      "clinics": [
+        {
+          "id": "MKO01",
+          "name": "Maccabi Kiryat Ono Branch",
+          "address": "Ha’atzmaut St 12",
+          "city": "Kiryat Ono"
+        },
+        {
+          "id": "MKO03",
+          "name": "Maccabi Petah Tikva Branch",
+          "address": "Be’er Sheva St 20",
+          "city": "Petah Tikva"
+        }
+      ]
+    },
+    {
+      "id": "sarah-levi",
+      "firstName": "Sarah",
+      "lastName": "Levi",
+      "specialty": "Cardiology",
+      "clinics": [
+        {
+          "id": "MKO04",
+          "name": "Maccabi Tel Aviv – Central",
+          "address": "Iben Gavirol 45",
+          "city": "Tel Aviv"
+        },
+        {
+          "id": "MKO02",
+          "name": "Maccabi Ramat Gan Branch",
+          "address": "Hahistadrut St 5",
+          "city": "Ramat Gan"
+        }
+      ]
+    },
+    {
+      "id": "dana-ben-ari",
+      "firstName": "Dana",
+      "lastName": "Ben-Ari",
+      "specialty": "Dermatology",
+      "clinics": [
+        {
+          "id": "MKO05",
+          "name": "Maccabi Haifa Branch",
+          "address": "Hanassi Blvd 10",
+          "city": "Haifa"
+        },
+        {
+          "id": "MKO01",
+          "name": "Maccabi Kiryat Ono Branch",
+          "address": "Ha’atzmaut St 12",
+          "city": "Kiryat Ono"
+        }
+      ]
+    },
+    {
+      "id": "amir-klein",
+      "firstName": "Amir",
+      "lastName": "Klein",
+      "specialty": "Orthopedics",
+      "clinics": [
+        {
+          "id": "MKO01",
+          "name": "Maccabi Kiryat Ono Branch",
+          "address": "Ha’atzmaut St 12",
+          "city": "Kiryat Ono"
+        },
+        {
+          "id": "MKO03",
+          "name": "Maccabi Petah Tikva Branch",
+          "address": "Be’er Sheva St 20",
+          "city": "Petah Tikva"
+        }
+      ]
+    },
+    {
+      "id": "yael-navon",
+      "firstName": "Yael",
+      "lastName": "Navon",
+      "specialty": "Neurology",
+      "clinics": [
+        {
+          "id": "MKO05",
+          "name": "Maccabi Haifa Branch",
+          "address": "Hanassi Blvd 10",
+          "city": "Haifa"
+        },
+        {
+          "id": "MKO01",
+          "name": "Maccabi Kiryat Ono Branch",
+          "address": "Ha’atzmaut St 12",
+          "city": "Kiryat Ono"
+        }
+      ]
+    },
+    {
+      "id": "eli-shalev",
+      "firstName": "Eli",
+      "lastName": "Shalev",
+      "specialty": "Pediatrics",
+      "clinics": [
+        {
+          "id": "MKO03",
+          "name": "Maccabi Petah Tikva Branch",
+          "address": "Be’er Sheva St 20",
+          "city": "Petah Tikva"
+        },
+        {
+          "id": "MKO02",
+          "name": "Maccabi Ramat Gan Branch",
+          "address": "Hahistadrut St 5",
+          "city": "Ramat Gan"
+        }
+      ]
+    },
+    {
+      "id": "ruth-goldberg",
+      "firstName": "Ruth",
+      "lastName": "Goldberg",
+      "specialty": "ENT",
+      "clinics": [
+        {
+          "id": "MKO02",
+          "name": "Maccabi Ramat Gan Branch",
+          "address": "Hahistadrut St 5",
+          "city": "Ramat Gan"
+        },
+        {
+          "id": "MKO04",
+          "name": "Maccabi Tel Aviv – Central",
+          "address": "Iben Gavirol 45",
+          "city": "Tel Aviv"
+        }
+      ]
+    },
+    {
+      "id": "avi-michaeli",
+      "firstName": "Avi",
+      "lastName": "Michaeli",
+      "specialty": "Ophthalmology",
+      "clinics": [
+        {
+          "id": "MKO03",
+          "name": "Maccabi Petah Tikva Branch",
+          "address": "Be’er Sheva St 20",
+          "city": "Petah Tikva"
+        },
+        {
+          "id": "MKO02",
+          "name": "Maccabi Ramat Gan Branch",
+          "address": "Hahistadrut St 5",
+          "city": "Ramat Gan"
+        }
+      ]
+    },
+    {
+      "id": "shani-shapira",
+      "firstName": "Shani",
+      "lastName": "Shapira",
+      "specialty": "Endocrinology",
+      "clinics": [
+        {
+          "id": "MKO05",
+          "name": "Maccabi Haifa Branch",
+          "address": "Hanassi Blvd 10",
+          "city": "Haifa"
+        },
+        {
+          "id": "MKO02",
+          "name": "Maccabi Ramat Gan Branch",
+          "address": "Hahistadrut St 5",
+          "city": "Ramat Gan"
+        }
+      ]
+    },
+    {
+      "id": "noam-eran",
+      "firstName": "Noam",
+      "lastName": "Eran",
+      "specialty": "Oncology",
+      "clinics": [
+        {
+          "id": "MKO05",
+          "name": "Maccabi Haifa Branch",
+          "address": "Hanassi Blvd 10",
+          "city": "Haifa"
+        },
+        {
+          "id": "MKO02",
+          "name": "Maccabi Ramat Gan Branch",
+          "address": "Hahistadrut St 5",
+          "city": "Ramat Gan"
+        }
+      ]
+    },
+    {
+      "id": "tamar-barak",
+      "firstName": "Tamar",
+      "lastName": "Barak",
+      "specialty": "Gastroenterology",
+      "clinics": [
+        {
+          "id": "MKO04",
+          "name": "Maccabi Tel Aviv – Central",
+          "address": "Iben Gavirol 45",
+          "city": "Tel Aviv"
+        },
+        {
+          "id": "MKO02",
+          "name": "Maccabi Ramat Gan Branch",
+          "address": "Hahistadrut St 5",
+          "city": "Ramat Gan"
+        }
+      ]
+    },
+    {
+      "id": "ori-hoffman",
+      "firstName": "Ori",
+      "lastName": "Hoffman",
+      "specialty": "Pulmonology",
+      "clinics": [
+        {
+          "id": "MKO02",
+          "name": "Maccabi Ramat Gan Branch",
+          "address": "Hahistadrut St 5",
+          "city": "Ramat Gan"
+        },
+        {
+          "id": "MKO03",
+          "name": "Maccabi Petah Tikva Branch",
+          "address": "Be’er Sheva St 20",
+          "city": "Petah Tikva"
+        }
+      ]
+    },
+    {
+      "id": "gal-shtern",
+      "firstName": "Gal",
+      "lastName": "Shtern",
+      "specialty": "Urology",
+      "clinics": [
+        {
+          "id": "MKO04",
+          "name": "Maccabi Tel Aviv – Central",
+          "address": "Iben Gavirol 45",
+          "city": "Tel Aviv"
+        },
+        {
+          "id": "MKO05",
+          "name": "Maccabi Haifa Branch",
+          "address": "Hanassi Blvd 10",
+          "city": "Haifa"
+        }
+      ]
+    },
+    {
+      "id": "nadav-tal",
+      "firstName": "Nadav",
+      "lastName": "Tal",
+      "specialty": "Nephrology",
+      "clinics": [
+        {
+          "id": "MKO02",
+          "name": "Maccabi Ramat Gan Branch",
+          "address": "Hahistadrut St 5",
+          "city": "Ramat Gan"
+        },
+        {
+          "id": "MKO01",
+          "name": "Maccabi Kiryat Ono Branch",
+          "address": "Ha’atzmaut St 12",
+          "city": "Kiryat Ono"
+        }
+      ]
+    },
+    {
+      "id": "michal-rosen",
+      "firstName": "Michal",
+      "lastName": "Rosen",
+      "specialty": "Psychiatry",
+      "clinics": [
+        {
+          "id": "MKO01",
+          "name": "Maccabi Kiryat Ono Branch",
+          "address": "Ha’atzmaut St 12",
+          "city": "Kiryat Ono"
+        },
+        {
+          "id": "MKO02",
+          "name": "Maccabi Ramat Gan Branch",
+          "address": "Hahistadrut St 5",
+          "city": "Ramat Gan"
+        }
+      ]
+    },
+    {
+      "id": "itai-raz",
+      "firstName": "Itai",
+      "lastName": "Raz",
+      "specialty": "Rheumatology",
+      "clinics": [
+        {
+          "id": "MKO03",
+          "name": "Maccabi Petah Tikva Branch",
+          "address": "Be’er Sheva St 20",
+          "city": "Petah Tikva"
+        },
+        {
+          "id": "MKO01",
+          "name": "Maccabi Kiryat Ono Branch",
+          "address": "Ha’atzmaut St 12",
+          "city": "Kiryat Ono"
+        }
+      ]
+    },
+    {
+      "id": "lea-peretz",
+      "firstName": "Lea",
+      "lastName": "Peretz",
+      "specialty": "Hematology",
+      "clinics": [
+        {
+          "id": "MKO03",
+          "name": "Maccabi Petah Tikva Branch",
+          "address": "Be’er Sheva St 20",
+          "city": "Petah Tikva"
+        },
+        {
+          "id": "MKO01",
+          "name": "Maccabi Kiryat Ono Branch",
+          "address": "Ha’atzmaut St 12",
+          "city": "Kiryat Ono"
+        }
+      ]
+    },
+    {
+      "id": "bar-eliav",
+      "firstName": "Bar",
+      "lastName": "Eliav",
+      "specialty": "Allergy",
+      "clinics": [
+        {
+          "id": "MKO05",
+          "name": "Maccabi Haifa Branch",
+          "address": "Hanassi Blvd 10",
+          "city": "Haifa"
+        },
+        {
+          "id": "MKO04",
+          "name": "Maccabi Tel Aviv – Central",
+          "address": "Iben Gavirol 45",
+          "city": "Tel Aviv"
+        }
+      ]
+    },
+    {
+      "id": "guy-dayan",
+      "firstName": "Guy",
+      "lastName": "Dayan",
+      "specialty": "Infectious Disease",
+      "clinics": [
+        {
+          "id": "MKO03",
+          "name": "Maccabi Petah Tikva Branch",
+          "address": "Be’er Sheva St 20",
+          "city": "Petah Tikva"
+        },
+        {
+          "id": "MKO04",
+          "name": "Maccabi Tel Aviv – Central",
+          "address": "Iben Gavirol 45",
+          "city": "Tel Aviv"
+        }
+      ]
+    },
+    {
+      "id": "hadas-moshe",
+      "firstName": "Hadas",
+      "lastName": "Moshe",
+      "specialty": "Rheumatology II",
+      "clinics": [
+        {
+          "id": "MKO05",
+          "name": "Maccabi Haifa Branch",
+          "address": "Hanassi Blvd 10",
+          "city": "Haifa"
+        },
+        {
+          "id": "MKO03",
+          "name": "Maccabi Petah Tikva Branch",
+          "address": "Be’er Sheva St 20",
+          "city": "Petah Tikva"
+        }
+      ]
+    }
+  ]
+}

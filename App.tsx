@@ -5,9 +5,11 @@ import { auth } from './firebase';
 import AuthNavigator from './navigation/AuthNavigator';
 import AppNavigator from './navigation/AppNavigator';
 import { useNotificationPermission } from './useNotificationPermission';
+import { useFallDetectionService } from './services/FallDetectionService';
 
 export default function App() {
   const [user, setUser] = useState<null | object>(null);
+  const [initializing, setInitializing] = useState(true);
   
   // Add notification permission hook
   const { 
@@ -16,10 +18,16 @@ export default function App() {
     showGalaxyInstructions 
   } = useNotificationPermission();
 
+  // Initialize fall detection service
+  useFallDetectionService();
+
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, setUser);
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setUser(user);
+      if (initializing) setInitializing(false);
+    });
     return unsubscribe;
-  }, []);
+  }, [initializing]);
 
   useEffect(() => {
     // Check notification permissions when user logs in
@@ -38,9 +46,10 @@ export default function App() {
     setupNotifications();
   }, [user, checkPermission, showGalaxyInstructions]);
 
+  // Show AuthNavigator while initializing or when no user
   return (
     <NavigationContainer>
-      {user ? <AppNavigator /> : <AuthNavigator />}
+      {!initializing && user ? <AppNavigator /> : <AuthNavigator />}
     </NavigationContainer>
   );
 }

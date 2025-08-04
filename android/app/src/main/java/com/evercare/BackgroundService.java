@@ -28,6 +28,12 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.content.pm.PackageManager;
 import androidx.core.app.ActivityCompat;
+import android.content.SharedPreferences;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 public class BackgroundService extends Service implements SensorEventListener{
 
@@ -49,6 +55,7 @@ public class BackgroundService extends Service implements SensorEventListener{
     
     private long freeFallStartTime = 0;
     private boolean inFreeFall = false;
+    private boolean fallEventProcessed = false;
 
     
     @Override
@@ -109,9 +116,10 @@ public class BackgroundService extends Service implements SensorEventListener{
                     Log.d(TAG, "Potential free fall detected, acceleration: " + acceleration);
                 }
                 
-                // Check if free fall has lasted long enough
+                // Check if free fall has lasted long enough and hasn't been processed yet
                 long freeFallDuration = System.currentTimeMillis() - freeFallStartTime;
-                if (freeFallDuration >= FREE_FALL_TIME_THRESHOLD) {
+                if (freeFallDuration >= FREE_FALL_TIME_THRESHOLD && !fallEventProcessed) {
+                    fallEventProcessed = true; // Mark as processed to prevent duplicates
                     onFreeFallDetected(acceleration, freeFallDuration);
                 }
             } else {
@@ -120,6 +128,7 @@ public class BackgroundService extends Service implements SensorEventListener{
                     Log.d(TAG, "Free fall ended, acceleration returned to: " + acceleration);
                 }
                 inFreeFall = false;
+                fallEventProcessed = false; // Reset for next fall detection
                 freeFallStartTime = 0;
             }
         }
@@ -132,36 +141,75 @@ public class BackgroundService extends Service implements SensorEventListener{
         // Show notification immediately
         showFreeFallNotification(acceleration, duration);
         
-        // Save fall event to Firebase Firestore
-        saveFallToFirebase(acceleration, duration);
+        // Save fall event to Firebase Firestore - moved to React Native side due to auth context
+        // saveFallToFirebase(acceleration, duration);
 
-        //broadcast to app
+        //broadcast to app with fall data for React Native to save
         handleFreeFallEvent(acceleration, duration);
     }
     
     private void handleFreeFallEvent(float acceleration, long duration) {
-        // Your custom free fall handling logic
-        Log.i(TAG, "Handling free fall event - implement your response here");
+        // Send broadcast with fall data for React Native to save to Firebase
+        Log.i(TAG, "Broadcasting free fall event to React Native for Firebase saving");
         
-        
-        // Example: You could send a broadcast to notify other parts of your app
         Intent freeFallIntent = new Intent("com.evercare.FREE_FALL_DETECTED");
         freeFallIntent.putExtra("acceleration", acceleration);
         freeFallIntent.putExtra("duration", duration);
+        freeFallIntent.putExtra("timestamp", System.currentTimeMillis());
+        
+        // Add location data if available
+        if (lastKnownLocation != null) {
+            freeFallIntent.putExtra("latitude", lastKnownLocation.getLatitude());
+            freeFallIntent.putExtra("longitude", lastKnownLocation.getLongitude());
+            freeFallIntent.putExtra("accuracy", lastKnownLocation.getAccuracy());
+            freeFallIntent.putExtra("provider", lastKnownLocation.getProvider());
+            freeFallIntent.putExtra("locationTimestamp", lastKnownLocation.getTime());
+        }
+        
+        // Send both regular broadcast and local broadcast
         sendBroadcast(freeFallIntent);
+        
+        // Also try LocalBroadcastManager for internal app communication
+        try {
+            LocalBroadcastManager.getInstance(this).sendBroadcast(freeFallIntent);
+            Log.i(TAG, "Local broadcast also sent");
+        } catch (Exception e) {
+            Log.e(TAG, "Error sending local broadcast: " + e.getMessage());
+        }
     }
     
     private void saveFallToFirebase(float acceleration, long duration) {
         try {
-            // Check if user is authenticated
-            FirebaseUser currentUser = mAuth.getCurrentUser();
-            if (currentUser == null) {
-                Log.w(TAG, "No authenticated user - fall event not saved to Firebase");
-                return;
+            // First try to get user ID from SharedPreferences (set by React Native via native module)
+            SharedPreferences prefs = getSharedPreferences("EverCareAuth", Context.MODE_PRIVATE);
+            String userId = prefs.getString("userId", null);
+            
+            if (userId != null) {
+                Log.d(TAG, "Found userId in SharedPreferences: " + userId);
+            } else {
+                Log.w(TAG, "No userId found in SharedPreferences - checking Firebase Auth");
+                
+                // Fallback to Firebase Auth
+                FirebaseUser currentUser = mAuth.getCurrentUser();
+                if (currentUser != null) {
+                    userId = currentUser.getUid();
+                    Log.d(TAG, "Found userId via Firebase Auth: " + userId);
+                } else {
+                    Log.w(TAG, "No authenticated user found in SharedPreferences or Firebase Auth - fall event not saved");
+                    return;
+                }
             }
             
-            String userId = currentUser.getUid();
-            Log.d(TAG, "Saving fall event for user: " + userId);
+            final String finalUserId = userId;
+            Log.d(TAG, "Saving fall event for user: " + finalUserId);
+            
+            // Check if Firebase Auth thinks we're authenticated
+            FirebaseUser currentUser = mAuth.getCurrentUser();
+            if (currentUser != null) {
+                Log.d(TAG, "Firebase Auth user: " + currentUser.getUid() + " (matches stored: " + currentUser.getUid().equals(finalUserId) + ")");
+            } else {
+                Log.w(TAG, "Firebase Auth shows no current user, but we have stored userId: " + finalUserId);
+            }
             
             // Create fall event data
             Map<String, Object> fallEvent = new HashMap<>();
@@ -169,7 +217,7 @@ public class BackgroundService extends Service implements SensorEventListener{
             fallEvent.put("acceleration", acceleration);
             fallEvent.put("duration", duration);
             fallEvent.put("deviceInfo", android.os.Build.MODEL);
-            fallEvent.put("userId", userId);
+            fallEvent.put("userId", finalUserId);
             
             // Add location data if available
             if (lastKnownLocation != null) {
@@ -193,11 +241,11 @@ public class BackgroundService extends Service implements SensorEventListener{
             
             // Save to user-specific subcollection: users/{userId}/falls
             db.collection("users")
-                .document(userId)
+                .document(finalUserId)
                 .collection("falls")
                 .add(fallEvent)
                 .addOnSuccessListener(documentReference -> {
-                    Log.d(TAG, "Fall event saved to Firebase for user " + userId + " with ID: " + documentReference.getId());
+                    Log.d(TAG, "Fall event saved to Firebase for user " + finalUserId + " with ID: " + documentReference.getId());
                 })
                 .addOnFailureListener(e -> {
                     Log.e(TAG, "Error saving fall event to Firebase: " + e.getMessage());
@@ -287,10 +335,6 @@ public class BackgroundService extends Service implements SensorEventListener{
         }
         
         Log.d(TAG, "Service destroyed");
-        
-        // Restart service if killed
-        Intent restartIntent = new Intent(getApplicationContext(), BackgroundService.class);
-        startService(restartIntent);
     }
     
     @Override

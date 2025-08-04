@@ -1,7 +1,7 @@
 // src/screens/Splash.tsx
 import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useIsFocused } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { auth, db } from '../firebase';
 import { usePermissions } from '../usePermissions';
@@ -17,18 +17,19 @@ type SplashNavProp = NativeStackNavigationProp<RootStackParamList, 'Splash'>;
 
 export default function SplashScreen() {
   const navigation = useNavigation<SplashNavProp>();
+  const isFocused = useIsFocused();
   const { hasAllPermissions, requestPermissions, loading } = usePermissions();
   const [statusText, setStatusText] = useState('Loading...');
+  const [hasNavigated, setHasNavigated] = useState(false);
 
   useEffect(() => {
+    if (hasNavigated) return; // Prevent multiple navigations
+
     const initializeApp = async () => {
       try {
         setStatusText('Setting up permissions...');
         console.log('Splash: Starting permission setup');
-        
-        // Wait a moment for the splash to show
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        
+                
         // Request permissions
         console.log('Splash: Requesting permissions');
         try {
@@ -42,7 +43,14 @@ export default function SplashScreen() {
         
         // Navigate to login after permissions are handled
         setTimeout(() => {
-          navigation.replace('Login');
+          if (!hasNavigated && isFocused) {
+            try {
+              setHasNavigated(true);
+              navigation.replace('Login');
+            } catch (navError) {
+              console.log('Navigation failed, probably context switched:', navError);
+            }
+          }
         }, 1000);
         
       } catch (error) {
@@ -50,13 +58,20 @@ export default function SplashScreen() {
         setStatusText('Setup complete');
         // Navigate anyway after error
         setTimeout(() => {
-          navigation.replace('Login');
+          if (!hasNavigated && isFocused) {
+            try {
+              setHasNavigated(true);
+              navigation.replace('Login');
+            } catch (navError) {
+              console.log('Navigation failed, probably context switched:', navError);
+            }
+          }
         }, 2000);
       }
     };
 
     initializeApp();
-  }, [navigation, requestPermissions]);
+  }, []); // Empty dependency array - only run once on mount
 
   return (
     <View style={styles.container}>
@@ -75,6 +90,7 @@ const styles = StyleSheet.create({
   text: {
     fontSize:  28,
     fontWeight:'bold',
+    color: '#666',
     marginBottom: 20,
   },
   statusText: {

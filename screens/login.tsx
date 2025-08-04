@@ -11,6 +11,8 @@ import {
 } from 'react-native';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../firebase';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { NativeModules } from 'react-native';
 
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { AuthStackParamList } from '../navigation/AuthNavigator';
@@ -25,9 +27,30 @@ export default function LoginScreen({ navigation }: LoginScreenProps) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  const storeUserIdNatively = async (userId: string) => {
+    try {
+      // Store in AsyncStorage for React Native
+      await AsyncStorage.setItem('userId', userId);
+      console.log('AsyncStorage: Stored userId:', userId);
+      
+      // Store in SharedPreferences via native module for BackgroundService access
+      const { AuthStorage } = NativeModules;
+      if (AuthStorage) {
+        await AuthStorage.storeUserId(userId);
+        console.log('Native Module: Stored userId in SharedPreferences');
+      } else {
+        console.log('AuthStorage native module not available');
+      }
+    } catch (error) {
+      console.log('Error storing user ID:', error);
+    }
+  };
+
   const handleLogin = async () => {
     try {
-      await signInWithEmailAndPassword(auth, email, password);
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      // Store user ID for background service access
+      await storeUserIdNatively(userCredential.user.uid);
       // No navigation.replace here – root App.tsx will switch flows automatically
     } catch (err: any) {
       Alert.alert('Login Failed', err.message);

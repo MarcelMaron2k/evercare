@@ -15,6 +15,19 @@ import androidx.core.app.NotificationCompat;
 import android.os.Build;
 import android.app.PendingIntent;
 import android.os.Vibrator;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import java.util.HashMap;
+import java.util.Map;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
+import android.content.pm.PackageManager;
+import androidx.core.app.ActivityCompat;
 
 public class BackgroundService extends Service implements SensorEventListener{
 
@@ -25,6 +38,10 @@ public class BackgroundService extends Service implements SensorEventListener{
     private SensorManager sensorManager;
     private Sensor accelerometer;
     private NotificationManager notificationManager;
+    private FirebaseFirestore db;
+    private FirebaseAuth mAuth;
+    private LocationManager locationManager;
+    private Location lastKnownLocation;
 
     private static final float FREE_FALL_THRESHOLD = 2.0f; // m/s²
     private static final long FREE_FALL_TIME_THRESHOLD = 50; // milliseconds
@@ -46,6 +63,14 @@ public class BackgroundService extends Service implements SensorEventListener{
         // Initialize notification manager and create channel
         notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         createNotificationChannel();
+        
+        // Initialize Firebase
+        db = FirebaseFirestore.getInstance();
+        mAuth = FirebaseAuth.getInstance();
+        
+        // Initialize location manager
+        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        requestLocationUpdates();
 
         if (accelerometer != null) {
             // Register for accelerometer updates
@@ -79,6 +104,7 @@ public class BackgroundService extends Service implements SensorEventListener{
                 if (!inFreeFall) {
                     // Start of potential free fall
                     freeFallStartTime = System.currentTimeMillis();
+                    
                     inFreeFall = true;
                     Log.d(TAG, "Potential free fall detected, acceleration: " + acceleration);
                 }
@@ -106,16 +132,10 @@ public class BackgroundService extends Service implements SensorEventListener{
         // Show notification immediately
         showFreeFallNotification(acceleration, duration);
         
-        // Vibrate device to alert user
-        vibrateDevice();
+        // Save fall event to Firebase Firestore
+        saveFallToFirebase(acceleration, duration);
 
-        // Add your free fall response logic here
-        // Examples:
-        // - Send notification
-        // - Save to database
-        // - Send to server
-        // - Trigger emergency response
-        
+        //broadcast to app
         handleFreeFallEvent(acceleration, duration);
     }
     
@@ -123,12 +143,127 @@ public class BackgroundService extends Service implements SensorEventListener{
         // Your custom free fall handling logic
         Log.i(TAG, "Handling free fall event - implement your response here");
         
+        
         // Example: You could send a broadcast to notify other parts of your app
         Intent freeFallIntent = new Intent("com.evercare.FREE_FALL_DETECTED");
         freeFallIntent.putExtra("acceleration", acceleration);
         freeFallIntent.putExtra("duration", duration);
         sendBroadcast(freeFallIntent);
     }
+    
+    private void saveFallToFirebase(float acceleration, long duration) {
+        try {
+            // Check if user is authenticated
+            FirebaseUser currentUser = mAuth.getCurrentUser();
+            if (currentUser == null) {
+                Log.w(TAG, "No authenticated user - fall event not saved to Firebase");
+                return;
+            }
+            
+            String userId = currentUser.getUid();
+            Log.d(TAG, "Saving fall event for user: " + userId);
+            
+            // Create fall event data
+            Map<String, Object> fallEvent = new HashMap<>();
+            fallEvent.put("timestamp", new Date());
+            fallEvent.put("acceleration", acceleration);
+            fallEvent.put("duration", duration);
+            fallEvent.put("deviceInfo", android.os.Build.MODEL);
+            fallEvent.put("userId", userId);
+            
+            // Add location data if available
+            if (lastKnownLocation != null) {
+                Map<String, Object> locationData = new HashMap<>();
+                locationData.put("latitude", lastKnownLocation.getLatitude());
+                locationData.put("longitude", lastKnownLocation.getLongitude());
+                locationData.put("accuracy", lastKnownLocation.getAccuracy());
+                locationData.put("provider", lastKnownLocation.getProvider());
+                locationData.put("locationTimestamp", new Date(lastKnownLocation.getTime()));
+                fallEvent.put("location", locationData);
+                
+                Log.d(TAG, "Fall location: " + lastKnownLocation.getLatitude() + ", " + lastKnownLocation.getLongitude());
+            } else {
+                fallEvent.put("location", null);
+                Log.w(TAG, "No location data available for fall event");
+            }
+            
+            // Format date for better readability
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
+            fallEvent.put("readableTimestamp", dateFormat.format(new Date()));
+            
+            // Save to user-specific subcollection: users/{userId}/falls
+            db.collection("users")
+                .document(userId)
+                .collection("falls")
+                .add(fallEvent)
+                .addOnSuccessListener(documentReference -> {
+                    Log.d(TAG, "Fall event saved to Firebase for user " + userId + " with ID: " + documentReference.getId());
+                })
+                .addOnFailureListener(e -> {
+                    Log.e(TAG, "Error saving fall event to Firebase: " + e.getMessage());
+                });
+                
+        } catch (Exception e) {
+            Log.e(TAG, "Exception while saving fall to Firebase: " + e.getMessage());
+        }
+    }
+    
+    private void requestLocationUpdates() {
+        try {
+            if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && 
+                ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                Log.w(TAG, "Location permissions not granted");
+                return;
+            }
+            
+            // Request location updates from both GPS and Network providers
+            if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+                locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 30000, 10, locationListener);
+                Log.d(TAG, "GPS location updates requested");
+            }
+            
+            if (locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
+                locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 30000, 10, locationListener);
+                Log.d(TAG, "Network location updates requested");
+            }
+            
+            // Get last known location
+            Location gpsLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+            Location networkLocation = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+            
+            if (gpsLocation != null) {
+                lastKnownLocation = gpsLocation;
+            } else if (networkLocation != null) {
+                lastKnownLocation = networkLocation;
+            }
+            
+        } catch (Exception e) {
+            Log.e(TAG, "Error requesting location updates: " + e.getMessage());
+        }
+    }
+    
+    private LocationListener locationListener = new LocationListener() {
+        @Override
+        public void onLocationChanged(Location location) {
+            lastKnownLocation = location;
+            Log.d(TAG, "Location updated: " + location.getLatitude() + ", " + location.getLongitude());
+        }
+        
+        @Override
+        public void onProviderEnabled(String provider) {
+            Log.d(TAG, "Location provider enabled: " + provider);
+        }
+        
+        @Override
+        public void onProviderDisabled(String provider) {
+            Log.d(TAG, "Location provider disabled: " + provider);
+        }
+        
+        @Override
+        public void onStatusChanged(String provider, int status, android.os.Bundle extras) {
+            Log.d(TAG, "Location provider status changed: " + provider + " status: " + status);
+        }
+    };
     
     @Override
     public IBinder onBind(Intent intent) {
@@ -143,6 +278,12 @@ public class BackgroundService extends Service implements SensorEventListener{
         if (sensorManager != null) {
             sensorManager.unregisterListener(this);
             Log.d(TAG, "Accelerometer unregistered");
+        }
+        
+        // Stop location updates
+        if (locationManager != null) {
+            locationManager.removeUpdates(locationListener);
+            Log.d(TAG, "Location updates stopped");
         }
         
         Log.d(TAG, "Service destroyed");
@@ -182,30 +323,31 @@ public class BackgroundService extends Service implements SensorEventListener{
             Log.w(TAG, "Notifications are disabled for this app");
         }
         
-        // Create intent to open app when notification is tapped
-        Intent intent = new Intent(this, MainActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 
+        // Create intent to call emergency number (101)
+        Intent callIntent = new Intent(Intent.ACTION_CALL);
+        callIntent.setData(android.net.Uri.parse("tel:101"));
+        callIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, callIntent, 
             PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
         
-        // Build the notification with maximum visibility settings
+        // Build the notification with help message
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
-                .setSmallIcon(android.R.drawable.stat_sys_warning) // Different system icon
-                .setContentTitle("🚨 CRITICAL: FREE FALL DETECTED!")
-                .setContentText(String.format("EMERGENCY - Duration: %dms | G-Force: %.2f", duration, acceleration))
+                .setSmallIcon(android.R.drawable.stat_sys_warning)
+                .setContentTitle("Fall Detected")
+                .setContentText("Tap here if you need help")
                 .setStyle(new NotificationCompat.BigTextStyle()
-                        .bigText(String.format("🚨 EMERGENCY ALERT 🚨\n\nFree fall event detected!\n\nDuration: %d milliseconds\nAcceleration: %.2f m/s²\n\nDevice may have been dropped or fallen!\n\nTap to open app immediately.", duration, acceleration)))
-                .setPriority(NotificationCompat.PRIORITY_MAX) // Changed to MAX
+                        .bigText("A fall has been detected. If you need emergency assistance, tap this notification to call 101."))
+                .setPriority(NotificationCompat.PRIORITY_MAX)
                 .setCategory(NotificationCompat.CATEGORY_ALARM)
                 .setAutoCancel(true)
                 .setContentIntent(pendingIntent)
                 .setVibrate(new long[]{0, 1000, 500, 1000})
-                .setDefaults(NotificationCompat.DEFAULT_ALL) // All defaults
+                .setDefaults(NotificationCompat.DEFAULT_ALL)
                 .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
                 .setOngoing(false)
                 .setShowWhen(true)
                 .setWhen(System.currentTimeMillis())
-                .setFullScreenIntent(pendingIntent, true) // Show as full screen on lock screen
+                .setFullScreenIntent(pendingIntent, true)
                 .setColor(android.graphics.Color.RED)
                 .setBadgeIconType(NotificationCompat.BADGE_ICON_SMALL);
         
@@ -227,23 +369,4 @@ public class BackgroundService extends Service implements SensorEventListener{
         }
     }
     
-    private void vibrateDevice() {
-        try {
-            Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-            if (vibrator != null && vibrator.hasVibrator()) {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                    // New vibration pattern for newer devices
-                    long[] pattern = {0, 500, 200, 500, 200, 1000};
-                    vibrator.vibrate(android.os.VibrationEffect.createWaveform(pattern, -1));
-                } else {
-                    // Legacy vibration for older devices
-                    long[] pattern = {0, 500, 200, 500, 200, 1000};
-                    vibrator.vibrate(pattern, -1);
-                }
-                Log.d(TAG, "Device vibration triggered");
-            }
-        } catch (Exception e) {
-            Log.e(TAG, "Error triggering vibration: " + e.getMessage());
-        }
-    }
 } 

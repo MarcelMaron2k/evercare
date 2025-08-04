@@ -12,6 +12,7 @@ import type { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
 
 import { auth, db } from '../firebase';
 import { collection, getDocs, query } from 'firebase/firestore';
+import { usePermissions } from '../usePermissions';
 
 type TabParamList = {
   Home: undefined;

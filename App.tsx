@@ -22,22 +22,21 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    // Check and setup notification permissions when app starts
+    // Check notification permissions when user logs in
     const setupNotifications = async () => {
-      if (user) { // Only check after user is authenticated
-        const enabled = await checkPermission();
-        
-        if (!enabled) {
+      if (user) {
+        const notificationEnabled = await checkPermission();
+        if (!notificationEnabled) {
           // Wait a bit then show setup instructions for Galaxy devices
           setTimeout(() => {
             showGalaxyInstructions();
-          }, 3000); // Wait 3 seconds after login
+          }, 2000);
         }
       }
     };
 
     setupNotifications();
-  }, [user, checkPermission, showGalaxyInstructions]); // Run when user logs in
+  }, [user, checkPermission, showGalaxyInstructions]);
 
   return (
     <NavigationContainer>

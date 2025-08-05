@@ -9,10 +9,12 @@ import {
   Alert,
   Pressable
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../firebase';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { NativeModules } from 'react-native';
+import { useTheme } from '../utils/theme';
 
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { AuthStackParamList } from '../navigation/AuthNavigator';
@@ -24,6 +26,7 @@ interface LoginScreenProps {
 }
 
 export default function LoginScreen({ navigation }: LoginScreenProps) {
+  const { colors } = useTheme();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -58,11 +61,16 @@ export default function LoginScreen({ navigation }: LoginScreenProps) {
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Login</Text>
+    <SafeAreaView style={[styles.container, { backgroundColor: colors.background }]}>
+      <Text style={[styles.title, { color: colors.text }]}>Login</Text>
       <TextInput
         placeholder="Email"
-        style={styles.input}
+        placeholderTextColor={colors.textSecondary}
+        style={[styles.input, { 
+          borderColor: colors.border, 
+          backgroundColor: colors.card,
+          color: colors.text 
+        }]}
         value={email}
         onChangeText={setEmail}
         autoCapitalize="none"
@@ -70,22 +78,27 @@ export default function LoginScreen({ navigation }: LoginScreenProps) {
       />
       <TextInput
         placeholder="Password"
-        style={styles.input}
+        placeholderTextColor={colors.textSecondary}
+        style={[styles.input, { 
+          borderColor: colors.border, 
+          backgroundColor: colors.card,
+          color: colors.text 
+        }]}
         value={password}
         onChangeText={setPassword}
         secureTextEntry
       />
       <Button title="Sign In" onPress={handleLogin} />
       <Pressable onPress={() => navigation.navigate('Signup')}>
-        <Text style={styles.link}>Don't have an account? Sign up</Text>
+        <Text style={[styles.link, { color: colors.primary }]}>Don't have an account? Sign up</Text>
       </Pressable>
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: { padding: 24, flex: 1, justifyContent: 'center' },
   title: { fontSize: 32, marginBottom: 24, textAlign: 'center' },
-  input: { borderWidth: 1, borderColor: '#ccc', padding: 12, borderRadius: 6, marginBottom: 12 },
-  link: { color: '#007bff', marginTop: 12, textAlign: 'center' },
+  input: { borderWidth: 1, padding: 12, borderRadius: 6, marginBottom: 12 },
+  link: { marginTop: 12, textAlign: 'center' },
 });

@@ -3,12 +3,15 @@ import React, { useState } from 'react';
 import {
   View, Text, TextInput, Button, StyleSheet, Alert
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth }                           from '../firebase';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { NativeModules } from 'react-native';
+import { useTheme } from '../utils/theme';
 
 export default function SignupScreen() {
+  const { colors } = useTheme();
   const [email,           setEmail]           = useState('');
   const [password,        setPassword]        = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -48,30 +51,48 @@ export default function SignupScreen() {
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Sign Up</Text>
+    <SafeAreaView style={[styles.container, { backgroundColor: colors.background }]}>
+      <Text style={[styles.title, { color: colors.text }]}>Sign Up</Text>
       <TextInput
-        placeholder="Email" style={styles.input}
+        placeholder="Email" 
+        placeholderTextColor={colors.textSecondary}
+        style={[styles.input, { 
+          borderColor: colors.border, 
+          backgroundColor: colors.card,
+          color: colors.text 
+        }]}
         value={email} onChangeText={setEmail}
         autoCapitalize="none" keyboardType="email-address"
       />
       <TextInput
-        placeholder="Password" style={styles.input}
+        placeholder="Password" 
+        placeholderTextColor={colors.textSecondary}
+        style={[styles.input, { 
+          borderColor: colors.border, 
+          backgroundColor: colors.card,
+          color: colors.text 
+        }]}
         value={password} onChangeText={setPassword}
         secureTextEntry
       />
       <TextInput
-        placeholder="Confirm Password" style={styles.input}
+        placeholder="Confirm Password" 
+        placeholderTextColor={colors.textSecondary}
+        style={[styles.input, { 
+          borderColor: colors.border, 
+          backgroundColor: colors.card,
+          color: colors.text 
+        }]}
         value={confirmPassword} onChangeText={setConfirmPassword}
         secureTextEntry
       />
       <Button title="Create Account" onPress={handleSignup} />
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container:{ padding:24, flex:1, justifyContent:'center' },
   title:    { fontSize:32, marginBottom:24, textAlign:'center' },
-  input:    { borderWidth:1, borderColor:'#ccc', padding:12, borderRadius:6, marginBottom:12 }
+  input:    { borderWidth:1, padding:12, borderRadius:6, marginBottom:12 }
 });

@@ -34,6 +34,8 @@ import java.io.FileInputStream;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+import android.content.BroadcastReceiver;
+import android.content.IntentFilter;
 
 public class BackgroundService extends Service implements SensorEventListener{
 
@@ -48,6 +50,8 @@ public class BackgroundService extends Service implements SensorEventListener{
     private FirebaseAuth mAuth;
     private LocationManager locationManager;
     private Location lastKnownLocation;
+    private String caretakerPhone = null;
+    private BroadcastReceiver settingsReceiver;
 
     private static final float FREE_FALL_THRESHOLD = 2.0f; // m/s²
     private static final long FREE_FALL_TIME_THRESHOLD = 50; // milliseconds
@@ -78,6 +82,12 @@ public class BackgroundService extends Service implements SensorEventListener{
         // Initialize location manager
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         requestLocationUpdates();
+        
+        // Initialize caretaker phone to null - will be set via broadcast from React Native
+        caretakerPhone = null;
+        
+        // Register broadcast receiver for settings updates
+        registerSettingsReceiver();
 
         if (accelerometer != null) {
             // Register for accelerometer updates
@@ -91,7 +101,6 @@ public class BackgroundService extends Service implements SensorEventListener{
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        
         Log.d("FallDetection","Service Started");
         return START_STICKY;
     }
@@ -140,9 +149,6 @@ public class BackgroundService extends Service implements SensorEventListener{
 
         // Show notification immediately
         showFreeFallNotification(acceleration, duration);
-        
-        // Save fall event to Firebase Firestore - moved to React Native side due to auth context
-        // saveFallToFirebase(acceleration, duration);
 
         //broadcast to app with fall data for React Native to save
         handleFreeFallEvent(acceleration, duration);
@@ -177,85 +183,6 @@ public class BackgroundService extends Service implements SensorEventListener{
             Log.e(TAG, "Error sending local broadcast: " + e.getMessage());
         }
     }
-    
-    private void saveFallToFirebase(float acceleration, long duration) {
-        try {
-            // First try to get user ID from SharedPreferences (set by React Native via native module)
-            SharedPreferences prefs = getSharedPreferences("EverCareAuth", Context.MODE_PRIVATE);
-            String userId = prefs.getString("userId", null);
-            
-            if (userId != null) {
-                Log.d(TAG, "Found userId in SharedPreferences: " + userId);
-            } else {
-                Log.w(TAG, "No userId found in SharedPreferences - checking Firebase Auth");
-                
-                // Fallback to Firebase Auth
-                FirebaseUser currentUser = mAuth.getCurrentUser();
-                if (currentUser != null) {
-                    userId = currentUser.getUid();
-                    Log.d(TAG, "Found userId via Firebase Auth: " + userId);
-                } else {
-                    Log.w(TAG, "No authenticated user found in SharedPreferences or Firebase Auth - fall event not saved");
-                    return;
-                }
-            }
-            
-            final String finalUserId = userId;
-            Log.d(TAG, "Saving fall event for user: " + finalUserId);
-            
-            // Check if Firebase Auth thinks we're authenticated
-            FirebaseUser currentUser = mAuth.getCurrentUser();
-            if (currentUser != null) {
-                Log.d(TAG, "Firebase Auth user: " + currentUser.getUid() + " (matches stored: " + currentUser.getUid().equals(finalUserId) + ")");
-            } else {
-                Log.w(TAG, "Firebase Auth shows no current user, but we have stored userId: " + finalUserId);
-            }
-            
-            // Create fall event data
-            Map<String, Object> fallEvent = new HashMap<>();
-            fallEvent.put("timestamp", new Date());
-            fallEvent.put("acceleration", acceleration);
-            fallEvent.put("duration", duration);
-            fallEvent.put("deviceInfo", android.os.Build.MODEL);
-            fallEvent.put("userId", finalUserId);
-            
-            // Add location data if available
-            if (lastKnownLocation != null) {
-                Map<String, Object> locationData = new HashMap<>();
-                locationData.put("latitude", lastKnownLocation.getLatitude());
-                locationData.put("longitude", lastKnownLocation.getLongitude());
-                locationData.put("accuracy", lastKnownLocation.getAccuracy());
-                locationData.put("provider", lastKnownLocation.getProvider());
-                locationData.put("locationTimestamp", new Date(lastKnownLocation.getTime()));
-                fallEvent.put("location", locationData);
-                
-                Log.d(TAG, "Fall location: " + lastKnownLocation.getLatitude() + ", " + lastKnownLocation.getLongitude());
-            } else {
-                fallEvent.put("location", null);
-                Log.w(TAG, "No location data available for fall event");
-            }
-            
-            // Format date for better readability
-            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
-            fallEvent.put("readableTimestamp", dateFormat.format(new Date()));
-            
-            // Save to user-specific subcollection: users/{userId}/falls
-            db.collection("users")
-                .document(finalUserId)
-                .collection("falls")
-                .add(fallEvent)
-                .addOnSuccessListener(documentReference -> {
-                    Log.d(TAG, "Fall event saved to Firebase for user " + finalUserId + " with ID: " + documentReference.getId());
-                })
-                .addOnFailureListener(e -> {
-                    Log.e(TAG, "Error saving fall event to Firebase: " + e.getMessage());
-                });
-                
-        } catch (Exception e) {
-            Log.e(TAG, "Exception while saving fall to Firebase: " + e.getMessage());
-        }
-    }
-    
     private void requestLocationUpdates() {
         try {
             if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && 
@@ -312,6 +239,49 @@ public class BackgroundService extends Service implements SensorEventListener{
             Log.d(TAG, "Location provider status changed: " + provider + " status: " + status);
         }
     };
+
+    private void registerSettingsReceiver() {
+        settingsReceiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                Log.i(TAG, "=== BackgroundService BroadcastReceiver.onReceive called ===");
+                Log.i(TAG, "Received broadcast with action: " + intent.getAction());
+                
+                if ("com.evercare.REFRESH_CARETAKER_SETTINGS".equals(intent.getAction())) {
+                    Log.i(TAG, "=== Processing caretaker settings refresh broadcast ===");
+                    
+                    // Get caretaker phone from broadcast extras
+                    String newCaretakerPhone = intent.getStringExtra("caretakerPhone");
+                    String caretakerName = intent.getStringExtra("caretakerName");
+                    
+                    Log.i(TAG, "Extracted from broadcast - Phone: " + (newCaretakerPhone != null ? newCaretakerPhone : "null"));
+                    Log.i(TAG, "Extracted from broadcast - Name: " + (caretakerName != null ? caretakerName : "null"));
+                    
+                    // Update the caretaker phone directly
+                    String oldPhone = caretakerPhone;
+                    caretakerPhone = (newCaretakerPhone != null && !newCaretakerPhone.trim().isEmpty()) ? newCaretakerPhone.trim() : null;
+                    
+                    Log.i(TAG, "Phone updated: '" + (oldPhone != null ? oldPhone : "null") + "' -> '" + (caretakerPhone != null ? caretakerPhone : "null") + "'");
+                    Log.i(TAG, "Will use " + (caretakerPhone != null ? ("caretaker: " + caretakerPhone) : "emergency services (101)") + " for fall notifications");
+                } else {
+                    Log.d(TAG, "Ignoring broadcast with unrecognized action: " + intent.getAction());
+                }
+            }
+        };
+        
+        IntentFilter filter = new IntentFilter("com.evercare.REFRESH_CARETAKER_SETTINGS");
+        
+        // Use RECEIVER_NOT_EXPORTED for internal app broadcasts
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            registerReceiver(settingsReceiver, filter, Context.RECEIVER_NOT_EXPORTED);
+            Log.i(TAG, "Registered broadcast receiver with RECEIVER_NOT_EXPORTED (API 33+)");
+        } else {
+            registerReceiver(settingsReceiver, filter);
+            Log.i(TAG, "Registered broadcast receiver (API < 33)");
+        }
+        
+        Log.d(TAG, "Settings broadcast receiver registered");
+    }
     
     @Override
     public IBinder onBind(Intent intent) {
@@ -332,6 +302,16 @@ public class BackgroundService extends Service implements SensorEventListener{
         if (locationManager != null) {
             locationManager.removeUpdates(locationListener);
             Log.d(TAG, "Location updates stopped");
+        }
+        
+        // Unregister settings receiver
+        if (settingsReceiver != null) {
+            try {
+                unregisterReceiver(settingsReceiver);
+                Log.d(TAG, "Settings broadcast receiver unregistered");
+            } catch (Exception e) {
+                Log.e(TAG, "Error unregistering settings receiver: " + e.getMessage());
+            }
         }
         
         Log.d(TAG, "Service destroyed");
@@ -367,9 +347,15 @@ public class BackgroundService extends Service implements SensorEventListener{
             Log.w(TAG, "Notifications are disabled for this app");
         }
         
-        // Create intent to call emergency number (101)
+        // Determine which phone number to call
+        Log.i(TAG, "Creating fall notification - caretakerPhone value: " + (caretakerPhone != null ? caretakerPhone : "null"));
+        String phoneNumber = (caretakerPhone != null && !caretakerPhone.trim().isEmpty()) ? caretakerPhone : "101";
+        String contactType = (caretakerPhone != null && !caretakerPhone.trim().isEmpty()) ? "your caretaker" : "emergency services (101)";
+        Log.i(TAG, "Will call: " + phoneNumber + " (" + contactType + ")");
+        
+        // Create intent to call the appropriate number
         Intent callIntent = new Intent(Intent.ACTION_CALL);
-        callIntent.setData(android.net.Uri.parse("tel:101"));
+        callIntent.setData(android.net.Uri.parse("tel:" + phoneNumber));
         callIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, callIntent, 
             PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
@@ -380,7 +366,7 @@ public class BackgroundService extends Service implements SensorEventListener{
                 .setContentTitle("Fall Detected")
                 .setContentText("Tap here if you need help")
                 .setStyle(new NotificationCompat.BigTextStyle()
-                        .bigText("A fall has been detected. If you need emergency assistance, tap this notification to call 101."))
+                        .bigText("A fall has been detected. If you need emergency assistance, tap this notification to call " + contactType + "."))
                 .setPriority(NotificationCompat.PRIORITY_MAX)
                 .setCategory(NotificationCompat.CATEGORY_ALARM)
                 .setAutoCancel(true)

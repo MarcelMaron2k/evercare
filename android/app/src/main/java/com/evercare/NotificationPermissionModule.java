@@ -34,7 +34,7 @@ public class NotificationPermissionModule extends ReactContextBaseJavaModule {
             NotificationManager nm = (NotificationManager) getReactApplicationContext()
                 .getSystemService(Context.NOTIFICATION_SERVICE);
             boolean enabled = nm.areNotificationsEnabled();
-            Log.d(TAG, "Notifications enabled: " + enabled);
+            //Log.d(TAG, "Notifications enabled: " + enabled);
             promise.resolve(enabled);
         } catch (Exception e) {
             Log.e(TAG, "Error checking notification permission: " + e.getMessage());

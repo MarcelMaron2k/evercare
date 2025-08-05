@@ -36,7 +36,7 @@ export const useNotificationPermission = (): UseNotificationPermissionReturn => 
       
       const enabled = await NotificationPermission.areNotificationsEnabled();
       setHasPermission(enabled);
-      console.log('Notification permission check:', enabled);
+      //console.log('Notification permission check:', enabled);
       return enabled;
     } catch (error) {
       console.error('Error checking notification permission:', error);

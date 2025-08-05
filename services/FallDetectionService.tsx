@@ -23,6 +23,20 @@ export const useFallDetectionService = () => {
 
     console.log('FallDetectionService: Setting up fall detection listener');
 
+    // Start the foreground service
+    const { ForegroundServiceModule } = NativeModules;
+    if (ForegroundServiceModule) {
+      ForegroundServiceModule.startForegroundService()
+        .then((result: string) => {
+          console.log('FallDetectionService: Foreground service started -', result);
+        })
+        .catch((error: any) => {
+          console.error('FallDetectionService: Failed to start foreground service -', error);
+        });
+    } else {
+      console.log('FallDetectionService: ForegroundServiceModule not available');
+    }
+
     const subscription = DeviceEventEmitter.addListener(
       'FREE_FALL_DETECTED',
       async (eventData: FallEventData) => {
@@ -36,7 +50,7 @@ export const useFallDetectionService = () => {
           }
 
           // Create fall event data
-          const fallEvent = {
+          const fallEvent: any = {
             timestamp: new Date(eventData.timestamp),
             acceleration: eventData.acceleration,
             duration: eventData.duration,
@@ -73,6 +87,18 @@ export const useFallDetectionService = () => {
     return () => {
       console.log('FallDetectionService: Cleaning up fall detection listener');
       subscription.remove();
+      
+      // Stop the foreground service
+      const { ForegroundServiceModule } = NativeModules;
+      if (ForegroundServiceModule) {
+        ForegroundServiceModule.stopForegroundService()
+          .then((result: string) => {
+            console.log('FallDetectionService: Foreground service stopped -', result);
+          })
+          .catch((error: any) => {
+            console.error('FallDetectionService: Failed to stop foreground service -', error);
+          });
+      }
     };
   }, []);
 };

@@ -28,6 +28,8 @@ public class MainApplication extends Application implements ReactApplication {
             List<ReactPackage> packages = new PackageList(this).getPackages();
             packages.add(new NotificationPermissionPackage());
             packages.add(new AuthStoragePackage());
+            packages.add(new ForegroundServicePackage());
+            packages.add(new SettingsPackage());
             return packages;
         }
 

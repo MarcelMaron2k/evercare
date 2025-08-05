@@ -1,37 +1,40 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { AppStackParamList } from '../navigation/AppNavigator';
-// Adjust this import path to where your React Navigation types are defined.
-// If you haven’t typed your navigator, you can replace `RootStackParamList` with `any`.
+import { useTheme } from '../utils/theme';
+
 type Props = NativeStackScreenProps<AppStackParamList, 'AppointmentCenter'>;
 
 const AppointmentCenter: React.FC<Props> = ({ navigation }) => {
+  const { colors } = useTheme();
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Appointment Center</Text>
+    <SafeAreaView style={[styles.container, { backgroundColor: colors.background }]}>
+      <Text style={[styles.title, { color: colors.text }]}>Appointment Center</Text>
 
       <TouchableOpacity
-        style={styles.button}
+        style={[styles.button, { backgroundColor: colors.primary }]}
         onPress={() => navigation.navigate('Appointments')}
       >
         <Text style={styles.buttonText}>Add Appointment</Text>
       </TouchableOpacity>
 
       <TouchableOpacity
-        style={styles.button}
+        style={[styles.button, { backgroundColor: colors.primary }]}
         onPress={() => navigation.navigate('UpcomingAppointments')}
       >
         <Text style={styles.buttonText}>Upcoming Appointments</Text>
       </TouchableOpacity>
 
       <TouchableOpacity
-        style={styles.button}
+        style={[styles.button, { backgroundColor: colors.primary }]}
         onPress={() => navigation.navigate('PastAppointments')}
       >
         <Text style={styles.buttonText}>Past Appointments</Text>
       </TouchableOpacity>
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -40,7 +43,6 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 24,
     justifyContent: 'flex-start',
-    backgroundColor: '#fff',
   },
   title: {
     fontSize: 24,
@@ -49,7 +51,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   button: {
-    backgroundColor: '#007AFF',
     paddingVertical: 14,
     paddingHorizontal: 16,
     borderRadius: 8,

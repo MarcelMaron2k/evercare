@@ -12,10 +12,13 @@ import {
   KeyboardAvoidingView,
   Platform,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import firebase, { auth, db } from '../firebase';
 import { Picker } from '@react-native-picker/picker';
+import { useTheme } from '../utils/theme';
 
 export default function MedicationScreen() {
+  const { colors } = useTheme();
   const uid = auth.currentUser!.uid;
   const medsRef = db.collection('users').doc(uid).collection('medications');
 
@@ -143,125 +146,152 @@ export default function MedicationScreen() {
   };
 
   return (
-    <KeyboardAvoidingView
-      style={styles.container}
-      behavior={Platform.OS === 'ios' ? 'padding' : undefined}
-    >
-      {/* Form */}
-      <View style={styles.form}>
-        <Text style={styles.label}>Drug Name</Text>
-        <TextInput
-          style={styles.input}
-          placeholder="Search drug…"
-          value={searchText || name}
-          onChangeText={t => {
-            setSearchText(t);
-            setName('');
-          }}
-        />
-        {searchText.length >= 2 && suggestions.length > 0 && (
-          <View style={styles.suggestionsContainer}>
-            {suggestions.map(s => (
-              <TouchableOpacity
-                key={s}
-                onPress={() => {
-                  setName(s);
-                  setSearchText('');
-                  setSuggestions([]);
-                }}
-                style={styles.suggestionItem}
-              >
-                <Text>{s}</Text>
-              </TouchableOpacity>
-            ))}
-          </View>
-        )}
-
-        <Text style={styles.label}>Amount (units per dose)</Text>
-        <TextInput
-          style={styles.input}
-          keyboardType="number-pad"
-          value={amount.toString()}
-          onChangeText={t => setAmount(+t || 1)}
-        />
-
-        <Text style={styles.label}>Frequency</Text>
-        <View style={styles.row}>
+    <SafeAreaView style={[styles.container, { backgroundColor: colors.background }]}>
+      <KeyboardAvoidingView
+        style={styles.keyboardView}
+        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+      >
+        {/* Form */}
+        <View style={[styles.form, { backgroundColor: colors.card }]}>
+          <Text style={[styles.label, { color: colors.text }]}>Drug Name</Text>
           <TextInput
-            style={styles.smallInput}
-            keyboardType="number-pad"
-            value={doseCount.toString()}
-            onChangeText={t => setDoseCount(+t || 1)}
+            style={[styles.input, { 
+              borderColor: colors.border, 
+              backgroundColor: colors.background,
+              color: colors.text 
+            }]}
+            placeholder="Search drug…"
+            placeholderTextColor={colors.textSecondary}
+            value={searchText || name}
+            onChangeText={t => {
+              setSearchText(t);
+              setName('');
+            }}
           />
-          <Text style={styles.centerText}>per</Text>
-          <TextInput
-            style={styles.smallInput}
-            keyboardType="number-pad"
-            value={periodCount.toString()}
-            onChangeText={t => setPeriodCount(+t || 1)}
-          />
-          <Picker
-            selectedValue={periodUnit}
-            style={styles.picker}
-            onValueChange={v => setPeriodUnit(v as any)}
-          >
-            <Picker.Item label="day" value="day" />
-            <Picker.Item label="week" value="week" />
-          </Picker>
-        </View>
-
-        <Text style={styles.label}>Duration</Text>
-        <View style={styles.row}>
-          <TextInput
-            style={styles.smallInput}
-            keyboardType="number-pad"
-            value={durationCount.toString()}
-            onChangeText={t => setDurationCount(+t || 1)}
-          />
-          <Picker
-            selectedValue={durationUnit}
-            style={styles.picker}
-            onValueChange={v => setDurationUnit(v as any)}
-          >
-            <Picker.Item label="day" value="day" />
-            <Picker.Item label="week" value="week" />
-          </Picker>
-        </View>
-
-        <Button title="Add Medication" onPress={addMedication} />
-      </View>
-
-      {/* Medications List */}
-      <Text style={styles.medsTitle}>Your Medications</Text>
-      <FlatList
-        data={medList}
-        keyExtractor={item => item.id}
-        renderItem={({ item }) => {
-          const d = item.data;
-          return (
-            <View style={styles.listItem}>
-              <View style={styles.listItemText}>
-                <Text>{d.name}</Text>
-                <Text>
-                  {d.amount} unit(s) — {d.doseCount} per {d.periodCount}{' '}
-                  {d.periodUnit}(s) for {d.durationCount}{' '}
-                  {d.durationUnit}(s)
-                </Text>
-              </View>
-              <Button title="Remove" onPress={() => removeMedication(item.id)} />
+          {searchText.length >= 2 && suggestions.length > 0 && (
+            <View style={[styles.suggestionsContainer, { 
+              borderColor: colors.border, 
+              backgroundColor: colors.card 
+            }]}>
+              {suggestions.map(s => (
+                <TouchableOpacity
+                  key={s}
+                  onPress={() => {
+                    setName(s);
+                    setSearchText('');
+                    setSuggestions([]);
+                  }}
+                  style={[styles.suggestionItem, { borderBottomColor: colors.border }]}
+                >
+                  <Text style={{ color: colors.text }}>{s}</Text>
+                </TouchableOpacity>
+              ))}
             </View>
-          );
-        }}
-        keyboardShouldPersistTaps="handled"
-        contentContainerStyle={styles.listContainer}
-      />
-    </KeyboardAvoidingView>
+          )}
+
+          <Text style={[styles.label, { color: colors.text }]}>Amount (units per dose)</Text>
+          <TextInput
+            style={[styles.input, { 
+              borderColor: colors.border, 
+              backgroundColor: colors.background,
+              color: colors.text 
+            }]}
+            keyboardType="number-pad"
+            value={amount.toString()}
+            onChangeText={t => setAmount(+t || 1)}
+          />
+
+          <Text style={[styles.label, { color: colors.text }]}>Frequency</Text>
+          <View style={styles.row}>
+            <TextInput
+              style={[styles.smallInput, { 
+                borderColor: colors.border, 
+                backgroundColor: colors.background,
+                color: colors.text 
+              }]}
+              keyboardType="number-pad"
+              value={doseCount.toString()}
+              onChangeText={t => setDoseCount(+t || 1)}
+            />
+            <Text style={[styles.centerText, { color: colors.text }]}>per</Text>
+            <TextInput
+              style={[styles.smallInput, { 
+                borderColor: colors.border, 
+                backgroundColor: colors.background,
+                color: colors.text 
+              }]}
+              keyboardType="number-pad"
+              value={periodCount.toString()}
+              onChangeText={t => setPeriodCount(+t || 1)}
+            />
+            <Picker
+              selectedValue={periodUnit}
+              style={[styles.picker, { color: colors.text }]}
+              onValueChange={v => setPeriodUnit(v as any)}
+            >
+              <Picker.Item label="day" value="day" />
+              <Picker.Item label="week" value="week" />
+            </Picker>
+          </View>
+
+          <Text style={[styles.label, { color: colors.text }]}>Duration</Text>
+          <View style={styles.row}>
+            <TextInput
+              style={[styles.smallInput, { 
+                borderColor: colors.border, 
+                backgroundColor: colors.background,
+                color: colors.text 
+              }]}
+              keyboardType="number-pad"
+              value={durationCount.toString()}
+              onChangeText={t => setDurationCount(+t || 1)}
+            />
+            <Picker
+              selectedValue={durationUnit}
+              style={[styles.picker, { color: colors.text }]}
+              onValueChange={v => setDurationUnit(v as any)}
+            >
+              <Picker.Item label="day" value="day" />
+              <Picker.Item label="week" value="week" />
+            </Picker>
+          </View>
+
+          <Button title="Add Medication" onPress={addMedication} />
+        </View>
+
+        {/* Medications List */}
+        <Text style={[styles.medsTitle, { color: colors.text }]}>Your Medications</Text>
+        <FlatList
+          data={medList}
+          keyExtractor={item => item.id}
+          renderItem={({ item }) => {
+            const d = item.data;
+            return (
+              <View style={[styles.listItem, { borderBottomColor: colors.border }]}>
+                <View style={styles.listItemText}>
+                  <Text style={{ color: colors.text }}>{d.name}</Text>
+                  <Text style={{ color: colors.textSecondary }}>
+                    {d.amount} unit(s) — {d.doseCount} per {d.periodCount}{' '}
+                    {d.periodUnit}(s) for {d.durationCount}{' '}
+                    {d.durationUnit}(s)
+                  </Text>
+                </View>
+                <Button title="Remove" onPress={() => removeMedication(item.id)} />
+              </View>
+            );
+          }}
+          keyboardShouldPersistTaps="handled"
+          contentContainerStyle={styles.listContainer}
+        />
+      </KeyboardAvoidingView>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: { flex: 1 },
-  form: { padding: 16, backgroundColor: '#fff' },
+  keyboardView: { flex: 1 },
+  form: { padding: 16 },
   label: { marginBottom: 4 },
   input: { borderWidth: 1, padding: 8, marginBottom: 12 },
   suggestionsContainer: { borderWidth: 1, marginBottom: 12 },

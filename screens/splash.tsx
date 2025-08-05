@@ -1,10 +1,12 @@
 // src/screens/Splash.tsx
 import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation, useIsFocused } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { auth, db } from '../firebase';
 import { usePermissions } from '../usePermissions';
+import { useTheme } from '../utils/theme';
 
 type RootStackParamList = {
   Splash:  undefined;
@@ -16,6 +18,7 @@ type RootStackParamList = {
 type SplashNavProp = NativeStackNavigationProp<RootStackParamList, 'Splash'>;
 
 export default function SplashScreen() {
+  const { colors } = useTheme();
   const navigation = useNavigation<SplashNavProp>();
   const isFocused = useIsFocused();
   const { hasAllPermissions, requestPermissions, loading } = usePermissions();
@@ -74,10 +77,10 @@ export default function SplashScreen() {
   }, []); // Empty dependency array - only run once on mount
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>EverCare</Text>
-      <Text style={styles.statusText}>{statusText}</Text>
-    </View>
+    <SafeAreaView style={[styles.container, { backgroundColor: colors.background }]}>
+      <Text style={[styles.text, { color: colors.text }]}>EverCare</Text>
+      <Text style={[styles.statusText, { color: colors.textSecondary }]}>{statusText}</Text>
+    </SafeAreaView>
   );
 }
 
@@ -90,12 +93,10 @@ const styles = StyleSheet.create({
   text: {
     fontSize:  28,
     fontWeight:'bold',
-    color: '#666',
     marginBottom: 20,
   },
   statusText: {
     fontSize: 16,
-    color: '#666',
     textAlign: 'center',
   },
 });

@@ -1,35 +1,60 @@
 // src/screens/signup.tsx
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import {
   ImageBackground,
   View,
   Text,
   TextInput,
   Pressable,
-  Image,
   StyleSheet,
   Alert,
 } from 'react-native';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import {
+  createUserWithEmailAndPassword,
+  signOut,
+} from 'firebase/auth';
 import { auth } from '../firebase';
 import Colors from '../styles/Colors';
+import { SettingsContext, ProviderKey } from '../context/SettingsContext';
 
 const background = require('../assets/background.png');
-const logo       = require('../assets/logo.png');
 
-export default function SignupScreen() {
+const PROVIDERS: { key: ProviderKey; label: string }[] = [
+  { key: 'maccabi',  label: 'Maccabi' },
+  { key: 'clalit',   label: 'Clalit' },
+  { key: 'meuhedet', label: 'Meuhedet' },
+  { key: 'leumit',   label: 'Leumit' },
+];
+
+export default function SignupScreen({ navigation }: any) {
+  const { updateSettings } = useContext(SettingsContext);
+
+  const [name, setName]                   = useState('');
   const [email, setEmail]                 = useState('');
   const [password, setPassword]           = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [provider, setProvider]           = useState<ProviderKey>('');
 
   const handleSignup = async () => {
-    if (password !== confirmPassword) {
-      Alert.alert('Error', 'Passwords do not match');
+    // validate
+    if (!name.trim() || !provider) {
+      Alert.alert('Error', 'Please enter your name and select a provider.');
       return;
     }
+    if (password !== confirmPassword) {
+      Alert.alert('Error', 'Passwords do not match.');
+      return;
+    }
+
     try {
+      // create & auto-login
       await createUserWithEmailAndPassword(auth, email, password);
-      Alert.alert('Success', 'Account created! You can now log in.');
+      // persist into context + AsyncStorage
+      await updateSettings({ name: name.trim(), provider });
+      // immediately sign out so we drop back to AuthNavigator
+      await signOut(auth);
+      // then go to Login screen
+      navigation.navigate('Login');
     } catch (err: any) {
       Alert.alert('Signup Failed', err.message);
     }
@@ -42,9 +67,38 @@ export default function SignupScreen() {
       imageStyle={styles.bgImage}
     >
       <View style={styles.overlay}>
-        <Image source={logo} style={styles.logoTop} />
-        <Text style={styles.appName}>EverCare</Text>
         <Text style={styles.title}>Sign Up</Text>
+
+        <TextInput
+          placeholder="Full Name"
+          placeholderTextColor="#666"
+          style={styles.input}
+          value={name}
+          onChangeText={setName}
+        />
+
+        <Text style={styles.sectionHeader}>Select Provider</Text>
+        <View style={styles.providers}>
+          {PROVIDERS.map(p => (
+            <Pressable
+              key={p.key}
+              style={[
+                styles.providerButton,
+                provider === p.key && styles.providerButtonSelected,
+              ]}
+              onPress={() => setProvider(p.key)}
+            >
+              <Text
+                style={[
+                  styles.providerText,
+                  provider === p.key && styles.providerTextSelected,
+                ]}
+              >
+                {p.label}
+              </Text>
+            </Pressable>
+          ))}
+        </View>
 
         <TextInput
           placeholder="Email"
@@ -83,56 +137,72 @@ export default function SignupScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  bgImage: {
-    opacity: 0.6,
-  },
+  container: { flex: 1 },
+  bgImage:   { opacity: 0.6 },
   overlay: {
-    flex: 1,
-    padding: 24,
+    flex:            1,
+    padding:        24,
     justifyContent: 'center',
-    alignItems: 'center',
-  },
-  logoTop: {
-    width: 100,
-    height: 100,
-    resizeMode: 'contain',
-    marginBottom: 8,
-  },
-  appName: {
-    fontSize: 28,
-    fontWeight: '600',
-    color: Colors.blue,
-    marginBottom: 16,
   },
   title: {
-    fontSize: 36,
+    fontSize:   36,
     fontWeight: '600',
-    color: Colors.blue,
+    color:      Colors.blue,
     marginBottom: 24,
+    textAlign: 'center',
+  },
+  sectionHeader: {
+    fontSize:   16,
+    fontWeight: '600',
+    color:      Colors.blue,
+    marginTop:  16,
+    marginBottom: 8,
+  },
+  providers: {
+    flexDirection: 'row',
+    justifyContent:'space-between',
+    marginBottom: 16,
+  },
+  providerButton: {
+    flex:            1,
+    marginHorizontal: 4,
+    paddingVertical: 12,
+    borderRadius:    6,
+    backgroundColor: 'rgba(255,255,255,0.9)',
+    alignItems:      'center',
+    borderWidth:     1,
+    borderColor:     'transparent',
+  },
+  providerButtonSelected: {
+    borderColor: Colors.blue,
+  },
+  providerText: {
+    fontSize: 14,
+    color:    Colors.blue,
+  },
+  providerTextSelected: {
+    fontWeight: '600',
   },
   input: {
-    width: '100%',
-    backgroundColor: 'rgba(255,255,255,0.9)',
-    borderRadius: 6,
-    padding: 12,
-    marginBottom: 12,
-    borderWidth: 1,
-    borderColor: '#555',    // dark gray border
+    width:             '100%',
+    backgroundColor:  'rgba(255,255,255,0.9)',
+    borderRadius:      6,
+    padding:           12,
+    marginBottom:      12,
+    borderWidth:       1,
+    borderColor:       '#555',
   },
   button: {
-    width: '100%',
-    backgroundColor: Colors.green,
-    padding: 12,
-    borderRadius: 6,
-    alignItems: 'center',
-    marginVertical: 12,
+    width:             '100%',
+    backgroundColor:   Colors.green,
+    padding:           12,
+    borderRadius:      6,
+    alignItems:       'center',
+    marginTop:         24,
   },
   buttonText: {
-    color: Colors.white,
-    fontSize: 16,
-    fontWeight: '600',
+    color:        Colors.white,
+    fontSize:     16,
+    fontWeight:   '600',
   },
 });

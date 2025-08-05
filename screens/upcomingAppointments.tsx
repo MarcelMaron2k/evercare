@@ -1,6 +1,8 @@
 // src/screens/UpcomingAppointments.tsx
-import React, { useState, useEffect, useCallback } from 'react';
+
+import React, { useState, useEffect, useCallback, useContext } from 'react';
 import {
+  SafeAreaView,
   View,
   Text,
   ActivityIndicator,
@@ -14,68 +16,77 @@ import { AppStackParamList } from '../navigation/AppNavigator';
 import {
   getBookedAppointments,
   removeBookedAppointment,
-} from '../services/appointmentService';
+} from '../services/appointment/appointmentService';
 import type { Appointment } from '../types/appointment';
+import Colors from '../styles/Colors';
+import { SettingsContext } from '../context/SettingsContext';
 
-// Typing for React Navigation params:
 type Props = NativeStackScreenProps<AppStackParamList, 'UpcomingAppointments'>;
 
-/**
- * Renders one appointment row with a “Cancel” button
- */
-const AppointmentRow: React.FC<{
+interface AppointmentRowProps {
   appt: Appointment;
   onCancel: (slotId: string) => void;
-}> = ({ appt, onCancel }) => {
+}
+
+const FONT_SIZES = { small: 14, medium: 16, large: 18, xlarge: 20 };
+
+const AppointmentRow: React.FC<AppointmentRowProps> = ({ appt, onCancel }) => {
+  const { settings } = useContext(SettingsContext);
+  const fontSize   = FONT_SIZES[settings.fontSizeKey];
+  const fontWeight = settings.boldText ? '700' : '400';
+  const textColor  = settings.highContrast
+    ? '#000'
+    : settings.darkMode
+      ? Colors.white
+      : Colors.graydark;
+
   const timeString = new Date(appt.slot.startTime).toLocaleString([], {
-    month: 'short',
-    day: 'numeric',
-    hour: '2-digit',
+    month:  'short',
+    day:    'numeric',
+    hour:   '2-digit',
     minute: '2-digit',
   });
 
   return (
     <View style={styles.row}>
-      <View style={styles.rowTextContainer}>
-        <Text style={styles.rowText}>
-          {timeString} — Dr. {appt.doctor.firstName} {appt.doctor.lastName} @{' '}
-          {appt.provider.name}
-        </Text>
-      </View>
+      <Text style={[styles.rowText, { fontSize, fontWeight, color: textColor }]}>
+        {timeString} — Dr. {appt.doctor.firstName} {appt.doctor.lastName} @ {appt.provider.name}
+      </Text>
       <TouchableOpacity
         style={styles.cancelButton}
         onPress={() => onCancel(appt.slot.slotId)}
       >
-        <Text style={styles.cancelButtonText}>Cancel</Text>
+        <Text style={[styles.cancelButtonText, { fontSize, fontWeight }]}>
+          Cancel
+        </Text>
       </TouchableOpacity>
     </View>
   );
 };
 
-const UpcomingAppointments: React.FC<Props> = ({ navigation }) => {
+export default function UpcomingAppointments({ navigation }: Props) {
+  const { settings } = useContext(SettingsContext);
   const [appointments, setAppointments] = useState<Appointment[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
-  // Load all booked appointments, filter to future‐only
   const loadAppointments = useCallback(async () => {
     setLoading(true);
     const all = await getBookedAppointments();
     const now = new Date().toISOString();
-    const upcoming = all.filter((a) => a.slot.startTime > now);
-    upcoming.sort((a, b) => a.slot.startTime.localeCompare(b.slot.startTime));
+    const upcoming = all
+      .filter(a => a.slot.startTime > now)
+      .sort((a, b) =>
+        a.slot.startTime.localeCompare(b.slot.startTime)
+      );
     setAppointments(upcoming);
     setLoading(false);
   }, []);
 
-  // Refresh whenever this screen is focused
   useEffect(() => {
-    const unsubscribe = navigation.addListener('focus', () => {
-      loadAppointments();
-    });
+    const unsubscribe = navigation.addListener('focus', loadAppointments);
     return unsubscribe;
   }, [loadAppointments, navigation]);
 
-  // Called when user taps “Cancel”
   const handleCancel = useCallback(
     async (slotId: string) => {
       Alert.alert(
@@ -87,18 +98,9 @@ const UpcomingAppointments: React.FC<Props> = ({ navigation }) => {
             text: 'Yes',
             style: 'destructive',
             onPress: async () => {
-              try {
-                await removeBookedAppointment(slotId);
-                // Reload the list after removal
-                await loadAppointments();
-                Alert.alert('Canceled', 'Appointment has been canceled.');
-              } catch (err) {
-                console.error(err);
-                Alert.alert(
-                  'Error',
-                  'There was a problem canceling the appointment.'
-                );
-              }
+              await removeBookedAppointment(slotId);
+              await loadAppointments();
+              Alert.alert('Canceled', 'Appointment has been canceled.');
             },
           },
         ]
@@ -112,62 +114,56 @@ const UpcomingAppointments: React.FC<Props> = ({ navigation }) => {
   }
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={[styles.container, { backgroundColor: settings.darkMode ? Colors.black : Colors.white }]}>
       {appointments.length === 0 ? (
         <View style={styles.emptyContainer}>
-          <Text style={styles.emptyText}>No upcoming appointments.</Text>
+          <Text style={[
+            styles.emptyText,
+            {
+              fontSize: FONT_SIZES[settings.fontSizeKey],
+              color: settings.highContrast ? '#000' : Colors.graydark,
+            }
+          ]}>
+            No upcoming appointments.
+          </Text>
         </View>
       ) : (
-        <FlatList
+        <FlatList<Appointment>
           data={appointments}
-          keyExtractor={(item: Appointment) => item.slot.slotId}
+          keyExtractor={item => item.slot.slotId}
           renderItem={({ item }) => (
             <AppointmentRow appt={item} onCancel={handleCancel} />
           )}
-          contentContainerStyle={{ paddingBottom: 16 }}
+          contentContainerStyle={styles.listContainer}
         />
       )}
-    </View>
+    </SafeAreaView>
   );
-};
+}
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#fff' },
-  emptyContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  emptyText: {
-    fontSize: 18,
-    color: '#666',
-  },
+  container:       { flex: 1 },
+  emptyContainer:  { flex: 1, justifyContent: 'center', alignItems: 'center' },
+  emptyText:       { },
+
+  listContainer:   { paddingBottom: 16 },
+
   row: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection:   'row',
+    alignItems:      'center',
     paddingVertical: 14,
     paddingHorizontal: 16,
     borderBottomWidth: 1,
-    borderColor: '#eee',
+    borderColor:      '#eee',
   },
-  rowTextContainer: {
-    flex: 1,
-  },
-  rowText: {
-    fontSize: 16,
-  },
-  cancelButton: {
+  rowText:         { flex: 1 },
+
+  cancelButton:    {
     backgroundColor: '#FF3B30',
     paddingVertical: 6,
     paddingHorizontal: 12,
-    borderRadius: 4,
-    marginLeft: 12,
+    borderRadius:    4,
+    marginLeft:      12,
   },
-  cancelButtonText: {
-    color: '#fff',
-    fontSize: 14,
-    fontWeight: '600',
-  },
+  cancelButtonText:{ color: '#fff' },
 });
-
-export default UpcomingAppointments;

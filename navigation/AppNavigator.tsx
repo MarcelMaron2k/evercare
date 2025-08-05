@@ -6,17 +6,21 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from '../screens/home';
 import MedicationScreen from '../screens/medication';
 import AppointmentCenter from '../screens/appointmentCenter';
-import AddAppointment from '../screens/addAppointment';           // now exports AddAppointment
+import AddAppointment from '../screens/addAppointment';           
 import UpcomingAppointments from '../screens/upcomingAppointments';
 import PastAppointments from '../screens/pastappointmets';
+import AppSettings from '../screens/appsettings';
+import UserSettings from '../screens/usersettings';
 
 export type AppStackParamList = {
   Home: undefined;
   Medications: undefined;
   AppointmentCenter: undefined;
-  Appointments: undefined;            // “Add Appointment” route
+  AddAppointment: undefined;            
   UpcomingAppointments: undefined;
   PastAppointments: undefined;
+  AppSettings: undefined;
+  UserSettings: undefined;
 };
 
 const Stack = createNativeStackNavigator<AppStackParamList>();
@@ -35,7 +39,7 @@ export default function AppNavigator() {
 
       {/* Add Appointment */}
       <Stack.Screen
-        name="Appointments"
+        name="AddAppointment"
         component={AddAppointment}
       />
 
@@ -49,6 +53,16 @@ export default function AppNavigator() {
       <Stack.Screen
         name="PastAppointments"
         component={PastAppointments}
+      />
+      {/* app settings */}
+      <Stack.Screen
+        name="AppSettings"
+        component={AppSettings}
+      />
+      {/* user settings */}
+      <Stack.Screen
+        name="UserSettings"
+        component={UserSettings}
       />
     </Stack.Navigator>
   );

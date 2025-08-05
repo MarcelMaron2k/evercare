@@ -1,264 +1,285 @@
+
 {
   "slots": [
     {
       "slotId": "SLOT-9463-0",
+      "providerId": "maccabi",
       "doctorId": "sarah-levi",
-      "startTime": "2025-06-01T09:00:00Z",
-      "endTime": "2025-06-01T09:30:00Z",
-      "branch": {
-        "id": "MKO04",
-        "name": "Maccabi Tel Aviv – Central",
+      "doctorName": "Sarah Levi",
+      "slotDateTime": "2025-06-01T09:00:00Z",
+      "location": {
+        "siteCode": "MKO04",
+        "siteName": "Maccabi Tel Aviv – Central",
         "address": "Iben Gavirol 45",
         "city": "Tel Aviv"
       },
-      "isAvailable": true
+      "status": "Open"
     },
     {
       "slotId": "SLOT-3806-1",
+      "providerId": "maccabi",
       "doctorId": "bar-eliav",
-      "startTime": "2025-06-01T10:00:00Z",
-      "endTime": "2025-06-01T10:30:00Z",
-      "branch": {
-        "id": "MKO01",
-        "name": "Maccabi Kiryat Ono Branch",
+      "doctorName": "Bar Eliav",
+      "slotDateTime": "2025-06-01T10:00:00Z",
+      "location": {
+        "siteCode": "MKO01",
+        "siteName": "Maccabi Kiryat Ono Branch",
         "address": "Ha’atzmaut St 12",
         "city": "Kiryat Ono"
       },
-      "isAvailable": false
+      "status": "Booked"
     },
     {
-      "slotId": "SLOT-1953-2",
-      "doctorId": "amir-klein",
-      "startTime": "2025-06-01T11:00:00Z",
-      "endTime": "2025-06-01T11:30:00Z",
-      "branch": {
-        "id": "MKO01",
-        "name": "Maccabi Kiryat Ono Branch",
+      "slotId": "SLOT-7182-2",
+      "providerId": "maccabi",
+      "doctorId": "yossi-cohen",
+      "doctorName": "Yossi Cohen",
+      "slotDateTime": "2025-06-01T11:00:00Z",
+      "location": {
+        "siteCode": "MKO01",
+        "siteName": "Maccabi Kiryat Ono Branch",
         "address": "Ha’atzmaut St 12",
         "city": "Kiryat Ono"
       },
-      "isAvailable": true
+      "status": "Open"
     },
     {
-      "slotId": "SLOT-3967-3",
-      "doctorId": "lea-peretz",
-      "startTime": "2025-06-01T12:00:00Z",
-      "endTime": "2025-06-01T12:30:00Z",
-      "branch": {
-        "id": "MKO03",
-        "name": "Maccabi Petah Tikva Branch",
-        "address": "Be’er Sheva St 20",
-        "city": "Petah Tikva"
-      },
-      "isAvailable": true
-    },
-    {
-      "slotId": "SLOT-2831-4",
-      "doctorId": "gal-shtern",
-      "startTime": "2025-06-02T09:00:00Z",
-      "endTime": "2025-06-02T09:30:00Z",
-      "branch": {
-        "id": "MKO02",
-        "name": "Maccabi Ramat Gan Branch",
-        "address": "Hahistadrut St 5",
-        "city": "Ramat Gan"
-      },
-      "isAvailable": false
-    },
-    {
-      "slotId": "SLOT-2257-5",
-      "doctorId": "guy-dayan",
-      "startTime": "2025-06-02T10:00:00Z",
-      "endTime": "2025-06-02T10:30:00Z",
-      "branch": {
-        "id": "MKO05",
-        "name": "Maccabi Haifa Branch",
-        "address": "Hanassi Blvd 10",
-        "city": "Haifa"
-      },
-      "isAvailable": true
-    },
-    {
-      "slotId": "SLOT-4221-6",
-      "doctorId": "avi-michaeli",
-      "startTime": "2025-06-02T11:00:00Z",
-      "endTime": "2025-06-02T11:30:00Z",
-      "branch": {
-        "id": "MKO04",
-        "name": "Maccabi Tel Aviv – Central",
-        "address": "Iben Gavirol 45",
-        "city": "Tel Aviv"
-      },
-      "isAvailable": false
-    },
-    {
-      "slotId": "SLOT-1354-7",
-      "doctorId": "tamar-barak",
-      "startTime": "2025-06-02T12:00:00Z",
-      "endTime": "2025-06-02T12:30:00Z",
-      "branch": {
-        "id": "MKO05",
-        "name": "Maccabi Haifa Branch",
-        "address": "Hanassi Blvd 10",
-        "city": "Haifa"
-      },
-      "isAvailable": false
-    },
-    {
-      "slotId": "SLOT-7881-8",
+      "slotId": "SLOT-1810-3",
+      "providerId": "maccabi",
       "doctorId": "noam-eran",
-      "startTime": "2025-06-03T09:00:00Z",
-      "endTime": "2025-06-03T09:30:00Z",
-      "branch": {
-        "id": "MKO03",
-        "name": "Maccabi Petah Tikva Branch",
-        "address": "Be’er Sheva St 20",
-        "city": "Petah Tikva"
-      },
-      "isAvailable": true
-    },
-    {
-      "slotId": "SLOT-5129-9",
-      "doctorId": "guy-dayan",
-      "startTime": "2025-06-03T10:00:00Z",
-      "endTime": "2025-06-03T10:30:00Z",
-      "branch": {
-        "id": "MKO01",
-        "name": "Maccabi Kiryat Ono Branch",
-        "address": "Ha’atzmaut St 12",
-        "city": "Kiryat Ono"
-      },
-      "isAvailable": true
-    },
-    {
-      "slotId": "SLOT-1136-10",
-      "doctorId": "lea-peretz",
-      "startTime": "2025-06-03T11:00:00Z",
-      "endTime": "2025-06-03T11:30:00Z",
-      "branch": {
-        "id": "MKO02",
-        "name": "Maccabi Ramat Gan Branch",
-        "address": "Hahistadrut St 5",
+      "doctorName": "Noam Eran",
+      "slotDateTime": "2025-06-01T12:00:00Z",
+      "location": {
+        "siteCode": "MKO02",
+        "siteName": "Maccabi Ramat Gan Clinic",
+        "address": "Weizmann St 2",
         "city": "Ramat Gan"
       },
-      "isAvailable": true
+      "status": "Open"
     },
     {
-      "slotId": "SLOT-7090-11",
-      "doctorId": "dana-ben-ari",
-      "startTime": "2025-06-03T12:00:00Z",
-      "endTime": "2025-06-03T12:30:00Z",
-      "branch": {
-        "id": "MKO04",
-        "name": "Maccabi Tel Aviv – Central",
+      "slotId": "SLOT-5421-4",
+      "providerId": "maccabi",
+      "doctorId": "ruth-goldberg",
+      "doctorName": "Ruth Goldberg",
+      "slotDateTime": "2025-06-02T09:00:00Z",
+      "location": {
+        "siteCode": "MKO02",
+        "siteName": "Maccabi Ramat Gan Clinic",
+        "address": "Weizmann St 2",
+        "city": "Ramat Gan"
+      },
+      "status": "Booked"
+    },
+    {
+      "slotId": "SLOT-8790-5",
+      "providerId": "maccabi",
+      "doctorId": "michal-rosen",
+      "doctorName": "Michal Rosen",
+      "slotDateTime": "2025-06-02T10:00:00Z",
+      "location": {
+        "siteCode": "MKO03",
+        "siteName": "Maccabi Jerusalem Division",
+        "address": "King George St 17",
+        "city": "Jerusalem"
+      },
+      "status": "Open"
+    },
+    {
+      "slotId": "SLOT-3664-6",
+      "providerId": "maccabi",
+      "doctorId": "yasmin-navon",
+      "doctorName": "Yael Navon",
+      "slotDateTime": "2025-06-02T11:00:00Z",
+      "location": {
+        "siteCode": "MKO03",
+        "siteName": "Maccabi Jerusalem Division",
+        "address": "King George St 17",
+        "city": "Jerusalem"
+      },
+      "status": "Open"
+    },
+    {
+      "slotId": "SLOT-4532-7",
+      "providerId": "maccabi",
+      "doctorId": "yossi-cohen",
+      "doctorName": "Yossi Cohen",
+      "slotDateTime": "2025-06-02T12:00:00Z",
+      "location": {
+        "siteCode": "MKO04",
+        "siteName": "Maccabi Tel Aviv – Central",
         "address": "Iben Gavirol 45",
         "city": "Tel Aviv"
       },
-      "isAvailable": true
+      "status": "Open"
     },
     {
-      "slotId": "SLOT-4740-12",
-      "doctorId": "nadav-tal",
-      "startTime": "2025-06-04T09:00:00Z",
-      "endTime": "2025-06-04T09:30:00Z",
-      "branch": {
-        "id": "MKO03",
-        "name": "Maccabi Petah Tikva Branch",
-        "address": "Be’er Sheva St 20",
-        "city": "Petah Tikva"
+      "slotId": "SLOT-1984-8",
+      "providerId": "maccabi",
+      "doctorId": "sarah-levi",
+      "doctorName": "Sarah Levi",
+      "slotDateTime": "2025-06-03T09:00:00Z",
+      "location": {
+        "siteCode": "MKO04",
+        "siteName": "Maccabi Tel Aviv – Central",
+        "address": "Iben Gavirol 45",
+        "city": "Tel Aviv"
       },
-      "isAvailable": true
+      "status": "Open"
     },
     {
-      "slotId": "SLOT-8963-13",
-      "doctorId": "nadav-tal",
-      "startTime": "2025-06-04T10:00:00Z",
-      "endTime": "2025-06-04T10:30:00Z",
-      "branch": {
-        "id": "MKO01",
-        "name": "Maccabi Kiryat Ono Branch",
+      "slotId": "SLOT-7421-9",
+      "providerId": "maccabi",
+      "doctorId": "ruth-goldberg",
+      "doctorName": "Ruth Goldberg",
+      "slotDateTime": "2025-06-03T10:00:00Z",
+      "location": {
+        "siteCode": "MKO02",
+        "siteName": "Maccabi Ramat Gan Clinic",
+        "address": "Weizmann St 2",
+        "city": "Ramat Gan"
+      },
+      "status": "Open"
+    },
+    {
+      "slotId": "SLOT-6638-10",
+      "providerId": "maccabi",
+      "doctorId": "bar-eliav",
+      "doctorName": "Bar Eliav",
+      "slotDateTime": "2025-06-03T11:00:00Z",
+      "location": {
+        "siteCode": "MKO01",
+        "siteName": "Maccabi Kiryat Ono Branch",
         "address": "Ha’atzmaut St 12",
         "city": "Kiryat Ono"
       },
-      "isAvailable": false
+      "status": "Booked"
     },
     {
-      "slotId": "SLOT-7242-14",
-      "doctorId": "amir-klein",
-      "startTime": "2025-06-04T11:00:00Z",
-      "endTime": "2025-06-04T11:30:00Z",
-      "branch": {
-        "id": "MKO05",
-        "name": "Maccabi Haifa Branch",
-        "address": "Hanassi Blvd 10",
-        "city": "Haifa"
+      "slotId": "SLOT-3156-11",
+      "providerId": "maccabi",
+      "doctorId": "dana-ben-ari",
+      "doctorName": "Dana Ben-Ari",
+      "slotDateTime": "2025-06-03T12:00:00Z",
+      "location": {
+        "siteCode": "MKO01",
+        "siteName": "Maccabi Kiryat Ono Branch",
+        "address": "Ha’atzmaut St 12",
+        "city": "Kiryat Ono"
       },
-      "isAvailable": true
+      "status": "Open"
     },
     {
-      "slotId": "SLOT-2924-15",
-      "doctorId": "nadav-tal",
-      "startTime": "2025-06-04T12:00:00Z",
-      "endTime": "2025-06-04T12:30:00Z",
-      "branch": {
-        "id": "MKO05",
-        "name": "Maccabi Haifa Branch",
-        "address": "Hanassi Blvd 10",
-        "city": "Haifa"
+      "slotId": "SLOT-6197-12",
+      "providerId": "maccabi",
+      "doctorId": "ori-hoffman",
+      "doctorName": "Ori Hoffman",
+      "slotDateTime": "2025-06-04T09:00:00Z",
+      "location": {
+        "siteCode": "MKO02",
+        "siteName": "Maccabi Ramat Gan Clinic",
+        "address": "Weizmann St 2",
+        "city": "Ramat Gan"
       },
-      "isAvailable": false
+      "status": "Booked"
     },
     {
-      "slotId": "SLOT-5149-16",
-      "doctorId": "gal-shtern",
-      "startTime": "2025-06-05T09:00:00Z",
-      "endTime": "2025-06-05T09:30:00Z",
-      "branch": {
-        "id": "MKO05",
-        "name": "Maccabi Haifa Branch",
-        "address": "Hanassi Blvd 10",
-        "city": "Haifa"
+      "slotId": "SLOT-9080-13",
+      "providerId": "maccabi",
+      "doctorId": "yasmin-navon",
+      "doctorName": "Yael Navon",
+      "slotDateTime": "2025-06-04T10:00:00Z",
+      "location": {
+        "siteCode": "MKO03",
+        "siteName": "Maccabi Jerusalem Division",
+        "address": "King George St 17",
+        "city": "Jerusalem"
       },
-      "isAvailable": true
+      "status": "Open"
     },
     {
-      "slotId": "SLOT-6964-17",
-      "doctorId": "shani-shapira",
-      "startTime": "2025-06-05T10:00:00Z",
-      "endTime": "2025-06-05T10:30:00Z",
-      "branch": {
-        "id": "MKO04",
-        "name": "Maccabi Tel Aviv – Central",
+      "slotId": "SLOT-1425-14",
+      "providerId": "maccabi",
+      "doctorId": "hadas-moshe",
+      "doctorName": "Hadas Moshe",
+      "slotDateTime": "2025-06-04T11:00:00Z",
+      "location": {
+        "siteCode": "MKO04",
+        "siteName": "Maccabi Tel Aviv – Central",
         "address": "Iben Gavirol 45",
         "city": "Tel Aviv"
       },
-      "isAvailable": true
+      "status": "Open"
     },
     {
-      "slotId": "SLOT-2753-18",
-      "doctorId": "yael-navon",
-      "startTime": "2025-06-05T11:00:00Z",
-      "endTime": "2025-06-05T11:30:00Z",
-      "branch": {
-        "id": "MKO03",
-        "name": "Maccabi Petah Tikva Branch",
-        "address": "Be’er Sheva St 20",
-        "city": "Petah Tikva"
+      "slotId": "SLOT-5596-15",
+      "providerId": "maccabi",
+      "doctorId": "bar-eliav",
+      "doctorName": "Bar Eliav",
+      "slotDateTime": "2025-06-05T09:00:00Z",
+      "location": {
+        "siteCode": "MKO05",
+        "siteName": "Maccabi Beer Sheva Clinic",
+        "address": "Rager Blvd 3",
+        "city": "Beer Sheva"
       },
-      "isAvailable": false
+      "status": "Open"
     },
     {
-      "slotId": "SLOT-2778-19",
-      "doctorId": "dana-ben-ari",
-      "startTime": "2025-06-05T12:00:00Z",
-      "endTime": "2025-06-05T12:30:00Z",
-      "branch": {
-        "id": "MKO05",
-        "name": "Maccabi Haifa Branch",
-        "address": "Hanassi Blvd 10",
-        "city": "Haifa"
+      "slotId": "SLOT-7712-16",
+      "providerId": "maccabi",
+      "doctorId": "yossi-cohen",
+      "doctorName": "Yossi Cohen",
+      "slotDateTime": "2025-06-05T10:00:00Z",
+      "location": {
+        "siteCode": "MKO02",
+        "siteName": "Maccabi Ramat Gan Clinic",
+        "address": "Weizmann St 2",
+        "city": "Ramat Gan"
       },
-      "isAvailable": true
+      "status": "Open"
+    },
+    {
+      "slotId": "SLOT-8890-17",
+      "providerId": "maccabi",
+      "doctorId": "ruth-goldberg",
+      "doctorName": "Ruth Goldberg",
+      "slotDateTime": "2025-06-05T11:00:00Z",
+      "location": {
+        "siteCode": "MKO01",
+        "siteName": "Maccabi Kiryat Ono Branch",
+        "address": "Ha’atzmaut St 12",
+        "city": "Kiryat Ono"
+      },
+      "status": "Open"
+    },
+    {
+      "slotId": "SLOT-2345-18",
+      "providerId": "maccabi",
+      "doctorId": "michal-rosen",
+      "doctorName": "Michal Rosen",
+      "slotDateTime": "2025-06-05T12:00:00Z",
+      "location": {
+        "siteCode": "MKO04",
+        "siteName": "Maccabi Tel Aviv – Central",
+        "address": "Iben Gavirol 45",
+        "city": "Tel Aviv"
+      },
+      "status": "Open"
+    },
+    {
+      "slotId": "SLOT-6789-19",
+      "providerId": "maccabi",
+      "doctorId": "bar-eliav",
+      "doctorName": "Bar Eliav",
+      "slotDateTime": "2025-06-06T09:00:00Z",
+      "location": {
+        "siteCode": "MKO05",
+        "siteName": "Maccabi Beer Sheva Clinic",
+        "address": "Rager Blvd 3",
+        "city": "Beer Sheva"
+      },
+      "status": "Open"
     }
   ]
 }

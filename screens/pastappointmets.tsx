@@ -1,59 +1,63 @@
 // src/screens/PastAppointments.tsx
-import React, { useState, useEffect, useCallback } from 'react';
+
+import React, { useState, useEffect, useCallback, useContext } from 'react';
 import {
+  SafeAreaView,
   View,
   Text,
   ActivityIndicator,
-  TouchableOpacity,
-  StyleSheet,
   FlatList,
+  StyleSheet,
+  ImageBackground,
+  Dimensions,
 } from 'react-native';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { AppStackParamList } from '../navigation/AppNavigator';
-import { getBookedAppointments } from '../services/appointmentService';
-import type { Appointment, Slot } from '../types/appointment';
+import {
+  getBookedAppointments,
+} from '../services/appointment/appointmentService';
+import type { Appointment } from '../types/appointment';
+import AppointmentHistoryCard from './components/AppointmentHistoryCard';
+import Colors from '../styles/Colors';
+import { SettingsContext } from '../context/SettingsContext'
+const background = require('../assets/background.png');
+const { width, height } = Dimensions.get('window');
 
 type Props = NativeStackScreenProps<AppStackParamList, 'PastAppointments'>;
 
-/**
- * Renders a simple appointment row
- */
-const AppointmentRow: React.FC<{ appt: Appointment }> = ({ appt }) => {
-  const timeString = new Date(appt.slot.startTime).toLocaleString([], {
-    month: 'short',
-    day: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit',
-  });
-  return (
-    <View style={styles.row}>
-      <Text style={styles.rowText}>
-        {timeString} — Dr. {appt.doctor.firstName} {appt.doctor.lastName} @ {appt.provider.name}
-      </Text>
-    </View>
-  );
-};
+export default function PastAppointments({ navigation }: Props) {
+  const { settings } = useContext(SettingsContext);
+  const FONT_SIZES: Record<typeof settings.fontSizeKey, number> = {
+    small: 14,
+    medium: 16,
+    large: 18,
+    xlarge: 20,
+  };
+  const fontSize   = FONT_SIZES[settings.fontSizeKey];
+  const fontWeight = settings.boldText ? '700' : '400';
+  const textColor  = settings.highContrast
+    ? '#000'
+    : settings.darkMode
+      ? Colors.white
+      : Colors.blue;
+  const bgColor    = settings.darkMode ? Colors.black : Colors.white;
 
-const PastAppointments: React.FC<Props> = ({ navigation }) => {
   const [appointments, setAppointments] = useState<Appointment[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
-  // Fetch all booked appointments and filter to past only
   const loadAppointments = useCallback(async () => {
     setLoading(true);
     const all = await getBookedAppointments();
     const now = new Date().toISOString();
-    const past = all.filter((a) => a.slot.startTime < now);
-    // Sort by startTime descending (most recent first)
-    past.sort((a, b) => b.slot.startTime.localeCompare(a.slot.startTime));
+    const past = all
+      .filter(a => a.slot.startTime < now)
+      .sort((a, b) => b.slot.startTime.localeCompare(a.slot.startTime));
     setAppointments(past);
     setLoading(false);
   }, []);
 
   useEffect(() => {
-    const unsubscribe = navigation.addListener('focus', () => {
-      loadAppointments();
-    });
+    const unsubscribe = navigation.addListener('focus', loadAppointments);
     return unsubscribe;
   }, [loadAppointments, navigation]);
 
@@ -62,43 +66,43 @@ const PastAppointments: React.FC<Props> = ({ navigation }) => {
   }
 
   return (
-    <View style={styles.container}>
-      {appointments.length === 0 ? (
-        <View style={styles.emptyContainer}>
-          <Text style={styles.emptyText}>No past appointments.</Text>
-        </View>
-      ) : (
-        <FlatList
-          data={appointments}
-          keyExtractor={(item: Appointment) => item.slot.slotId}
-          renderItem={({ item }) => <AppointmentRow appt={item} />}
-          contentContainerStyle={{ paddingBottom: 16 }}
-        />
-      )}
-    </View>
+    <SafeAreaView style={[styles.safe, { backgroundColor: bgColor }]}>
+      <ImageBackground
+        source={background}
+        style={styles.background}
+        imageStyle={styles.bgImage}
+      >
+        <Text style={[styles.pageTitle, { fontSize: 24, fontWeight: '600', color: textColor }]}>
+          Past Appointments
+        </Text>
+        {appointments.length === 0 ? (
+          <View style={styles.emptyContainer}>
+            <Text style={[styles.emptyText, { fontSize, color: textColor }]}>
+              No past appointments.
+            </Text>
+          </View>
+        ) : (
+          <FlatList
+            data={appointments}
+            keyExtractor={a => a.slot.slotId}
+            renderItem={({ item }) => <AppointmentHistoryCard appt={item} />}
+            contentContainerStyle={styles.listContainer}
+          />
+        )}
+      </ImageBackground>
+    </SafeAreaView>
   );
-};
+}
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#fff' },
-  emptyContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  emptyText: {
-    fontSize: 18,
-    color: '#666',
-  },
-  row: {
-    paddingVertical: 14,
-    paddingHorizontal: 16,
-    borderBottomWidth: 1,
-    borderColor: '#eee',
-  },
-  rowText: {
-    fontSize: 16,
-  },
-});
+  safe: { flex: 1 },
+  background: { flex: 1, width, height },
+  bgImage: { opacity: 0.6, resizeMode: 'cover' },
 
-export default PastAppointments;
+  pageTitle: { margin: 16 },
+
+  emptyContainer: { flex: 1, justifyContent: 'center', alignItems: 'center' },
+  emptyText: {},
+
+  listContainer: { paddingBottom: 16 },
+});

@@ -36,6 +36,8 @@ import java.io.InputStreamReader;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import android.content.BroadcastReceiver;
 import android.content.IntentFilter;
+import android.os.Handler;
+import android.os.Looper;
 
 public class BackgroundService extends Service implements SensorEventListener{
 
@@ -55,11 +57,19 @@ public class BackgroundService extends Service implements SensorEventListener{
 
     private static final float FREE_FALL_THRESHOLD = 2.0f; // m/s²
     private static final long FREE_FALL_TIME_THRESHOLD = 50; // milliseconds
+    private static final long AUTO_CALL_DELAY = 120000; // 2 minutes in milliseconds
 
     
     private long freeFallStartTime = 0;
     private boolean inFreeFall = false;
     private boolean fallEventProcessed = false;
+    
+    // Auto-call timer variables
+    private Handler autoCallHandler;
+    private Runnable autoCallRunnable;
+    private Runnable countdownUpdateRunnable;
+    private BroadcastReceiver notificationInteractionReceiver;
+    private long autoCallStartTime;
 
     
     @Override
@@ -88,6 +98,12 @@ public class BackgroundService extends Service implements SensorEventListener{
         
         // Register broadcast receiver for settings updates
         registerSettingsReceiver();
+        
+        // Initialize auto-call handler
+        autoCallHandler = new Handler(Looper.getMainLooper());
+        
+        // Register notification interaction receiver
+        registerNotificationInteractionReceiver();
 
         if (accelerometer != null) {
             // Register for accelerometer updates
@@ -149,6 +165,9 @@ public class BackgroundService extends Service implements SensorEventListener{
 
         // Show notification immediately
         showFreeFallNotification(acceleration, duration);
+
+        // Start 2-minute auto-call timer
+        startAutoCallTimer();
 
         //broadcast to app with fall data for React Native to save
         handleFreeFallEvent(acceleration, duration);
@@ -314,7 +333,184 @@ public class BackgroundService extends Service implements SensorEventListener{
             }
         }
         
+        // Unregister notification interaction receiver
+        if (notificationInteractionReceiver != null) {
+            try {
+                unregisterReceiver(notificationInteractionReceiver);
+                Log.d(TAG, "Notification interaction receiver unregistered");
+            } catch (Exception e) {
+                Log.e(TAG, "Error unregistering notification interaction receiver: " + e.getMessage());
+            }
+        }
+        
+        // Cancel auto-call timer
+        cancelAutoCallTimer();
+        
         Log.d(TAG, "Service destroyed");
+    }
+    
+    private void startAutoCallTimer() {
+        // Cancel any existing timer
+        cancelAutoCallTimer();
+        
+        Log.i(TAG, "Starting 2-minute auto-call timer with countdown");
+        autoCallStartTime = System.currentTimeMillis();
+        
+        // Main auto-call timer
+        autoCallRunnable = new Runnable() {
+            @Override
+            public void run() {
+                Log.w(TAG, "Auto-call timer expired - making emergency call");
+                makeEmergencyCall();
+            }
+        };
+        
+        // Countdown update timer (updates every second)
+        countdownUpdateRunnable = new Runnable() {
+            @Override
+            public void run() {
+                updateCountdownNotification();
+                if (autoCallRunnable != null) {
+                    // Schedule next update in 1 second
+                    autoCallHandler.postDelayed(countdownUpdateRunnable, 1000);
+                }
+            }
+        };
+        
+        autoCallHandler.postDelayed(autoCallRunnable, AUTO_CALL_DELAY);
+        autoCallHandler.post(countdownUpdateRunnable); // Start countdown updates immediately
+    }
+    
+    private void cancelAutoCallTimer() {
+        if (autoCallHandler != null) {
+            if (autoCallRunnable != null) {
+                autoCallHandler.removeCallbacks(autoCallRunnable);
+                autoCallRunnable = null;
+            }
+            if (countdownUpdateRunnable != null) {
+                autoCallHandler.removeCallbacks(countdownUpdateRunnable);
+                countdownUpdateRunnable = null;
+            }
+            Log.i(TAG, "Auto-call timer and countdown cancelled");
+        }
+    }
+    
+    private void makeEmergencyCall() {
+        Log.w(TAG, "Making automatic emergency call");
+        
+        // Determine which phone number to call
+        String phoneNumber = (caretakerPhone != null && !caretakerPhone.trim().isEmpty()) ? caretakerPhone : "101";
+        String contactType = (caretakerPhone != null && !caretakerPhone.trim().isEmpty()) ? "caretaker" : "emergency services (101)";
+        
+        Log.i(TAG, "Auto-calling: " + phoneNumber + " (" + contactType + ")");
+        
+        try {
+            Intent callIntent = new Intent(Intent.ACTION_CALL);
+            callIntent.setData(android.net.Uri.parse("tel:" + phoneNumber));
+            callIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(callIntent);
+            
+            // Clear the notification after making the call
+            notificationManager.cancel(NOTIFICATION_ID);
+            
+            Log.i(TAG, "Emergency call initiated successfully");
+        } catch (Exception e) {
+            Log.e(TAG, "Error making emergency call: " + e.getMessage());
+        }
+    }
+    
+    private void updateCountdownNotification() {
+        long currentTime = System.currentTimeMillis();
+        long elapsed = currentTime - autoCallStartTime;
+        long remaining = AUTO_CALL_DELAY - elapsed;
+        
+        if (remaining <= 0) {
+            return; // Timer has expired
+        }
+        
+        int minutes = (int) (remaining / 60000);
+        int seconds = (int) ((remaining % 60000) / 1000);
+        String countdownText = String.format("%d:%02d", minutes, seconds);
+        
+        // Determine which phone number to call for display
+        String phoneNumber = (caretakerPhone != null && !caretakerPhone.trim().isEmpty()) ? caretakerPhone : "101";
+        String contactType = (caretakerPhone != null && !caretakerPhone.trim().isEmpty()) ? "your caretaker" : "emergency services (101)";
+        
+        // Create the same intents as before
+        Intent callIntent = new Intent(Intent.ACTION_CALL);
+        callIntent.setData(android.net.Uri.parse("tel:" + phoneNumber));
+        callIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        PendingIntent callPendingIntent = PendingIntent.getActivity(this, 0, callIntent, 
+            PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+        
+        Intent okIntent = new Intent("com.evercare.FALL_NOTIFICATION_OK");
+        okIntent.setPackage(getPackageName());
+        PendingIntent okPendingIntent = PendingIntent.getBroadcast(this, 0, okIntent,
+            PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+        
+        Intent dismissIntent = new Intent("com.evercare.FALL_NOTIFICATION_DISMISSED");
+        dismissIntent.setPackage(getPackageName());
+        PendingIntent dismissPendingIntent = PendingIntent.getBroadcast(this, 1, dismissIntent,
+            PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+        
+        // Build updated notification with countdown (silent updates)
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
+                .setSmallIcon(android.R.drawable.stat_sys_warning)
+                .setContentTitle("Fall Detected")
+                .setContentText("Emergency call in " + countdownText + ". Tap 'I'm OK' if you're fine.")
+                .setStyle(new NotificationCompat.BigTextStyle()
+                        .bigText("Fall detected! Emergency call to " + contactType + " in " + countdownText + " unless you tap 'I'm OK'."))
+                .setPriority(NotificationCompat.PRIORITY_HIGH)
+                .setCategory(NotificationCompat.CATEGORY_ALARM)
+                .setAutoCancel(false)
+                .setContentIntent(callPendingIntent)
+                .setDeleteIntent(dismissPendingIntent)
+                .addAction(android.R.drawable.ic_menu_call, "Call Help", callPendingIntent)
+                .addAction(android.R.drawable.ic_menu_close_clear_cancel, "I'm OK", okPendingIntent)
+                .setOnlyAlertOnce(true)
+                .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
+                .setOngoing(true)
+                .setShowWhen(false)
+                .setColor(android.graphics.Color.RED)
+                .setBadgeIconType(NotificationCompat.BADGE_ICON_SMALL);
+        
+        try {
+            notificationManager.notify(NOTIFICATION_ID, builder.build());
+        } catch (Exception e) {
+            Log.e(TAG, "Error updating countdown notification: " + e.getMessage());
+        }
+    }
+    
+    private void registerNotificationInteractionReceiver() {
+        notificationInteractionReceiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                String action = intent.getAction();
+                Log.i(TAG, "Notification interaction received: " + action);
+                
+                if ("com.evercare.FALL_NOTIFICATION_OK".equals(action)) {
+                    Log.i(TAG, "User indicated they are OK - cancelling auto-call timer");
+                    cancelAutoCallTimer();
+                    // Clear the notification
+                    notificationManager.cancel(NOTIFICATION_ID);
+                } else if ("com.evercare.FALL_NOTIFICATION_DISMISSED".equals(action)) {
+                    Log.i(TAG, "Fall notification was dismissed - cancelling auto-call timer");
+                    cancelAutoCallTimer();
+                }
+            }
+        };
+        
+        IntentFilter filter = new IntentFilter();
+        filter.addAction("com.evercare.FALL_NOTIFICATION_OK");
+        filter.addAction("com.evercare.FALL_NOTIFICATION_DISMISSED");
+        
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            registerReceiver(notificationInteractionReceiver, filter, Context.RECEIVER_NOT_EXPORTED);
+        } else {
+            registerReceiver(notificationInteractionReceiver, filter);
+        }
+        
+        Log.d(TAG, "Notification interaction receiver registered");
     }
     
     @Override
@@ -357,27 +553,42 @@ public class BackgroundService extends Service implements SensorEventListener{
         Intent callIntent = new Intent(Intent.ACTION_CALL);
         callIntent.setData(android.net.Uri.parse("tel:" + phoneNumber));
         callIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, callIntent, 
+        PendingIntent callPendingIntent = PendingIntent.getActivity(this, 0, callIntent, 
             PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
         
-        // Build the notification with help message
+        // Create intent for "I'm OK" action
+        Intent okIntent = new Intent("com.evercare.FALL_NOTIFICATION_OK");
+        okIntent.setPackage(getPackageName());
+        PendingIntent okPendingIntent = PendingIntent.getBroadcast(this, 0, okIntent,
+            PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+        
+        // Create intent for notification dismiss
+        Intent dismissIntent = new Intent("com.evercare.FALL_NOTIFICATION_DISMISSED");
+        dismissIntent.setPackage(getPackageName());
+        PendingIntent dismissPendingIntent = PendingIntent.getBroadcast(this, 1, dismissIntent,
+            PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+        
+        // Build the notification with help message and action buttons
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
                 .setSmallIcon(android.R.drawable.stat_sys_warning)
                 .setContentTitle("Fall Detected")
-                .setContentText("Tap here if you need help")
+                .setContentText("Emergency call in 2 minutes. Tap 'I'm OK' if you're fine.")
                 .setStyle(new NotificationCompat.BigTextStyle()
-                        .bigText("A fall has been detected. If you need emergency assistance, tap this notification to call " + contactType + "."))
+                        .bigText("Fall detected! Emergency call to " + contactType + " in 2 minutes unless you tap 'I'm OK'."))
                 .setPriority(NotificationCompat.PRIORITY_MAX)
                 .setCategory(NotificationCompat.CATEGORY_ALARM)
-                .setAutoCancel(true)
-                .setContentIntent(pendingIntent)
+                .setAutoCancel(false)
+                .setContentIntent(callPendingIntent)
+                .setDeleteIntent(dismissPendingIntent)
+                .addAction(android.R.drawable.ic_menu_call, "Call Help", callPendingIntent)
+                .addAction(android.R.drawable.ic_menu_close_clear_cancel, "I'm OK", okPendingIntent)
                 .setVibrate(new long[]{0, 1000, 500, 1000})
                 .setDefaults(NotificationCompat.DEFAULT_ALL)
                 .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
-                .setOngoing(false)
+                .setOngoing(true)
                 .setShowWhen(true)
                 .setWhen(System.currentTimeMillis())
-                .setFullScreenIntent(pendingIntent, true)
+                .setFullScreenIntent(callPendingIntent, true)
                 .setColor(android.graphics.Color.RED)
                 .setBadgeIconType(NotificationCompat.BADGE_ICON_SMALL);
         

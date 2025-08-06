@@ -12,6 +12,7 @@ import PastAppointments from '../screens/pastappointmets';
 import AppSettings from '../screens/appsettings';
 import UserSettings from '../screens/usersettings';
 import HistoryScreen from '../screens/history';
+import SupportScreen from '../screens/SupportScreen';
 
 export type AppStackParamList = {
   Home: undefined;
@@ -24,6 +25,7 @@ export type AppStackParamList = {
   UserSettings: undefined;
   History: undefined;
   Settings: undefined;
+  SupportScreen:undefined;
 };
 
 const Stack = createNativeStackNavigator<AppStackParamList>();
@@ -73,6 +75,11 @@ export default function AppNavigator() {
       <Stack.Screen
         name="History"
         component={HistoryScreen}
+      />
+      {/* support */}
+      <Stack.Screen
+        name="SupportScreen"
+        component={SupportScreen}
       />
     </Stack.Navigator>
   );

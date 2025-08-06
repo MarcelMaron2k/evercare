@@ -31,7 +31,7 @@ type RootStackParamList = {
   History:            undefined;
   UserSettings:       undefined;
   AppSettings:        undefined;
-  Support:            undefined;
+  SupportScreen:      undefined;
 };
 
 type HomeNavProp = NativeStackNavigationProp<RootStackParamList, 'Home'>;
@@ -105,7 +105,7 @@ export default function HomeScreen() {
       icon: '📞',
       title: 'Support',
       subtitle: 'Get help',
-      onPress: () => navigation.navigate('Support'),
+      onPress: () => navigation.navigate('SupportScreen'),
     },
     {
       key: 'logout',

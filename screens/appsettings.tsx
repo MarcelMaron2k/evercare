@@ -12,8 +12,8 @@ import {
   Dimensions,
   ImageBackground,
 } from 'react-native';
-import Colors from '../styles/Colors';
 import { SettingsContext, FontSizeKey } from '../context/SettingsContext';
+import { useTheme } from '../utils/theme';
 
 const { width } = Dimensions.get('window');
 const FONT_SIZES: Record<FontSizeKey, number> = {
@@ -22,25 +22,15 @@ const FONT_SIZES: Record<FontSizeKey, number> = {
   large:  18,
   xlarge: 20,
 };
-const background = require('../assets/background.png');
 
 export default function AppSettings() {
   const { settings, updateSettings } = useContext(SettingsContext);
-
-  // dynamic styles
-  const fontSize   = FONT_SIZES[settings.fontSizeKey];
-  const fontWeight = settings.boldText ? '700' : '400';
-  const textColor  = settings.highContrast
-    ? '#000'
-    : settings.darkMode
-      ? Colors.white
-      : Colors.blue;
-  const bgColor    = settings.darkMode ? Colors.black : Colors.white;
+  const { colors, typography, backgroundImage } = useTheme();
 
   return (
-    <SafeAreaView style={[styles.safe, { backgroundColor: bgColor }]}>
+    <SafeAreaView style={[styles.safe, { backgroundColor: colors.background }]}>
       <ImageBackground
-        source={background}
+        source={backgroundImage}
         style={styles.background}
         imageStyle={styles.bgImage}
       >
@@ -49,7 +39,7 @@ export default function AppSettings() {
           <Text
             style={[
               styles.pageTitle,
-              { fontSize: 24, fontWeight: '600', color: textColor },
+              { fontSize: 24, fontWeight: '600', color: typography.textColor },
             ]}
           >
             App Settings
@@ -62,7 +52,7 @@ export default function AppSettings() {
             <Text
               style={[
                 styles.label,
-                { fontSize, fontWeight, color: textColor },
+                { fontSize: typography.fontSize, fontWeight: typography.fontWeight, color: typography.textColor },
                 settings.boldText && styles.boldText,
               ]}
             >
@@ -79,7 +69,7 @@ export default function AppSettings() {
             <Text
               style={[
                 styles.label,
-                { fontSize, fontWeight, color: textColor },
+                { fontSize: typography.fontSize, fontWeight: typography.fontWeight, color: typography.textColor },
                 settings.boldText && styles.boldText,
               ]}
             >
@@ -91,14 +81,15 @@ export default function AppSettings() {
                   key={lang}
                   style={[
                     styles.langButton,
-                    settings.language === lang && styles.langButtonSelected,
+                    { borderColor: colors.primary },
+                    settings.language === lang && [styles.langButtonSelected, { backgroundColor: colors.primary + '20' }],
                   ]}
                   onPress={() => updateSettings({ language: lang })}
                 >
                   <Text
                     style={[
                       styles.langText,
-                      { fontSize, fontWeight, color: textColor },
+                      { fontSize: typography.fontSize, fontWeight: typography.fontWeight, color: typography.textColor },
                       settings.language === lang && styles.boldText,
                     ]}
                   >
@@ -114,7 +105,7 @@ export default function AppSettings() {
             <Text
               style={[
                 styles.label,
-                { fontSize, fontWeight, color: textColor },
+                { fontSize: typography.fontSize, fontWeight: typography.fontWeight, color: typography.textColor },
                 settings.boldText && styles.boldText,
               ]}
             >
@@ -128,14 +119,15 @@ export default function AppSettings() {
                     onPress={() => updateSettings({ fontSizeKey: key })}
                     style={[
                       styles.fontButton,
+                      { borderColor: colors.separator },
                       settings.fontSizeKey === key &&
-                        styles.fontButtonSelected,
+                        [styles.fontButtonSelected, { backgroundColor: colors.primary + '20' }],
                     ]}
                   >
                     <Text
                       style={[
                         styles.fontChar,
-                        { fontSize: FONT_SIZES[key], fontWeight, color: textColor },
+                        { fontSize: FONT_SIZES[key], fontWeight: typography.fontWeight, color: typography.textColor },
                         settings.boldText && styles.boldText,
                       ]}
                     >
@@ -152,7 +144,7 @@ export default function AppSettings() {
             <Text
               style={[
                 styles.label,
-                { fontSize, fontWeight, color: textColor },
+                { fontSize: typography.fontSize, fontWeight: typography.fontWeight, color: typography.textColor },
                 settings.boldText && styles.boldText,
               ]}
             >
@@ -169,7 +161,7 @@ export default function AppSettings() {
             <Text
               style={[
                 styles.label,
-                { fontSize, fontWeight, color: textColor },
+                { fontSize: typography.fontSize, fontWeight: typography.fontWeight, color: typography.textColor },
                 settings.boldText && styles.boldText,
               ]}
             >
@@ -186,7 +178,7 @@ export default function AppSettings() {
             <Text
               style={[
                 styles.label,
-                { fontSize, fontWeight, color: textColor },
+                { fontSize: typography.fontSize, fontWeight: typography.fontWeight, color: typography.textColor },
                 settings.boldText && styles.boldText,
               ]}
             >
@@ -205,7 +197,7 @@ export default function AppSettings() {
             <Text
               style={[
                 styles.label,
-                { fontSize, fontWeight, color: textColor },
+                { fontSize: typography.fontSize, fontWeight: typography.fontWeight, color: typography.textColor },
                 settings.boldText && styles.boldText,
               ]}
             >
@@ -269,11 +261,8 @@ const styles = StyleSheet.create({
     marginHorizontal: 4,
     borderRadius: 4,
     borderWidth: 1,
-    borderColor: Colors.blue,
   },
-  langButtonSelected: {
-    backgroundColor: Colors.blue + '20',
-  },
+  langButtonSelected: {},
   langText: {
     fontSize: 16,
   },
@@ -288,10 +277,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderRadius: 4,
     borderWidth: 1,
-    borderColor: Colors.graylight,
   },
-  fontButtonSelected: {
-    backgroundColor: Colors.blue + '20',
-  },
+  fontButtonSelected: {},
   fontChar: {},
 });

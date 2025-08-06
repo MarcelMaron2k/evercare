@@ -12,7 +12,6 @@ import PastAppointments from '../screens/pastappointmets';
 import AppSettings from '../screens/appsettings';
 import UserSettings from '../screens/usersettings';
 import HistoryScreen from '../screens/history';
-import SettingsScreen from '../screens/settings';
 
 export type AppStackParamList = {
   Home: undefined;
@@ -74,12 +73,6 @@ export default function AppNavigator() {
       <Stack.Screen
         name="History"
         component={HistoryScreen}
-      />
-
-      {/* Settings */}
-      <Stack.Screen
-        name="Settings"
-        component={SettingsScreen}
       />
     </Stack.Navigator>
   );

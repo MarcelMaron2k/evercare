@@ -14,10 +14,9 @@ import {
   signOut,
 } from 'firebase/auth';
 import { auth } from '../firebase';
-import Colors from '../styles/Colors';
+import { useTheme } from '../utils/theme';
 import { SettingsContext, ProviderKey } from '../context/SettingsContext';
 
-const background = require('../assets/background.png');
 
 const PROVIDERS: { key: ProviderKey; label: string }[] = [
   { key: 'maccabi',  label: 'Maccabi' },
@@ -28,6 +27,7 @@ const PROVIDERS: { key: ProviderKey; label: string }[] = [
 
 export default function SignupScreen({ navigation }: any) {
   const { updateSettings } = useContext(SettingsContext);
+  const { colors, typography, backgroundImage } = useTheme();
 
   const [name, setName]                   = useState('');
   const [email, setEmail]                 = useState('');
@@ -62,36 +62,36 @@ export default function SignupScreen({ navigation }: any) {
 
   return (
     <ImageBackground
-      source={background}
-      style={styles.container}
+      source={backgroundImage}
+      style={[styles.container, { backgroundColor: colors.background }]}
       imageStyle={styles.bgImage}
     >
       <View style={styles.overlay}>
-        <Text style={styles.title}>Sign Up</Text>
+        <Text style={[styles.title, { color: typography.textColor, fontSize: typography.fontSize + 20, fontWeight: typography.fontWeight }]}>Sign Up</Text>
 
         <TextInput
           placeholder="Full Name"
-          placeholderTextColor="#666"
-          style={styles.input}
+          placeholderTextColor={colors.textSecondary}
+          style={[styles.input, { backgroundColor: colors.card, borderColor: colors.border, color: colors.text }]}
           value={name}
           onChangeText={setName}
         />
 
-        <Text style={styles.sectionHeader}>Select Provider</Text>
+        <Text style={[styles.sectionHeader, { color: typography.textColor, fontSize: typography.fontSize, fontWeight: typography.fontWeight }]}>Select Provider</Text>
         <View style={styles.providers}>
           {PROVIDERS.map(p => (
             <Pressable
               key={p.key}
               style={[
                 styles.providerButton,
-                provider === p.key && styles.providerButtonSelected,
+                { backgroundColor: colors.card, borderColor: provider === p.key ? colors.primary : 'transparent' }
               ]}
               onPress={() => setProvider(p.key)}
             >
               <Text
                 style={[
                   styles.providerText,
-                  provider === p.key && styles.providerTextSelected,
+                  { color: colors.primary, fontWeight: provider === p.key ? typography.fontWeight : '400' }
                 ]}
               >
                 {p.label}
@@ -102,8 +102,8 @@ export default function SignupScreen({ navigation }: any) {
 
         <TextInput
           placeholder="Email"
-          placeholderTextColor="#666"
-          style={styles.input}
+          placeholderTextColor={colors.textSecondary}
+          style={[styles.input, { backgroundColor: colors.card, borderColor: colors.border, color: colors.text }]}
           value={email}
           onChangeText={setEmail}
           autoCapitalize="none"
@@ -112,8 +112,8 @@ export default function SignupScreen({ navigation }: any) {
 
         <TextInput
           placeholder="Password"
-          placeholderTextColor="#666"
-          style={styles.input}
+          placeholderTextColor={colors.textSecondary}
+          style={[styles.input, { backgroundColor: colors.card, borderColor: colors.border, color: colors.text }]}
           value={password}
           onChangeText={setPassword}
           secureTextEntry
@@ -121,15 +121,15 @@ export default function SignupScreen({ navigation }: any) {
 
         <TextInput
           placeholder="Confirm Password"
-          placeholderTextColor="#666"
-          style={styles.input}
+          placeholderTextColor={colors.textSecondary}
+          style={[styles.input, { backgroundColor: colors.card, borderColor: colors.border, color: colors.text }]}
           value={confirmPassword}
           onChangeText={setConfirmPassword}
           secureTextEntry
         />
 
-        <Pressable style={styles.button} onPress={handleSignup}>
-          <Text style={styles.buttonText}>Create Account</Text>
+        <Pressable style={[styles.button, { backgroundColor: colors.success }]} onPress={handleSignup}>
+          <Text style={[styles.buttonText, { color: colors.card, fontSize: typography.fontSize, fontWeight: typography.fontWeight }]}>Create Account</Text>
         </Pressable>
       </View>
     </ImageBackground>
@@ -145,16 +145,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   title: {
-    fontSize:   36,
-    fontWeight: '600',
-    color:      Colors.blue,
     marginBottom: 24,
     textAlign: 'center',
   },
   sectionHeader: {
-    fontSize:   16,
-    fontWeight: '600',
-    color:      Colors.blue,
     marginTop:  16,
     marginBottom: 8,
   },
@@ -168,40 +162,34 @@ const styles = StyleSheet.create({
     marginHorizontal: 4,
     paddingVertical: 12,
     borderRadius:    6,
-    backgroundColor: 'rgba(255,255,255,0.9)',
     alignItems:      'center',
     borderWidth:     1,
-    borderColor:     'transparent',
   },
   providerButtonSelected: {
-    borderColor: Colors.blue,
+    // Dynamic border color applied inline
   },
   providerText: {
     fontSize: 14,
-    color:    Colors.blue,
+    // Dynamic color applied inline
   },
   providerTextSelected: {
     fontWeight: '600',
   },
   input: {
     width:             '100%',
-    backgroundColor:  'rgba(255,255,255,0.9)',
     borderRadius:      6,
     padding:           12,
     marginBottom:      12,
     borderWidth:       1,
-    borderColor:       '#555',
   },
   button: {
     width:             '100%',
-    backgroundColor:   Colors.green,
     padding:           12,
     borderRadius:      6,
     alignItems:       'center',
     marginTop:         24,
   },
   buttonText: {
-    color:        Colors.white,
     fontSize:     16,
     fontWeight:   '600',
   },

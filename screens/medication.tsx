@@ -18,32 +18,16 @@ import {
 } from 'react-native';
 import firebase, { auth, db } from '../firebase';
 import { Picker } from '@react-native-picker/picker';
-import Colors from '../styles/Colors';
 import { SettingsContext } from '../context/SettingsContext';
+import { useTheme } from '../utils/theme';
 
 const { width, height } = Dimensions.get('window');
-const background       = require('../assets/background.png');
 
 export default function MedicationScreen() {
   const { settings } = useContext(SettingsContext);
+  const { colors, typography, backgroundImage } = useTheme();
   const uid   = auth.currentUser!.uid;
   const medsRef = db.collection('users').doc(uid).collection('medications');
-
-  // compute dynamic styles from settings
-  const FONT_SIZES: Record<typeof settings.fontSizeKey, number> = {
-    small:  14,
-    medium: 16,
-    large:  18,
-    xlarge: 20,
-  };
-  const fontSize   = FONT_SIZES[settings.fontSizeKey];
-  const fontWeight = settings.boldText ? '700' : '400';
-  const textColor  = settings.highContrast
-    ? '#000'
-    : settings.darkMode
-      ? Colors.white
-      : Colors.graydark;
-  const bgColor    = settings.darkMode ? Colors.black : Colors.white;
 
   // form state
   const [searchText,    setSearchText]    = useState('');
@@ -148,25 +132,26 @@ export default function MedicationScreen() {
   const ListHeader = () => (
     <View>
       {/* Drug Lookup Card */}
-      <View style={styles.card}>
-        <Text style={[styles.cardTitle, { fontSize, fontWeight, color: textColor }]}>
+      <View style={[styles.card, { backgroundColor: colors.card, shadowColor: colors.shadow }]}>
+        <Text style={[styles.cardTitle, { fontSize: typography.fontSize, fontWeight: typography.fontWeight, color: typography.textColor }]}>
           Drug Name
         </Text>
         <TextInput
-          style={styles.input}
+          style={[styles.input, { backgroundColor: colors.card, borderColor: colors.border, color: colors.text }]}
           placeholder="Search drug…"
+          placeholderTextColor={colors.textSecondary}
           value={searchText || name}
           onChangeText={t => { setSearchText(t); setName(''); }}
         />
         {searchText.length >= 2 && suggestions.length > 0 && (
-          <View style={styles.suggestions}>
+          <View style={[styles.suggestions, { backgroundColor: colors.card, borderColor: colors.border }]}>
             {suggestions.map(s => (
               <Pressable
                 key={s}
                 onPress={() => { setName(s); setSearchText(''); setSuggestions([]); }}
-                style={styles.suggestionItem}
+                style={[styles.suggestionItem, { borderColor: colors.separator }]}
               >
-                <Text style={[styles.suggestionText, { fontSize, color: textColor }]}>
+                <Text style={[styles.suggestionText, { fontSize: typography.fontSize, color: typography.textColor }]}>
                   {s}
                 </Text>
               </Pressable>
@@ -176,31 +161,34 @@ export default function MedicationScreen() {
       </View>
 
       {/* Dosage & Schedule Card */}
-      <View style={styles.card}>
-        <Text style={[styles.cardTitle, { fontSize, fontWeight, color: textColor }]}>
+      <View style={[styles.card, { backgroundColor: colors.card, shadowColor: colors.shadow }]}>
+        <Text style={[styles.cardTitle, { fontSize: typography.fontSize, fontWeight: typography.fontWeight, color: typography.textColor }]}>
           Amount (units per dose)
         </Text>
         <TextInput
-          style={styles.input}
+          style={[styles.input, { backgroundColor: colors.card, borderColor: colors.border, color: colors.text }]}
           keyboardType="number-pad"
+          placeholderTextColor={colors.textSecondary}
           value={String(amount)}
           onChangeText={t => setAmount(+t||1)}
         />
 
-        <Text style={[styles.cardTitle, { fontSize, fontWeight, color: textColor }]}>
+        <Text style={[styles.cardTitle, { fontSize: typography.fontSize, fontWeight: typography.fontWeight, color: typography.textColor }]}>
           Frequency
         </Text>
         <View style={styles.row}>
           <TextInput
-            style={styles.smallInput}
+            style={[styles.smallInput, { backgroundColor: colors.card, borderColor: colors.border, color: colors.text }]}
             keyboardType="number-pad"
+            placeholderTextColor={colors.textSecondary}
             value={String(doseCount)}
             onChangeText={t => setDoseCount(+t||1)}
           />
-          <Text style={[styles.centerText, { fontSize, color: textColor }]}>per</Text>
+          <Text style={[styles.centerText, { fontSize: typography.fontSize, color: typography.textColor }]}>per</Text>
           <TextInput
-            style={styles.smallInput}
+            style={[styles.smallInput, { backgroundColor: colors.card, borderColor: colors.border, color: colors.text }]}
             keyboardType="number-pad"
+            placeholderTextColor={colors.textSecondary}
             value={String(periodCount)}
             onChangeText={t => setPeriodCount(+t||1)}
           />
@@ -214,13 +202,14 @@ export default function MedicationScreen() {
           </Picker>
         </View>
 
-        <Text style={[styles.cardTitle, { fontSize, fontWeight, color: textColor }]}>
+        <Text style={[styles.cardTitle, { fontSize: typography.fontSize, fontWeight: typography.fontWeight, color: typography.textColor }]}>
           Duration
         </Text>
         <View style={styles.row}>
           <TextInput
-            style={styles.smallInput}
+            style={[styles.smallInput, { backgroundColor: colors.card, borderColor: colors.border, color: colors.text }]}
             keyboardType="number-pad"
+            placeholderTextColor={colors.textSecondary}
             value={String(durationCount)}
             onChangeText={t => setDurationCount(+t||1)}
           />
@@ -236,24 +225,24 @@ export default function MedicationScreen() {
       </View>
 
       {/* Submit Card */}
-      <View style={styles.card}>
-        <Pressable style={styles.addButton} onPress={addMedication}>
-          <Text style={[styles.addButtonText, { fontSize, fontWeight }]}>
+      <View style={[styles.card, { backgroundColor: colors.card, shadowColor: colors.shadow }]}>
+        <Pressable style={[styles.addButton, { backgroundColor: colors.success }]} onPress={addMedication}>
+          <Text style={[styles.addButtonText, { fontSize: typography.fontSize, fontWeight: typography.fontWeight, color: colors.card }]}>
             Add Medication
           </Text>
         </Pressable>
       </View>
 
-      <Text style={[styles.sectionHeader, { fontSize: fontSize + 2, fontWeight }]}>
+      <Text style={[styles.sectionHeader, { fontSize: typography.fontSize + 2, fontWeight: typography.fontWeight, color: typography.textColor }]}>
         Your Medications
       </Text>
     </View>
   );
 
   return (
-    <SafeAreaView style={[styles.safe, { backgroundColor: bgColor }]}>
+    <SafeAreaView style={[styles.safe, { backgroundColor: colors.background }]}>
       <ImageBackground
-        source={background}
+        source={backgroundImage}
         style={styles.background}
         imageStyle={styles.bgImage}
       >
@@ -268,27 +257,27 @@ export default function MedicationScreen() {
             renderItem={({ item }) => {
               const d = item.data;
               return (
-                <View style={styles.medCard}>
+                <View style={[styles.medCard, { backgroundColor: colors.card }]}>
                   <View style={styles.medText}>
-                    <Text style={[styles.medName, { fontSize, fontWeight, color: textColor }]}>
+                    <Text style={[styles.medName, { fontSize: typography.fontSize, fontWeight: typography.fontWeight, color: typography.textColor }]}>
                       {d.name}
                     </Text>
-                    <Text style={[styles.medDetail, { fontSize: fontSize - 2, color: Colors.graydark }]}>
+                    <Text style={[styles.medDetail, { fontSize: typography.fontSize - 2, color: colors.textSecondary }]}>
                       {d.amount} unit(s) — {d.doseCount} per {d.periodCount} {d.periodUnit}(s) for {d.durationCount} {d.durationUnit}(s)
                     </Text>
                   </View>
                   <Pressable
-                    style={styles.removeButton}
+                    style={[styles.removeButton, { backgroundColor: colors.danger }]}
                     onPress={() => removeMedication(item.id)}
                   >
-                    <Text style={[styles.removeText, { fontSize, fontWeight }]}>
+                    <Text style={[styles.removeText, { fontSize: typography.fontSize, fontWeight: typography.fontWeight, color: colors.card }]}>
                       Remove
                     </Text>
                   </Pressable>
                 </View>
               );
             }}
-            contentContainerStyle={styles.listContainer}
+            contentContainerStyle={[styles.listContainer, { paddingHorizontal: 16 }]}
           />
         </KeyboardAvoidingView>
       </ImageBackground>
@@ -304,11 +293,9 @@ const styles = StyleSheet.create({
 
   scroll:          { padding: 16, paddingBottom: 32 },
   card:            {
-    backgroundColor: Colors.white,
     borderRadius:    8,
     padding:         16,
     marginBottom:    16,
-    shadowColor:     '#000',
     shadowOpacity:   0.05,
     shadowRadius:    6,
     shadowOffset:    { width: 0, height: 2 },
@@ -317,25 +304,20 @@ const styles = StyleSheet.create({
   cardTitle:       { marginBottom: 8 },
   input:           {
     borderWidth:  1,
-    borderColor:  '#666',
     borderRadius: 6,
     padding:      12,
-    backgroundColor: Colors.white,
     marginBottom: 12,
   },
   suggestions:     {
     borderWidth:  1,
-    borderColor:  '#666',
     borderRadius: 6,
-    backgroundColor: Colors.white,
     marginBottom: 12,
   },
-  suggestionItem:  { padding: 12, borderBottomWidth: 1, borderColor: '#eee' },
+  suggestionItem:  { padding: 12, borderBottomWidth: 1 },
   suggestionText:  {},
   row:             { flexDirection: 'row', alignItems: 'center', marginBottom: 12 },
   smallInput:      {
     borderWidth:  1,
-    borderColor:  '#666',
     borderRadius: 6,
     padding:      12,
     width:        64,
@@ -344,19 +326,17 @@ const styles = StyleSheet.create({
   },
   centerText:      { marginHorizontal: 8 },
   picker:          { flex: 1, marginLeft: 8 },
-  addButton:       { backgroundColor: Colors.green, paddingVertical: 14, borderRadius: 6, alignItems: 'center' },
-  addButtonText:   { color: Colors.white },
+  addButton:       { paddingVertical: 14, borderRadius: 6, alignItems: 'center' },
+  addButtonText:   {},
   sectionHeader:   { marginBottom: 12, marginTop: 8 },
 
   medCard:         {
-    backgroundColor: Colors.white,
     borderRadius:    8,
     padding:         16,
     marginBottom:    12,
     flexDirection:   'row',
     justifyContent:  'space-between',
     alignItems:      'center',
-    shadowColor:     '#000',
     shadowOpacity:   0.03,
     shadowRadius:    4,
     shadowOffset:    { width: 0, height: 1 },
@@ -365,7 +345,7 @@ const styles = StyleSheet.create({
   medText:         { flex: 1, marginRight: 12 },
   medName:         {},
   medDetail:       {},
-  removeButton:    { backgroundColor: Colors.red, paddingVertical: 8, paddingHorizontal: 12, borderRadius: 6 },
-  removeText:      { color: Colors.white },
+  removeButton:    { paddingVertical: 8, paddingHorizontal: 12, borderRadius: 6 },
+  removeText:      {},
   listContainer:   { paddingBottom: 32 },
 });

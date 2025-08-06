@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Pressable, View, Text, StyleSheet } from 'react-native';
-import Colors from '../../styles/Colors';
+import { useTheme } from '../../utils/theme';
 
 export default function ActionCard({
   icon,
@@ -15,14 +15,16 @@ export default function ActionCard({
   subtitle: string;
   onPress: () => void;
 }) {
+  const { colors, typography } = useTheme();
+
   return (
-    <Pressable style={styles.card} onPress={onPress}>
-      <View style={styles.iconContainer}>
+    <Pressable style={[styles.card, { backgroundColor: colors.card }]} onPress={onPress}>
+      <View style={[styles.iconContainer, { backgroundColor: colors.primary + '20' }]}>
         <Text style={styles.icon}>{icon}</Text>
       </View>
       <View style={styles.textContainer}>
-        <Text style={styles.title}>{title}</Text>
-        {subtitle ? <Text style={styles.subtitle}>{subtitle}</Text> : null}
+        <Text style={[styles.title, { color: colors.primary, fontSize: typography.fontSize, fontWeight: typography.fontWeight }]}>{title}</Text>
+        {subtitle ? <Text style={[styles.subtitle, { color: colors.textSecondary, fontSize: typography.fontSize - 2 }]}>{subtitle}</Text> : null}
       </View>
     </Pressable>
   );
@@ -32,7 +34,6 @@ const styles = StyleSheet.create({
   card: {
     flex:            1,
     margin:          8,
-    backgroundColor: Colors.white,
     borderRadius:    8,
     padding:         16,
     alignItems:      'center',
@@ -44,7 +45,6 @@ const styles = StyleSheet.create({
     elevation:       2,
   },
   iconContainer: {
-    backgroundColor: Colors.blue + '20',
     borderRadius:    24,
     padding:         12,
     marginBottom:    8,
@@ -56,13 +56,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   title: {
-    fontSize:   16,
     fontWeight: '600',
-    color:      Colors.blue,
     marginBottom: 4,
   },
   subtitle: {
-    fontSize: 14,
-    color:    Colors.gray,
+    // Dynamic styles applied inline
   },
 });

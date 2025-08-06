@@ -51,7 +51,7 @@ export default function SplashScreen() {
     <ImageBackground
       source={background}
       style={styles.container}
-      imageStyle={styles.bgImage}    // ← now exists!
+      imageStyle={styles.bgImage}
     >
       <Animated.Image
         source={logo}

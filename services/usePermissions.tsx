@@ -1,40 +1,118 @@
-import { useState, useEffect } from 'react';
-import { PermissionsAndroid, Platform, Alert } from 'react-native';
+import { useState, useEffect, useCallback } from 'react';
+import { PermissionsAndroid, Platform, Alert, NativeModules } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
+// Type definitions for the native notification module
+interface NotificationPermissionModule {
+  areNotificationsEnabled(): Promise<boolean>;
+  openNotificationSettings(): void;
+  openAppSettings(): void;
+  getNotificationInfo(): Promise<string>;
+}
+
+// Get the native module with proper typing
+const NotificationPermission = NativeModules.NotificationPermission as NotificationPermissionModule;
+
+interface PermissionsState {
+  notifications: boolean | null;
+  phone: boolean | null;
+  location: boolean | null;
+  backgroundLocation: boolean | null;
+}
+
 interface UsePermissionsReturn {
+  permissions: PermissionsState;
   hasAllPermissions: boolean | null;
   requestPermissions: () => Promise<void>;
+  requestNotificationPermission: () => void;
   loading: boolean;
 }
 
 export const usePermissions = (): UsePermissionsReturn => {
+  const [permissions, setPermissions] = useState<PermissionsState>({
+    notifications: null,
+    phone: null,
+    location: null,
+    backgroundLocation: null
+  });
   const [hasAllPermissions, setHasAllPermissions] = useState<boolean | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
 
+  // Check notification permissions using native module
+  const checkNotificationPermission = useCallback(async (): Promise<boolean> => {
+    try {
+      if (Platform.OS !== 'android') {
+        setPermissions(prev => ({ ...prev, notifications: true }));
+        return true;
+      }
+      
+      const enabled = await NotificationPermission.areNotificationsEnabled();
+      setPermissions(prev => ({ ...prev, notifications: enabled }));
+      return enabled;
+    } catch (error) {
+      console.error('Error checking notification permission:', error);
+      setPermissions(prev => ({ ...prev, notifications: false }));
+      return false;
+    }
+  }, []);
+
+  // Request notification permission using native module  
+  const requestNotificationPermission = useCallback((): void => {
+    if (Platform.OS !== 'android') {
+      Alert.alert('Info', 'Notification settings are handled automatically on iOS');
+      return;
+    }
+
+    Alert.alert(
+      'Enable Notifications',
+      'This app needs notification permission to send you important health alerts and appointment reminders.',
+      [
+        { text: 'Cancel', style: 'cancel' },
+        { 
+          text: 'Open Settings', 
+          onPress: () => {
+            try {
+              NotificationPermission.openNotificationSettings();
+            } catch (error) {
+              console.error('Error opening notification settings:', error);
+            }
+          }
+        }
+      ]
+    );
+  }, []);
+
   const checkPermissions = async (): Promise<boolean> => {
     if (Platform.OS !== 'android') {
+      setPermissions({
+        notifications: true,
+        phone: true,
+        location: true,
+        backgroundLocation: true
+      });
+      setHasAllPermissions(true);
       return true;
     }
 
     try {
-      const permissions = [
-        PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
-        PermissionsAndroid.PERMISSIONS.ACCESS_COARSE_LOCATION,
-        PermissionsAndroid.PERMISSIONS.CALL_PHONE,
-      ];
+      // Check all permissions individually
+      const [notificationResult, phoneResult, locationResult, backgroundLocationResult] = await Promise.all([
+        checkNotificationPermission(),
+        PermissionsAndroid.check(PermissionsAndroid.PERMISSIONS.CALL_PHONE),
+        PermissionsAndroid.check(PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION),
+        PermissionsAndroid.check(PermissionsAndroid.PERMISSIONS.ACCESS_BACKGROUND_LOCATION)
+      ]);
 
-      // Only check POST_NOTIFICATIONS if it exists
-      if (PermissionsAndroid.PERMISSIONS.POST_NOTIFICATIONS) {
-        permissions.push(PermissionsAndroid.PERMISSIONS.POST_NOTIFICATIONS);
-      }
-
-      const results = await Promise.all(
-        permissions.map(permission => PermissionsAndroid.check(permission))
-      );
+      // Update individual permissions
+      setPermissions(prev => ({
+        ...prev,
+        phone: phoneResult,
+        location: locationResult,
+        backgroundLocation: backgroundLocationResult
+      }));
 
       // Check if all permissions are granted
-      const allGranted = results.every(result => result === true);
+      const allGranted = notificationResult && phoneResult && locationResult;
       setHasAllPermissions(allGranted);
       return allGranted;
     } catch (error) {
@@ -44,7 +122,7 @@ export const usePermissions = (): UsePermissionsReturn => {
     }
   };
 
-  const requestPermissions = async (): Promise<void> => {
+  const requestPermissions = useCallback(async (): Promise<void> => {
     if (Platform.OS !== 'android') {
       console.log('Not Android platform, skipping permission requests');
       return;
@@ -67,12 +145,9 @@ export const usePermissions = (): UsePermissionsReturn => {
         PermissionsAndroid.PERMISSIONS.CALL_PHONE,
       ];
 
-      // Only add POST_NOTIFICATIONS if it exists (Android 13+)
-      if (PermissionsAndroid.PERMISSIONS.POST_NOTIFICATIONS) {
+      // Add POST_NOTIFICATIONS for Android 13+ (API 33+)
+      if (Platform.Version >= 33) {
         basicPermissions.push(PermissionsAndroid.PERMISSIONS.POST_NOTIFICATIONS);
-        console.log('POST_NOTIFICATIONS permission available, adding to request');
-      } else {
-        console.log('POST_NOTIFICATIONS permission not available on this Android version');
       }
 
       console.log('Requesting basic permissions...', basicPermissions);
@@ -87,7 +162,7 @@ export const usePermissions = (): UsePermissionsReturn => {
           case PermissionsAndroid.PERMISSIONS.ACCESS_COARSE_LOCATION:
             rationale = {
               title: 'Location Permission',
-              message: 'EverCare needs access to your location to record where falls occur for emergency services.',
+              message: 'EverCare needs access to your location for emergency services and finding nearby healthcare providers.',
               buttonPositive: 'Allow',
               buttonNegative: 'Deny',
             };
@@ -95,7 +170,7 @@ export const usePermissions = (): UsePermissionsReturn => {
           case PermissionsAndroid.PERMISSIONS.CALL_PHONE:
             rationale = {
               title: 'Phone Permission',
-              message: 'EverCare needs permission to make emergency calls when a fall is detected.',
+              message: 'EverCare needs permission to make emergency calls when needed.',
               buttonPositive: 'Allow',
               buttonNegative: 'Deny',
             };
@@ -103,7 +178,7 @@ export const usePermissions = (): UsePermissionsReturn => {
           case PermissionsAndroid.PERMISSIONS.POST_NOTIFICATIONS:
             rationale = {
               title: 'Notification Permission',
-              message: 'EverCare needs permission to send you notifications when a fall is detected.',
+              message: 'EverCare needs notification permission to send you important health alerts, fall detection warnings, and appointment reminders.',
               buttonPositive: 'Allow',
               buttonNegative: 'Deny',
             };
@@ -114,6 +189,22 @@ export const usePermissions = (): UsePermissionsReturn => {
         basicResults[permission] = result;
       }
       console.log('Basic permission results:', basicResults);
+
+      // For Android 13+, check if POST_NOTIFICATIONS was granted
+      // For older versions, use the native module check
+      let notificationGranted = false;
+      if (Platform.Version >= 33) {
+        notificationGranted = basicResults[PermissionsAndroid.PERMISSIONS.POST_NOTIFICATIONS] === PermissionsAndroid.RESULTS.GRANTED;
+      } else {
+        notificationGranted = await checkNotificationPermission();
+      }
+      
+      if (!notificationGranted) {
+        // Show notification setup instructions for older devices
+        if (Platform.Version < 33) {
+          requestNotificationPermission();
+        }
+      }
 
       // Check if location permissions were granted
       const locationGranted = 
@@ -127,7 +218,7 @@ export const usePermissions = (): UsePermissionsReturn => {
           PermissionsAndroid.PERMISSIONS.ACCESS_BACKGROUND_LOCATION,
           {
             title: 'Background Location Permission',
-            message: 'EverCare needs to access your location even when the app is closed to detect falls and provide emergency assistance.',
+            message: 'EverCare needs to access your location in the background for emergency services and location-based health features.',
             buttonPositive: 'Allow',
             buttonNegative: 'Deny',
           }
@@ -167,14 +258,14 @@ export const usePermissions = (): UsePermissionsReturn => {
       if (deniedPermissions.length > 0) {
         Alert.alert(
           'Permissions Required',
-          `The following permissions were denied: ${deniedPermissions.join(', ')}.\n\nFall detection may not work properly without these permissions.`,
+          `The following permissions were denied: ${deniedPermissions.join(', ')}.\n\nSome app features may not work properly without these permissions.`,
           [{ text: 'OK' }]
         );
       } else if (!hasRequestedBefore) {
         // Only show success message on first successful permission grant
         Alert.alert(
           'Permissions Granted',
-          'All permissions have been granted. Fall detection is now active.',
+          'All permissions have been granted. EverCare is ready to use.',
           [{ text: 'OK' }]
         );
       }
@@ -194,7 +285,7 @@ export const usePermissions = (): UsePermissionsReturn => {
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
 
   useEffect(() => {
     // Check permissions when component mounts
@@ -206,8 +297,10 @@ export const usePermissions = (): UsePermissionsReturn => {
   }, []);
 
   return {
+    permissions,
     hasAllPermissions,
     requestPermissions,
+    requestNotificationPermission,
     loading,
   };
 };

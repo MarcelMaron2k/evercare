@@ -5,19 +5,22 @@ import { auth } from './firebase';
 import AuthNavigator from './navigation/AuthNavigator';
 import AppNavigator from './navigation/AppNavigator';
 import { SettingsProvider } from './context/SettingsContext';
-import { useNotificationPermission } from './useNotificationPermission';
+import { usePermissions } from './services/usePermissions';
 import { useFallDetectionService } from './services/FallDetectionService';
 
 export default function App() {
   const [user, setUser] = useState<null | object>(null);
   const [initializing, setInitializing] = useState(true);
+  const [hasShownInstructions, setHasShownInstructions] = useState(false);
   
-  // Add notification permission hook
+  // Add unified permissions hook
   const { 
-    hasPermission, 
-    checkPermission, 
-    showGalaxyInstructions 
-  } = useNotificationPermission();
+    permissions,
+    hasAllPermissions, 
+    requestPermissions,
+    requestNotificationPermission,
+    loading: permissionsLoading 
+  } = usePermissions();
 
   // Initialize fall detection service
   useFallDetectionService();
@@ -31,21 +34,19 @@ export default function App() {
   }, [initializing]);
 
   useEffect(() => {
-    // Check notification permissions when user logs in
-    const setupNotifications = async () => {
-      if (user) {
-        const notificationEnabled = await checkPermission();
-        if (!notificationEnabled) {
-          // Wait a bit then show setup instructions for Galaxy devices
-          setTimeout(() => {
-            showGalaxyInstructions();
-          }, 2000);
-        }
+    // Request all permissions when user logs in
+    const setupPermissions = async () => {
+      if (user && !hasShownInstructions && !permissionsLoading) {
+        // Wait a bit then request all permissions
+        setTimeout(() => {
+          requestPermissions();
+          setHasShownInstructions(true);
+        }, 2000);
       }
     };
 
-    setupNotifications();
-  }, [user, checkPermission, showGalaxyInstructions]);
+    setupPermissions();
+  }, [user, hasShownInstructions, permissionsLoading, requestPermissions]);
 
   // Show AuthNavigator while initializing or when no user
   return (

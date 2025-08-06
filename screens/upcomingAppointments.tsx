@@ -18,8 +18,8 @@ import {
   removeBookedAppointment,
 } from '../services/appointment/appointmentService';
 import type { Appointment } from '../types/appointment';
-import Colors from '../styles/Colors';
 import { SettingsContext } from '../context/SettingsContext';
+import { useTheme } from '../utils/theme';
 
 type Props = NativeStackScreenProps<AppStackParamList, 'UpcomingAppointments'>;
 
@@ -32,13 +32,7 @@ const FONT_SIZES = { small: 14, medium: 16, large: 18, xlarge: 20 };
 
 const AppointmentRow: React.FC<AppointmentRowProps> = ({ appt, onCancel }) => {
   const { settings } = useContext(SettingsContext);
-  const fontSize   = FONT_SIZES[settings.fontSizeKey];
-  const fontWeight = settings.boldText ? '700' : '400';
-  const textColor  = settings.highContrast
-    ? '#000'
-    : settings.darkMode
-      ? Colors.white
-      : Colors.graydark;
+  const { colors, typography } = useTheme();
 
   const timeString = new Date(appt.slot.startTime).toLocaleString([], {
     month:  'short',
@@ -48,15 +42,15 @@ const AppointmentRow: React.FC<AppointmentRowProps> = ({ appt, onCancel }) => {
   });
 
   return (
-    <View style={styles.row}>
-      <Text style={[styles.rowText, { fontSize, fontWeight, color: textColor }]}>
+    <View style={[styles.row, { borderColor: colors.separator }]}>
+      <Text style={[styles.rowText, { fontSize: typography.fontSize, fontWeight: typography.fontWeight, color: typography.textColor }]}>
         {timeString} — Dr. {appt.doctor.firstName} {appt.doctor.lastName} @ {appt.provider.name}
       </Text>
       <TouchableOpacity
-        style={styles.cancelButton}
+        style={[styles.cancelButton, { backgroundColor: colors.danger }]}
         onPress={() => onCancel(appt.slot.slotId)}
       >
-        <Text style={[styles.cancelButtonText, { fontSize, fontWeight }]}>
+        <Text style={[styles.cancelButtonText, { fontSize: typography.fontSize, fontWeight: typography.fontWeight, color: colors.card }]}>
           Cancel
         </Text>
       </TouchableOpacity>
@@ -66,6 +60,7 @@ const AppointmentRow: React.FC<AppointmentRowProps> = ({ appt, onCancel }) => {
 
 export default function UpcomingAppointments({ navigation }: Props) {
   const { settings } = useContext(SettingsContext);
+  const { colors, typography } = useTheme();
   const [appointments, setAppointments] = useState<Appointment[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
@@ -114,14 +109,14 @@ export default function UpcomingAppointments({ navigation }: Props) {
   }
 
   return (
-    <SafeAreaView style={[styles.container, { backgroundColor: settings.darkMode ? Colors.black : Colors.white }]}>
+    <SafeAreaView style={[styles.container, { backgroundColor: colors.background }]}>
       {appointments.length === 0 ? (
         <View style={styles.emptyContainer}>
           <Text style={[
             styles.emptyText,
             {
-              fontSize: FONT_SIZES[settings.fontSizeKey],
-              color: settings.highContrast ? '#000' : Colors.graydark,
+              fontSize: typography.fontSize,
+              color: typography.textColor,
             }
           ]}>
             No upcoming appointments.
@@ -154,16 +149,14 @@ const styles = StyleSheet.create({
     paddingVertical: 14,
     paddingHorizontal: 16,
     borderBottomWidth: 1,
-    borderColor:      '#eee',
   },
   rowText:         { flex: 1 },
 
   cancelButton:    {
-    backgroundColor: '#FF3B30',
     paddingVertical: 6,
     paddingHorizontal: 12,
     borderRadius:    4,
     marginLeft:      12,
   },
-  cancelButtonText:{ color: '#fff' },
+  cancelButtonText:{},
 });

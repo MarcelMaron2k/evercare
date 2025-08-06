@@ -1,6 +1,6 @@
 // src/screens/Home.tsx
 
-import React, { useContext } from 'react';
+import React from 'react';
 import {
   SafeAreaView,
   ImageBackground,
@@ -15,13 +15,11 @@ import { useNavigation } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { signOut } from 'firebase/auth';
 import { auth } from '../firebase';
-import Colors from '../styles/Colors';
 import ActionCard from './components/ActionCard';
-import { SettingsContext } from '../context/SettingsContext';
+import { useTheme } from '../utils/theme';
 
-const background = require('../assets/background.png');
-const logo       = require('../assets/logo.png');
-const { width }  = Dimensions.get('window');
+const logo = require('../assets/logo.png');
+const { width } = Dimensions.get('window');
 
 type RootStackParamList = {
   Splash:             undefined;
@@ -30,7 +28,7 @@ type RootStackParamList = {
   Home:               undefined;
   AppointmentCenter:  undefined;
   Medications:        undefined;
-  ReportZone:         undefined;
+  History:            undefined;
   UserSettings:       undefined;
   AppSettings:        undefined;
   Support:            undefined;
@@ -48,23 +46,7 @@ interface Action {
 
 export default function HomeScreen() {
   const navigation = useNavigation<HomeNavProp>();
-  const { settings } = useContext(SettingsContext);
-
-  // compute dynamic styles from settings
-  const FONT_SIZES: Record<typeof settings.fontSizeKey, number> = {
-    small:  14,
-    medium: 16,
-    large:  18,
-    xlarge: 20,
-  };
-  const fontSize   = FONT_SIZES[settings.fontSizeKey];
-  const fontWeight = settings.boldText ? '700' : '400';
-  const textColor  = settings.highContrast
-    ? '#000'
-    : settings.darkMode
-      ? Colors.white
-      : Colors.green;
-  const bgColor    = settings.darkMode ? '#111' : Colors.white;
+  const { colors, typography, backgroundImage, settings } = useTheme();
 
   // greeting logic
   const hour = new Date().getHours();
@@ -98,11 +80,11 @@ export default function HomeScreen() {
       onPress: () => navigation.navigate('Medications'),
     },
     {
-      key: 'reports',
-      icon: '📊',
-      title: 'Report Zone',
-      subtitle: 'View & report',
-      onPress: () => navigation.navigate('ReportZone'),
+      key: 'history',
+      icon: '📋',
+      title: 'Fall History',
+      subtitle: 'View falls',
+      onPress: () => navigation.navigate('History'),
     },
     {
       key: 'userSettings',
@@ -135,30 +117,30 @@ export default function HomeScreen() {
   ];
 
   return (
-    <SafeAreaView style={[styles.safe, { backgroundColor: bgColor }]}>
+    <SafeAreaView style={[styles.safe, { backgroundColor: colors.background }]}>
       <ImageBackground
-        source={background}
+        source={backgroundImage}
         style={styles.background}
         imageStyle={styles.bgImage}
       >
         {/* Header */}
         <View style={styles.header}>
           <Image source={logo} style={styles.logoTop} />
-          <Text style={[styles.appName, { fontSize: 28, fontWeight: '600', color: textColor }]}>
+          <Text style={[styles.appName, { fontSize: 28, fontWeight: '600', color: typography.textColor }]}>
             EverCare
           </Text>
         </View>
 
         {/* Greeting & Summary */}
         <View style={styles.greetingSection}>
-          <Text style={[styles.greeting, { fontSize, fontWeight, color: textColor }]}>
+          <Text style={[styles.greeting, { fontSize: typography.fontSize, fontWeight: typography.fontWeight, color: typography.textColor }]}>
             {greetingText}, {settings.name || 'there'} 👋
           </Text>
-          <View style={styles.summaryCard}>
-            <Text style={[styles.summaryTitle, { fontSize: fontSize - 2, fontWeight: '600' }]}>
+          <View style={[styles.summaryCard, { backgroundColor: colors.card }]}>
+            <Text style={[styles.summaryTitle, { fontSize: typography.fontSize - 2, fontWeight: '600', color: colors.primary }]}>
               Next appointment
             </Text>
-            <Text style={[styles.summaryText, { fontSize: fontSize - 4, color: Colors.gray }]}>
+            <Text style={[styles.summaryText, { fontSize: typography.fontSize - 4, color: colors.textSecondary }]}>
               No upcoming appointment
             </Text>
           </View>
@@ -194,7 +176,6 @@ const styles = StyleSheet.create({
   greetingSection: { paddingHorizontal: 16, marginBottom: 24 },
   greeting:        { textAlign: 'center', marginBottom: 16 },
   summaryCard:     {
-    backgroundColor: Colors.white,
     borderRadius:    8,
     padding:         16,
     shadowColor:     '#000',
@@ -204,8 +185,8 @@ const styles = StyleSheet.create({
     elevation:       2,
     marginBottom:    24,
   },
-  summaryTitle:    { color: Colors.blue, marginBottom: 4 },
-  summaryText:     { color: '#333' },
+  summaryTitle:    { marginBottom: 4 },
+  summaryText:     { },
   actionsList:     {
     paddingHorizontal: 16,
     paddingBottom:     32,

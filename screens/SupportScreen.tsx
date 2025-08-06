@@ -140,13 +140,13 @@ const SupportScreen: React.FC<Props> = () => {
               >
                 Contact Us (Coming Soon)
               </Text>
-              <View style={styles.fakeButton}>
-                <Ionicons name="mail-outline" size={22} color="#aaa" style={{ marginRight: 8 }} />
-                <Text style={styles.fakeButtonText}>support@evercare.com</Text>
+              <View style={[styles.fakeButton, { backgroundColor: colors.surface }]}>
+                <Ionicons name="mail-outline" size={22} color={colors.textSecondary} style={{ marginRight: 8 }} />
+                <Text style={[styles.fakeButtonText, { color: colors.textSecondary }]}>support@evercare.com</Text>
               </View>
-              <View style={styles.fakeButton}>
-                <Ionicons name="call-outline" size={22} color="#aaa" style={{ marginRight: 8 }} />
-                <Text style={styles.fakeButtonText}>+1 (800) 123-4567</Text>
+              <View style={[styles.fakeButton, { backgroundColor: colors.surface }]}>
+                <Ionicons name="call-outline" size={22} color={colors.textSecondary} style={{ marginRight: 8 }} />
+                <Text style={[styles.fakeButtonText, { color: colors.textSecondary }]}>+1 (800) 123-4567</Text>
               </View>
             </View>
           </View>
@@ -154,7 +154,7 @@ const SupportScreen: React.FC<Props> = () => {
             style={{
               marginTop: 24,
               fontSize: typography.fontSize - 2,
-              color: "#aaa",
+              color: colors.textSecondary,
               textAlign: "center",
               fontFamily: "Raleway",
             }}
@@ -188,14 +188,12 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     marginTop: 10,
-    backgroundColor: "#f0f4fa",
     borderRadius: 12,
     padding: 10,
     opacity: 0.6,
     alignSelf: "flex-start",
   },
   fakeButtonText: {
-    color: "#aaa",
     fontSize: 16,
     fontFamily: "Raleway",
   },

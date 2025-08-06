@@ -1,15 +1,16 @@
 {
   "extends": "@react-native/typescript-config/tsconfig.json",
   "compilerOptions": {
+    "jsx": "react",
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true
   },
   "include": [
-    "custom.d.ts",    // your JSON-module declaration
-    "**/*.ts",        // all TS files anywhere in the project
-    "**/*.tsx",       // all TSX files
-    "**/*.json"       // so JSON imports are picked up
+    "custom.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.json"
   ],
   "exclude": [
     "node_modules",

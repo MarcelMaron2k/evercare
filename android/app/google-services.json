@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "742883445590",
+    "firebase_url": "https://evercare-cff66-default-rtdb.firebaseio.com",
+    "project_id": "evercare-cff66",
+    "storage_bucket": "evercare-cff66.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:742883445590:android:635c61d05cc8b32b64e4f7",
+        "android_client_info": {
+          "package_name": "com.evercare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "742883445590-itm1iri53sit2ljc3t9mpf845olpclcn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCsoWdkVRgmYhNbSstFu4sxAbVXdxOdiYs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "742883445590-itm1iri53sit2ljc3t9mpf845olpclcn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

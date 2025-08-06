@@ -11,6 +11,8 @@ import UpcomingAppointments from '../screens/upcomingAppointments';
 import PastAppointments from '../screens/pastappointmets';
 import AppSettings from '../screens/appsettings';
 import UserSettings from '../screens/usersettings';
+import HistoryScreen from '../screens/history';
+import SettingsScreen from '../screens/settings';
 
 export type AppStackParamList = {
   Home: undefined;
@@ -21,6 +23,8 @@ export type AppStackParamList = {
   PastAppointments: undefined;
   AppSettings: undefined;
   UserSettings: undefined;
+  History: undefined;
+  Settings: undefined;
 };
 
 const Stack = createNativeStackNavigator<AppStackParamList>();
@@ -59,10 +63,23 @@ export default function AppNavigator() {
         name="AppSettings"
         component={AppSettings}
       />
+      
       {/* user settings */}
       <Stack.Screen
         name="UserSettings"
         component={UserSettings}
+      />
+
+      {/* Fall History */}
+      <Stack.Screen
+        name="History"
+        component={HistoryScreen}
+      />
+
+      {/* Settings */}
+      <Stack.Screen
+        name="Settings"
+        component={SettingsScreen}
       />
     </Stack.Navigator>
   );
